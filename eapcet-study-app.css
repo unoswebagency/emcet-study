@@ -201,5 +201,11 @@ ul.tcs li { margin-bottom: 3px; }
 .splash-msg { font-size: 1.1rem; color: #d4d3ce; line-height: 1.6; }
 @keyframes popIn { 0% { opacity: 0; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1); } }
 
-.top, .layout { opacity: 0; transform: translateY(10px); transition: opacity 0.8s ease, transform 0.8s ease; }
-body.loaded .top, body.loaded .layout { opacity: 1; transform: translateY(0); }
+.top, .content { opacity: 0; transform: translateY(10px); transition: opacity 0.8s ease, transform 0.8s ease; }
+body.loaded .top, body.loaded .content { opacity: 1; transform: translateY(0); }
+
+@media(min-width: 901px) {
+  .sidebar { opacity: 0; transform: translateY(10px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  body.loaded .sidebar { opacity: 1; transform: translateY(0); }
+}
+
