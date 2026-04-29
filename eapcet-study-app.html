@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP EAPCET 2026 — Study Planner</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="eapcet-study-app.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div id="splash-screen" class="splash">
+  <div class="splash-content">
+    <div class="splash-title">Welcome, Sonu!</div>
+    <div class="splash-msg">Prepare well for your exam.<br>All the best for your preparation!</div>
+  </div>
+</div>
+
+
+<div class="top">
+  <div class="brand"><span class="brand-dot"></span>AP EAPCET <span class="brand-slash">/</span> 2026</div>
+  <div class="cpill" id="top-pill"><i data-lucide="calendar" class="ic-sm"></i> May 18</div>
+  <div class="top-r">
+    <button class="ibtn menu-btn" id="menu-btn" aria-label="Menu"><i data-lucide="menu" class="ic-md"></i></button></div>
+</div>
+
+<div class="backdrop hidden" id="backdrop" aria-label="Close menu"></div>
+<div class="layout">
+  <nav class="sidebar">
+    <div class="slbl">Overview</div>
+    <button class="ni on" onclick="nav(this,'dashboard')"><i data-lucide="layout-dashboard" class="ni-ic"></i>Dashboard</button>
+    <button class="ni" onclick="nav(this,'plan')"><i data-lucide="calendar-days" class="ni-ic"></i>3-Week Plan</button>
+    <div class="slbl">Study</div>
+    <button class="ni" onclick="nav(this,'syllabus')"><i data-lucide="book-open" class="ni-ic"></i>Syllabus</button>
+    <button class="ni" onclick="nav(this,'weightage')"><i data-lucide="pie-chart" class="ni-ic"></i>Weightage</button>
+
+    <div class="slbl">Tools</div>
+    <button class="ni" onclick="nav(this,'todo')"><i data-lucide="check-square" class="ni-ic"></i>To-Do List</button>
+    <button class="ni" onclick="nav(this,'pomodoro')"><i data-lucide="timer" class="ni-ic"></i>Pomodoro</button>
+  </nav>
+
+  <main class="content">
+
+    <!-- DASHBOARD -->
+    <div class="page active" id="page-dashboard">
+      <div class="hero">
+        <div>
+          <div class="h-lbl">AP EAPCET 2026 · MPC Engineering</div>
+          <div class="h-title">Your Exam is Almost Here.</div>
+          <div class="h-sub">Math 80 · Physics 40 · Chemistry 40 · No Negative Marking</div>
+        </div>
+        <div class="h-days"><div class="dnum" id="days-left">—</div><div class="dunit">days left</div></div>
+      </div>
+
+      <div class="qstrip" id="quote-el">… <span id="quote-auth"></span></div>
+
+      <div class="krow">
+        <div class="kpi"><div class="klbl">Mathematics</div><div class="kval s-m" id="kpi-m">0%</div><div class="kbar"><div class="kfill bg-math" id="kf-m"></div></div></div>
+        <div class="kpi"><div class="klbl">Physics</div><div class="kval s-p" id="kpi-p">0%</div><div class="kbar"><div class="kfill bg-phy" id="kf-p"></div></div></div>
+        <div class="kpi"><div class="klbl">Chemistry</div><div class="kval s-c" id="kpi-c">0%</div><div class="kbar"><div class="kfill bg-chem" id="kf-c"></div></div></div>
+      </div>
+
+      <div class="slabel">Today's Focus</div>
+      <div class="today-card">
+        <div class="td-tag" id="td-tag">—</div>
+        <div class="td-title" id="td-title">—</div>
+        <div class="td-topics" id="td-topics">—</div>
+      </div>
+    </div>
+
+    <!-- 3-WEEK PLAN -->
+    <div class="page" id="page-plan">
+      <div class="ptitle">3-Week Study Plan</div>
+      <div class="psub">May 18 exam · tick each day as you finish it</div>
+
+      <div class="wblock">
+        <div class="whead" onclick="tw('w1',this)">
+          <div><div class="wh-t">Week 1 — Foundations</div><div class="wh-d">Apr 28 – May 4</div></div>
+          <div class="whr"><span class="wpill wp-r">Must Complete</span><span class="chev" id="cv-w1">▾</span></div>
+        </div>
+        <div class="wbody" id="wb-w1">
+          <div class="drow"><div class="dr-d">Mon</div><div class="dr-b"><div class="dr-s s-m">Mathematics — Algebra Part 1</div><div class="dr-t">Functions, Mathematical Induction, Matrices (operations, determinants, inverse)</div></div><div class="cc" id="dc-w1-1" onclick="td('w1-1')"></div></div>
+          <div class="drow"><div class="dr-d">Tue</div><div class="dr-b"><div class="dr-s s-m">Mathematics — Algebra Part 2</div><div class="dr-t">Complex Numbers, De Moivre's Theorem, Quadratic Expressions & Inequations</div></div><div class="cc" id="dc-w1-2" onclick="td('w1-2')"></div></div>
+          <div class="drow"><div class="dr-d">Wed</div><div class="dr-b"><div class="dr-s s-p">Physics — Units & Motion</div><div class="dr-t">Units & Measurements, Motion in a Straight Line, Motion in a Plane</div></div><div class="cc" id="dc-w1-3" onclick="td('w1-3')"></div></div>
+          <div class="drow"><div class="dr-d">Thu</div><div class="dr-b"><div class="dr-s s-m">Mathematics — Trigonometry</div><div class="dr-t">Trig Ratios, Compound Angles, Trig Equations, Inverse Trig, Properties of Triangles</div></div><div class="cc" id="dc-w1-4" onclick="td('w1-4')"></div></div>
+          <div class="drow"><div class="dr-d">Fri</div><div class="dr-b"><div class="dr-s s-c">Chemistry — Atomic Structure & Bonding</div><div class="dr-t">Atomic Models, Quantum Numbers, Chemical Bonding, VSEPR, Hybridization</div></div><div class="cc" id="dc-w1-5" onclick="td('w1-5')"></div></div>
+          <div class="drow"><div class="dr-d">Sat</div><div class="dr-b"><div class="dr-s s-m">Mathematics — Coordinate Geometry Part 1</div><div class="dr-t">Locus, Transformation of Axes, Straight Lines, Pair of Straight Lines</div></div><div class="cc" id="dc-w1-6" onclick="td('w1-6')"></div></div>
+          <div class="drow"><div class="dr-d">Sun</div><div class="dr-b"><div class="dr-s s-r">Revision + 20 Practice Questions</div><div class="dr-t">Revise all Week 1 topics, attempt 20 mixed MCQs, note weak areas</div></div><div class="cc" id="dc-w1-7" onclick="td('w1-7')"></div></div>
+        </div>
+      </div>
+
+      <div class="wblock">
+        <div class="whead" onclick="tw('w2',this)">
+          <div><div class="wh-t">Week 2 — Core Topics</div><div class="wh-d">May 5 – May 11</div></div>
+          <div class="whr"><span class="wpill wp-b">High Priority</span><span class="chev" id="cv-w2">▾</span></div>
+        </div>
+        <div class="wbody" id="wb-w2">
+          <div class="drow"><div class="dr-d">Mon</div><div class="dr-b"><div class="dr-s s-m">Mathematics — Calculus Part 1</div><div class="dr-t">Limits & Continuity, Differentiation (all methods), Applications (tangents, normals, maxima/minima)</div></div><div class="cc" id="dc-w2-1" onclick="td('w2-1')"></div></div>
+          <div class="drow"><div class="dr-d">Tue</div><div class="dr-b"><div class="dr-s s-m">Mathematics — Calculus Part 2</div><div class="dr-t">Integration, Definite Integrals, Differential Equations (all 4 methods)</div></div><div class="cc" id="dc-w2-2" onclick="td('w2-2')"></div></div>
+          <div class="drow"><div class="dr-d">Wed</div><div class="dr-b"><div class="dr-s s-p">Physics — Mechanics</div><div class="dr-t">Laws of Motion, Work-Energy-Power, Collisions, Rotational Motion, Moment of Inertia</div></div><div class="cc" id="dc-w2-3" onclick="td('w2-3')"></div></div>
+          <div class="drow"><div class="dr-d">Thu</div><div class="dr-b"><div class="dr-s s-m">Mathematics — Vectors & Probability</div><div class="dr-t">Vector Addition, Dot & Cross Products, Triple Products, Probability, Binomial Distribution</div></div><div class="cc" id="dc-w2-4" onclick="td('w2-4')"></div></div>
+          <div class="drow"><div class="dr-d">Fri</div><div class="dr-b"><div class="dr-s s-c">Chemistry — Organic</div><div class="dr-t">Hydrocarbons, Functional Groups, Reaction Mechanisms, Alcohols, Carbonyl Compounds</div></div><div class="cc" id="dc-w2-5" onclick="td('w2-5')"></div></div>
+          <div class="drow"><div class="dr-d">Sat</div><div class="dr-b"><div class="dr-s s-m">Mathematics — Conics</div><div class="dr-t">Circle (tangent, normal, pole/polar), Parabola, Ellipse, Hyperbola (standard + parametric)</div></div><div class="cc" id="dc-w2-6" onclick="td('w2-6')"></div></div>
+          <div class="drow"><div class="dr-d">Sun</div><div class="dr-b"><div class="dr-s s-r">Full Mock Test — 160 Questions, 3 Hours</div><div class="dr-t">Simulate real exam conditions, analyze mistakes, identify weak chapters</div></div><div class="cc" id="dc-w2-7" onclick="td('w2-7')"></div></div>
+        </div>
+      </div>
+
+      <div class="wblock">
+        <div class="whead" onclick="tw('w3',this)">
+          <div><div class="wh-t">Week 3 — Final Sprint</div><div class="wh-d">May 12 – May 17</div></div>
+          <div class="whr"><span class="wpill wp-g">Revision Week</span><span class="chev" id="cv-w3">▾</span></div>
+        </div>
+        <div class="wbody" id="wb-w3">
+          <div class="drow"><div class="dr-d">Mon</div><div class="dr-b"><div class="dr-s s-m">Math Weak Topics</div><div class="dr-t">Revisit chapters that felt hard in Weeks 1–2, redo practice problems</div></div><div class="cc" id="dc-w3-1" onclick="td('w3-1')"></div></div>
+          <div class="drow"><div class="dr-d">Tue</div><div class="dr-b"><div class="dr-s s-p">Physics Full Revision</div><div class="dr-t">Mechanics, Rotational Motion, Thermodynamics, Oscillations, Gravitation, Mechanical Properties</div></div><div class="cc" id="dc-w3-2" onclick="td('w3-2')"></div></div>
+          <div class="drow"><div class="dr-d">Wed</div><div class="dr-b"><div class="dr-s s-c">Chemistry Full Revision</div><div class="dr-t">Organic, p-Block, Chemical Thermodynamics, Electrochemistry, Kinetics</div></div><div class="cc" id="dc-w3-3" onclick="td('w3-3')"></div></div>
+          <div class="drow"><div class="dr-d">Thu</div><div class="dr-b"><div class="dr-s s-r">Mock Test #2 — 160 Questions</div><div class="dr-t">3-hour timed exam, attempt every question (no negative marking)</div></div><div class="cc" id="dc-w3-4" onclick="td('w3-4')"></div></div>
+          <div class="drow"><div class="dr-d">Fri</div><div class="dr-b"><div class="dr-s s-r">Analyze + Formula Revision</div><div class="dr-t">Go through wrong answers, revise all key formulas, high-weightage chapters</div></div><div class="cc" id="dc-w3-5" onclick="td('w3-5')"></div></div>
+          <div class="drow"><div class="dr-d">Sat</div><div class="dr-b"><div class="dr-s s-e">May 17 — Rest Day</div><div class="dr-t">Light formula glance only. Eat well, sleep by 10 PM. You're ready.</div></div><div class="cc" id="dc-w3-6" onclick="td('w3-6')"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SYLLABUS -->
+    <div class="page" id="page-syllabus">
+      <div class="ptitle">Syllabus</div>
+      <div class="psub">Mark topics done to track your progress</div>
+      <div class="ssw">
+        <button class="ssb sm" onclick="sw('math',this)"><i data-lucide="ruler" style="width:14px;height:14px;margin-right:4px;vertical-align:-2px"></i> Mathematics</button>
+        <button class="ssb" onclick="sw('phy',this)"><i data-lucide="zap" style="width:14px;height:14px;margin-right:4px;vertical-align:-2px"></i> Physics</button>
+        <button class="ssb" onclick="sw('chem',this)"><i data-lucide="flask-conical" style="width:14px;height:14px;margin-right:4px;vertical-align:-2px"></i> Chemistry</button>
+      </div>
+      <div id="syl-math" class="tgrid">
+        <div class="tc"><div class="tch"><div class="tcn">Calculus</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Limits & Continuity</li>
+          <li>Differentiation</li>
+          <li>Applications</li>
+          <li>Integration</li>
+          <li>Definite Integrals</li>
+          <li>Differential Equations</li>
+        </ul><div class="tcf"><div class="tcq">18–20 questions</div><button class="tcb" id="tp-math-1" onclick="tt('math','1')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Coordinate Geometry</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Straight Lines</li>
+          <li>Pair of Lines</li>
+          <li>Circle</li>
+          <li>Parabola</li>
+          <li>Ellipse</li>
+          <li>Hyperbola</li>
+          <li>System of Circles</li>
+        </ul><div class="tcf"><div class="tcq">16–18 questions</div><button class="tcb" id="tp-math-2" onclick="tt('math','2')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Algebra</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Functions</li>
+          <li>Matrices</li>
+          <li>Complex Numbers</li>
+          <li>De Moivre's</li>
+          <li>Quadratic</li>
+          <li>Theory of Equations</li>
+          <li>Binomial</li>
+        </ul><div class="tcf"><div class="tcq">14–16 questions</div><button class="tcb" id="tp-math-3" onclick="tt('math','3')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Trigonometry</div><span class="pri p-hi">High</span></div><ul class="tcs">
+          <li>Trig Ratios</li>
+          <li>Compound Angles</li>
+          <li>Multiple & Sub-multiple</li>
+          <li>Trig Equations</li>
+          <li>Inverse Trig</li>
+        </ul><div class="tcf"><div class="tcq">8–10 questions</div><button class="tcb" id="tp-math-4" onclick="tt('math','4')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Vector Algebra</div><span class="pri p-hi">High</span></div><ul class="tcs">
+          <li>Vector Addition</li>
+          <li>Dot & Cross Products</li>
+          <li>Scalar & Vector Triple Products</li>
+          <li>Lines & Planes</li>
+        </ul><div class="tcf"><div class="tcq">6–7 questions</div><button class="tcb" id="tp-math-5" onclick="tt('math','5')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Probability & Statistics</div><span class="pri p-med">Medium</span></div><ul class="tcs">
+          <li>Measures of Dispersion</li>
+          <li>Probability</li>
+          <li>Bayes' Theorem</li>
+          <li>Binomial & Poisson Distributions</li>
+        </ul><div class="tcf"><div class="tcq">5–6 questions</div><button class="tcb" id="tp-math-6" onclick="tt('math','6')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">3D Geometry</div><span class="pri p-med">Medium</span></div><ul class="tcs">
+          <li>3D Coordinates</li>
+          <li>Direction Cosines & Ratios</li>
+          <li>Cartesian Plane</li>
+          <li>Section Formulae</li>
+          <li>Centroid</li>
+        </ul><div class="tcf"><div class="tcq">3–4 questions</div><button class="tcb" id="tp-math-7" onclick="tt('math','7')">Mark done</button></div></div>
+      </div>
+      <div id="syl-phy" class="tgrid hidden">
+        <div class="tc"><div class="tch"><div class="tcn">Mechanics</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Newton's Laws</li>
+          <li>Friction</li>
+          <li>Work-Energy-Power</li>
+          <li>Collisions</li>
+          <li>Rotational Motion</li>
+          <li>Moment of Inertia</li>
+        </ul><div class="tcf"><div class="tcq">8–10 questions</div><button class="tcb" id="tp-phy-1" onclick="tt('phy','1')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Thermodynamics</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Laws of Thermodynamics</li>
+          <li>Thermal Equilibrium</li>
+          <li>Carnot Engine</li>
+          <li>Isothermal & Adiabatic Processes</li>
+        </ul><div class="tcf"><div class="tcq">4–5 questions</div><button class="tcb" id="tp-phy-2" onclick="tt('phy','2')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Mechanical Properties</div><span class="pri p-hi">High</span></div><ul class="tcs">
+          <li>Stress-Strain</li>
+          <li>Young's Modulus</li>
+          <li>Fluid Pressure</li>
+          <li>Bernoulli's Principle</li>
+          <li>Surface Tension</li>
+        </ul><div class="tcf"><div class="tcq">4–5 questions</div><button class="tcb" id="tp-phy-3" onclick="tt('phy','3')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Oscillations & Gravitation</div><span class="pri p-hi">High</span></div><ul class="tcs">
+          <li>SHM</li>
+          <li>Spring-Mass</li>
+          <li>Simple Pendulum</li>
+          <li>Damped Oscillations</li>
+          <li>Kepler's Laws</li>
+          <li>Satellites</li>
+        </ul><div class="tcf"><div class="tcq">6–8 questions</div><button class="tcb" id="tp-phy-4" onclick="tt('phy','4')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Motion & Measurements</div><span class="pri p-med">Medium</span></div><ul class="tcs">
+          <li>Units & Measurements</li>
+          <li>Motion in Straight Line & Plane</li>
+          <li>Projectile</li>
+          <li>Circular Motion</li>
+        </ul><div class="tcf"><div class="tcq">3–4 questions</div><button class="tcb" id="tp-phy-5" onclick="tt('phy','5')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Thermal Properties</div><span class="pri p-med">Medium</span></div><ul class="tcs">
+          <li>Temperature & Heat</li>
+          <li>Thermal Expansion</li>
+          <li>Specific Heat</li>
+          <li>Calorimetry</li>
+          <li>Heat Transfer</li>
+        </ul><div class="tcf"><div class="tcq">3–4 questions</div><button class="tcb" id="tp-phy-6" onclick="tt('phy','6')">Mark done</button></div></div>
+      </div>
+      <div id="syl-chem" class="tgrid hidden">
+        <div class="tc"><div class="tch"><div class="tcn">Organic Chemistry</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Hydrocarbons</li>
+          <li>Functional Groups</li>
+          <li>Reaction Mechanisms</li>
+          <li>Alcohols & Phenols</li>
+          <li>Carbonyl Compounds</li>
+        </ul><div class="tcf"><div class="tcq">10–12 questions</div><button class="tcb" id="tp-chem-1" onclick="tt('chem','1')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Atomic Structure & Bonding</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Atomic Models</li>
+          <li>Quantum Numbers</li>
+          <li>Electronic Config.</li>
+          <li>Chemical Bonding</li>
+          <li>VSEPR</li>
+          <li>MOT</li>
+        </ul><div class="tcf"><div class="tcq">5–6 questions</div><button class="tcb" id="tp-chem-2" onclick="tt('chem','2')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">p-Block Elements</div><span class="pri p-hi">High</span></div><ul class="tcs">
+          <li>Group 13–18 Elements</li>
+          <li>Properties & Compounds</li>
+          <li>Industrial Applications</li>
+          <li>Periodic Trends</li>
+        </ul><div class="tcf"><div class="tcq">4–5 questions</div><button class="tcb" id="tp-chem-3" onclick="tt('chem','3')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Chemical Thermodynamics</div><span class="pri p-hi">High</span></div><ul class="tcs">
+          <li>First & Second Laws</li>
+          <li>Enthalpy</li>
+          <li>Entropy</li>
+          <li>Gibb's Free Energy</li>
+          <li>Hess's Law</li>
+          <li>Spontaneity</li>
+        </ul><div class="tcf"><div class="tcq">4–5 questions</div><button class="tcb" id="tp-chem-4" onclick="tt('chem','4')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Electrochemistry & Redox</div><span class="pri p-hi">High</span></div><ul class="tcs">
+          <li>Oxidation-Reduction</li>
+          <li>Electrochemical Cells</li>
+          <li>Nernst Equation</li>
+          <li>Electrolysis</li>
+          <li>Corrosion</li>
+        </ul><div class="tcf"><div class="tcq">3–4 questions</div><button class="tcb" id="tp-chem-5" onclick="tt('chem','5')">Mark done</button></div></div>
+        <div class="tc"><div class="tch"><div class="tcn">Chemical Kinetics</div><span class="pri p-med">Medium</span></div><ul class="tcs">
+          <li>Rate of Reaction</li>
+          <li>Order & Molecularity</li>
+          <li>Integrated Rate Laws</li>
+          <li>Activation Energy</li>
+          <li>Arrhenius</li>
+        </ul><div class="tcf"><div class="tcq">3–4 questions</div><button class="tcb" id="tp-chem-6" onclick="tt('chem','6')">Mark done</button></div></div>
+      </div>
+    </div>
+
+    <!-- WEIGHTAGE -->
+    <div class="page" id="page-weightage">
+      <div class="ptitle">Topic Weightage</div>
+      <div class="psub">Expected question distribution — previous year analysis</div>
+      <div class="wc">
+        <div class="wch"><span class="wdot bg-math"></span>Mathematics — 80 Questions</div>
+        <div class="wr"><div class="wn">Calculus</div><div class="wtr"><div class="wf bg-math w-25"></div></div><div class="wq s-m">18–20 Qs</div></div>
+        <div class="wr"><div class="wn">Coordinate Geometry</div><div class="wtr"><div class="wf bg-math w-22"></div></div><div class="wq s-m">16–18 Qs</div></div>
+        <div class="wr"><div class="wn">Algebra</div><div class="wtr"><div class="wf bg-math w-19"></div></div><div class="wq s-m">14–16 Qs</div></div>
+        <div class="wr"><div class="wn">Trigonometry</div><div class="wtr"><div class="wf bg-amber w-12"></div></div><div class="wq s-e">8–10 Qs</div></div>
+        <div class="wr"><div class="wn">Vector Algebra</div><div class="wtr"><div class="wf bg-amber w-9"></div></div><div class="wq s-e">6–7 Qs</div></div>
+        <div class="wr"><div class="wn">Probability & Statistics</div><div class="wtr"><div class="wf bg-chem w-7"></div></div><div class="wq s-c">5–6 Qs</div></div>
+        <div class="wr"><div class="wn">3D Geometry</div><div class="wtr"><div class="wf bg-chem w-5"></div></div><div class="wq s-c">3–4 Qs</div></div>
+      </div>
+      <div class="two">
+        <div class="wc">
+          <div class="wch"><span class="wdot bg-phy"></span>Physics — 40 Qs</div>
+          <div class="wr"><div class="wn">Mechanics</div><div class="wtr"><div class="wf bg-phy w-25"></div></div><div class="wq s-p">8–10</div></div>
+          <div class="wr"><div class="wn">Thermodynamics</div><div class="wtr"><div class="wf bg-phy w-13"></div></div><div class="wq s-p">4–5</div></div>
+          <div class="wr"><div class="wn">Mech. Properties</div><div class="wtr"><div class="wf bg-amber w-13"></div></div><div class="wq s-e">4–5</div></div>
+          <div class="wr"><div class="wn">Oscillations</div><div class="wtr"><div class="wf bg-amber w-10"></div></div><div class="wq s-e">3–4</div></div>
+          <div class="wr"><div class="wn">Gravitation</div><div class="wtr"><div class="wf bg-amber w-10"></div></div><div class="wq s-e">3–4</div></div>
+          <div class="wr"><div class="wn">Motion & Units</div><div class="wtr"><div class="wf bg-chem w-9"></div></div><div class="wq s-c">3–4</div></div>
+          <div class="wr"><div class="wn">Thermal Properties</div><div class="wtr"><div class="wf bg-chem w-9"></div></div><div class="wq s-c">3–4</div></div>
+        </div>
+        <div class="wc">
+          <div class="wch"><span class="wdot bg-chem"></span>Chemistry — 40 Qs</div>
+          <div class="wr"><div class="wn">Organic Chemistry</div><div class="wtr"><div class="wf bg-chem w-30"></div></div><div class="wq s-c">10–12</div></div>
+          <div class="wr"><div class="wn">Atomic Struct. & Bonding</div><div class="wtr"><div class="wf bg-chem w-15"></div></div><div class="wq s-c">5–6</div></div>
+          <div class="wr"><div class="wn">p-Block Elements</div><div class="wtr"><div class="wf bg-amber w-13"></div></div><div class="wq s-e">4–5</div></div>
+          <div class="wr"><div class="wn">Chemical Thermo.</div><div class="wtr"><div class="wf bg-amber w-13"></div></div><div class="wq s-e">4–5</div></div>
+          <div class="wr"><div class="wn">Electrochemistry</div><div class="wtr"><div class="wf bg-amber w-10"></div></div><div class="wq s-e">3–4</div></div>
+          <div class="wr"><div class="wn">Chemical Kinetics</div><div class="wtr"><div class="wf bg-chem w-10"></div></div><div class="wq s-c">3–4</div></div>
+          <div class="wr"><div class="wn">Coordination Comp.</div><div class="wtr"><div class="wf bg-chem w-10"></div></div><div class="wq s-c">3–4</div></div>
+        </div>
+      </div>
+      <div class="wc mt-0">
+        <div class="wch">🎯 Do-or-Die Chapters</div>
+        <div class="dgrid">
+          <div class="dchip"><div class="dcn s-m">Calculus</div><div class="dcs">18–20 marks in Maths</div></div>
+          <div class="dchip"><div class="dcn s-m">Circle & Conics</div><div class="dcs">8–10 marks in Maths</div></div>
+          <div class="dchip"><div class="dcn s-c">Organic Chemistry</div><div class="dcs">10–12 marks in Chem</div></div>
+          <div class="dchip"><div class="dcn s-p">Mechanics</div><div class="dcs">8–10 marks in Physics</div></div>
+          <div class="dchip"><div class="dcn s-m">Complex Nos & Matrices</div><div class="dcs">6–8 marks in Maths</div></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- TODO -->
+    <div class="page" id="page-todo">
+      <div class="ptitle">To-Do List</div>
+      <div class="psub">Add study tasks and tick them off as you go</div>
+      <div class="tkpis">
+        <div class="kpi"><div class="klbl">Pending</div><div class="kval" id="td-pending">0</div></div>
+        <div class="kpi"><div class="klbl">Completed</div><div class="kval s-c" id="td-done">0</div></div>
+      </div>
+      <div class="tbar">
+        <input class="tin" id="td-input" placeholder="Add a study task…" onkeydown="if(event.key==='Enter')addTodo()">
+        <select class="tsel" id="td-subj" aria-label="Select Subject">
+          <option value="math">📐 Math</option>
+          <option value="phy">⚡ Physics</option>
+          <option value="chem">🧪 Chemistry</option>
+          <option value="gen">📋 General</option>
+        </select>
+        <button class="tadd" onclick="addTodo()">Add</button>
+      </div>
+      <div id="td-list"></div>
+    </div>
+
+    <!-- POMODORO -->
+    <div class="page" id="page-pomodoro">
+      <div class="ptitle">Pomodoro Timer</div>
+      <div class="psub">25 min focus · 5 min break · stay in the zone</div>
+      <div class="pwrap">
+        <div class="pmodes">
+          <button class="pmb on" id="pmb-focus" onclick="spm('focus')">Focus · 25 min</button>
+          <button class="pmb" id="pmb-short" onclick="spm('short')">Short break · 5</button>
+          <button class="pmb" id="pmb-long" onclick="spm('long')">Long break · 15</button>
+        </div>
+        <div class="pface">
+          <svg class="psvg" width="204" height="204" viewBox="0 0 204 204">
+            <circle cx="102" cy="102" r="99" fill="none" stroke="var(--border)" stroke-width="5"/>
+            <circle id="pring" cx="102" cy="102" r="99" fill="none" stroke="var(--accent)" stroke-width="5"
+              stroke-dasharray="622" stroke-dashoffset="0" stroke-linecap="round"
+              transform="rotate(-90 102 102)" class="pring"/>
+          </svg>
+          <div class="ptime" id="ptime">25:00</div>
+          <div class="plbl" id="plbl">Focus</div>
+        </div>
+        <div class="pbtns">
+          <button class="pb2 pri" id="pstart" onclick="togglePomo()">Start</button>
+          <button class="pb2" onclick="resetPomo()">Reset</button>
+        </div>
+        <div class="pstats">
+          <div class="pscard"><div class="psv" id="psess">0</div><div class="psl">Sessions</div></div>
+          <div class="pscard"><div class="psv" id="pmins">0</div><div class="psl">Mins studied</div></div>
+          <div class="pscard"><div class="psv" id="pstreak">0</div><div class="psl">Day streak</div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="eapcet-study-app.js"></script>
+</body>
+</html>
