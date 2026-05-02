@@ -11,6 +11,57 @@ let timerInterval   = null;
 let elapsedSeconds  = 0;   // counts UP from 0
 let testSubmitted   = false;
 
+// ── Shuffle Helpers ───────────────────────────────────────
+// Fisher-Yates in-place shuffle
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+/**
+ * Shuffles:
+ *  1. The ORDER of questions inside the test card
+ *  2. The ORDER of answer options within every question
+ * Renumbers Q1…Q30 labels to match new order.
+ * Correct-answer lookup uses data-opt attributes so validation
+ * is completely unaffected by the visual shuffle.
+ */
+function shuffleTest(testId) {
+  const card = document.querySelector(`#${testId} .test-card`);
+  if (!card) return;
+
+  const resultDiv = card.querySelector('.test-result');
+  const submitBtn = card.querySelector('.submit-test-btn');
+
+  // Shuffle question elements
+  const items = shuffle(Array.from(card.querySelectorAll('.q-item')));
+
+  // Clear and rebuild card
+  card.innerHTML = '';
+  if (resultDiv) card.appendChild(resultDiv);
+
+  items.forEach((item, idx) => {
+    // Re-label question numbers Q1, Q2 … in new order
+    const strong = item.querySelector('.q-text strong');
+    if (strong) strong.textContent = `Q${idx + 1}.`;
+
+    // Shuffle options within this question
+    const opts = item.querySelector('.q-opts');
+    if (opts) {
+      const lis = shuffle(Array.from(opts.querySelectorAll('li')));
+      opts.innerHTML = '';
+      lis.forEach(li => opts.appendChild(li));
+    }
+
+    card.appendChild(item);
+  });
+
+  if (submitBtn) card.appendChild(submitBtn);
+}
+
 // ── Navigation Lock ───────────────────────────────────────
 function lockNavigation() {
   // Push a dummy state so the back button hits it first
@@ -74,7 +125,10 @@ function initTest(testId, testName) {
     return;
   }
 
-  // Bind option clicks
+  // Shuffle questions and options before the exam starts
+  shuffleTest(testId);
+
+  // Bind option clicks (after shuffle so listeners attach to new positions)
   document.querySelectorAll('.q-opts li').forEach(opt => {
     opt.addEventListener('click', function () {
       if (testSubmitted) return;
