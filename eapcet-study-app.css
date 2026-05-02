@@ -231,3 +231,6 @@ body.loaded .top, body.loaded .content { opacity: 1; transform: translateY(0); }
 .subj-ph-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--ink); }
 .subj-ph-desc { color: var(--ink2); }
 .test-card { width: 100%; max-width: 100%; grid-column: 1 / -1; margin-bottom: 2rem; }
+.c-math { color: var(--math); }
+.c-chem { color: var(--chem); }
+
