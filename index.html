@@ -127,152 +127,155 @@
       <div class="ptitle">Syllabus</div>
       <div class="psub">Mark topics done to track your progress</div>
       <div class="ssw">
-        <button class="ssb sm" onclick="sw('math',this)"><i data-lucide="ruler" style="width:14px;height:14px;margin-right:4px;vertical-align:-2px"></i> Mathematics</button>
-        <button class="ssb" onclick="sw('phy',this)"><i data-lucide="zap" style="width:14px;height:14px;margin-right:4px;vertical-align:-2px"></i> Physics</button>
-        <button class="ssb" onclick="sw('chem',this)"><i data-lucide="flask-conical" style="width:14px;height:14px;margin-right:4px;vertical-align:-2px"></i> Chemistry</button>
+        <button class="ssb sm" onclick="sw('math',this)"><i data-lucide="ruler" class="ic-sm"></i> Mathematics</button>
+        <button class="ssb" onclick="sw('phy',this)"><i data-lucide="zap" class="ic-sm"></i> Physics</button>
+        <button class="ssb" onclick="sw('chem',this)"><i data-lucide="flask-conical" class="ic-sm"></i> Chemistry</button>
       </div>
       <div id="syl-math" class="tgrid">
-        <div class="tc"><div class="tch"><div class="tcn">Calculus</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
-          <li>Limits & Continuity</li>
-          <li>Differentiation</li>
-          <li>Applications</li>
-          <li>Integration</li>
-          <li>Definite Integrals</li>
-          <li>Differential Equations</li>
-        </ul><div class="tcf"><div class="tcq">18–20 questions</div><button class="tcb" id="tp-math-1" onclick="tt('math','1')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">Coordinate Geometry</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
-          <li>Straight Lines</li>
-          <li>Pair of Lines</li>
-          <li>Circle</li>
-          <li>Parabola</li>
-          <li>Ellipse</li>
-          <li>Hyperbola</li>
-          <li>System of Circles</li>
-        </ul><div class="tcf"><div class="tcq">16–18 questions</div><button class="tcb" id="tp-math-2" onclick="tt('math','2')">Mark done</button></div></div>
         <div class="tc"><div class="tch"><div class="tcn">Algebra</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
           <li>Functions</li>
+          <li>Mathematical Induction</li>
           <li>Matrices</li>
           <li>Complex Numbers</li>
-          <li>De Moivre's</li>
-          <li>Quadratic</li>
+          <li>De Moivre's Theorem</li>
+          <li>Quadratic Expressions</li>
           <li>Theory of Equations</li>
-          <li>Binomial</li>
-        </ul><div class="tcf"><div class="tcq">14–16 questions</div><button class="tcb" id="tp-math-3" onclick="tt('math','3')">Mark done</button></div></div>
+          <li>Permutations & Combinations</li>
+          <li>Binomial Theorem</li>
+          <li>Partial fractions</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-math-1" onclick="tt('math','1')">Mark done</button></div></div>
+        
         <div class="tc"><div class="tch"><div class="tcn">Trigonometry</div><span class="pri p-hi">High</span></div><ul class="tcs">
-          <li>Trig Ratios</li>
-          <li>Compound Angles</li>
-          <li>Multiple & Sub-multiple</li>
-          <li>Trig Equations</li>
-          <li>Inverse Trig</li>
-        </ul><div class="tcf"><div class="tcq">8–10 questions</div><button class="tcb" id="tp-math-4" onclick="tt('math','4')">Mark done</button></div></div>
+          <li>Trigonometric Ratios</li>
+          <li>Trigonometric Equations</li>
+          <li>Inverse Trigonometric Functions</li>
+          <li>Hyperbolic Functions</li>
+          <li>Properties of Triangles</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-math-2" onclick="tt('math','2')">Mark done</button></div></div>
+        
         <div class="tc"><div class="tch"><div class="tcn">Vector Algebra</div><span class="pri p-hi">High</span></div><ul class="tcs">
-          <li>Vector Addition</li>
-          <li>Dot & Cross Products</li>
-          <li>Scalar & Vector Triple Products</li>
-          <li>Lines & Planes</li>
-        </ul><div class="tcf"><div class="tcq">6–7 questions</div><button class="tcb" id="tp-math-5" onclick="tt('math','5')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">Probability & Statistics</div><span class="pri p-med">Medium</span></div><ul class="tcs">
+          <li>Addition of Vectors</li>
+          <li>Product of Vectors</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-math-3" onclick="tt('math','3')">Mark done</button></div></div>
+        
+        <div class="tc"><div class="tch"><div class="tcn">Dispersion & Probability</div><span class="pri p-med">Medium</span></div><ul class="tcs">
           <li>Measures of Dispersion</li>
           <li>Probability</li>
-          <li>Bayes' Theorem</li>
-          <li>Binomial & Poisson Distributions</li>
-        </ul><div class="tcf"><div class="tcq">5–6 questions</div><button class="tcb" id="tp-math-6" onclick="tt('math','6')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">3D Geometry</div><span class="pri p-med">Medium</span></div><ul class="tcs">
-          <li>3D Coordinates</li>
+          <li>Random Variables & Distributions</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-math-4" onclick="tt('math','4')">Mark done</button></div></div>
+        
+        <div class="tc"><div class="tch"><div class="tcn">Coordinate Geometry</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Locus</li>
+          <li>Transformation of Axes</li>
+          <li>The Straight Line</li>
+          <li>Pair of Straight lines</li>
+          <li>Circle</li>
+          <li>System of circles</li>
+          <li>Parabola, Ellipse, Hyperbola</li>
+          <li>Three Dimensional Coordinates</li>
           <li>Direction Cosines & Ratios</li>
-          <li>Cartesian Plane</li>
-          <li>Section Formulae</li>
-          <li>Centroid</li>
-        </ul><div class="tcf"><div class="tcq">3–4 questions</div><button class="tcb" id="tp-math-7" onclick="tt('math','7')">Mark done</button></div></div>
+          <li>Plane</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-math-5" onclick="tt('math','5')">Mark done</button></div></div>
+        
+        <div class="tc"><div class="tch"><div class="tcn">Calculus</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Limits and Continuity</li>
+          <li>Differentiation</li>
+          <li>Applications of Derivatives</li>
+          <li>Integration</li>
+          <li>Definite Integrals</li>
+          <li>Differential equations</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-math-6" onclick="tt('math','6')">Mark done</button></div></div>
       </div>
       <div id="syl-phy" class="tgrid hidden">
         <div class="tc"><div class="tch"><div class="tcn">Mechanics</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
-          <li>Newton's Laws</li>
-          <li>Friction</li>
-          <li>Work-Energy-Power</li>
-          <li>Collisions</li>
-          <li>Rotational Motion</li>
-          <li>Moment of Inertia</li>
-        </ul><div class="tcf"><div class="tcq">8–10 questions</div><button class="tcb" id="tp-phy-1" onclick="tt('phy','1')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">Thermodynamics</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
-          <li>Laws of Thermodynamics</li>
-          <li>Thermal Equilibrium</li>
-          <li>Carnot Engine</li>
-          <li>Isothermal & Adiabatic Processes</li>
-        </ul><div class="tcf"><div class="tcq">4–5 questions</div><button class="tcb" id="tp-phy-2" onclick="tt('phy','2')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">Mechanical Properties</div><span class="pri p-hi">High</span></div><ul class="tcs">
-          <li>Stress-Strain</li>
-          <li>Young's Modulus</li>
-          <li>Fluid Pressure</li>
-          <li>Bernoulli's Principle</li>
-          <li>Surface Tension</li>
-        </ul><div class="tcf"><div class="tcq">4–5 questions</div><button class="tcb" id="tp-phy-3" onclick="tt('phy','3')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">Oscillations & Gravitation</div><span class="pri p-hi">High</span></div><ul class="tcs">
-          <li>SHM</li>
-          <li>Spring-Mass</li>
-          <li>Simple Pendulum</li>
-          <li>Damped Oscillations</li>
-          <li>Kepler's Laws</li>
-          <li>Satellites</li>
-        </ul><div class="tcf"><div class="tcq">6–8 questions</div><button class="tcb" id="tp-phy-4" onclick="tt('phy','4')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">Motion & Measurements</div><span class="pri p-med">Medium</span></div><ul class="tcs">
-          <li>Units & Measurements</li>
-          <li>Motion in Straight Line & Plane</li>
-          <li>Projectile</li>
-          <li>Circular Motion</li>
-        </ul><div class="tcf"><div class="tcq">3–4 questions</div><button class="tcb" id="tp-phy-5" onclick="tt('phy','5')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">Thermal Properties</div><span class="pri p-med">Medium</span></div><ul class="tcs">
-          <li>Temperature & Heat</li>
-          <li>Thermal Expansion</li>
-          <li>Specific Heat</li>
-          <li>Calorimetry</li>
-          <li>Heat Transfer</li>
-        </ul><div class="tcf"><div class="tcq">3–4 questions</div><button class="tcb" id="tp-phy-6" onclick="tt('phy','6')">Mark done</button></div></div>
+          <li>Physical World</li>
+          <li>Units and Measurements</li>
+          <li>Motion in a Straight Line</li>
+          <li>Motion in a Plane</li>
+          <li>Laws of Motion</li>
+          <li>Work, Energy and Power</li>
+          <li>System of Particles & Rotational Motion</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-phy-1" onclick="tt('phy','1')">Mark done</button></div></div>
+        
+        <div class="tc"><div class="tch"><div class="tcn">Properties of Matter & Thermodynamics</div><span class="pri p-hi">High</span></div><ul class="tcs">
+          <li>Oscillations</li>
+          <li>Gravitation</li>
+          <li>Mechanical Properties of Solids</li>
+          <li>Mechanical Properties of Fluids</li>
+          <li>Thermal Properties of Matter</li>
+          <li>Thermodynamics</li>
+          <li>Kinetic Theory</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-phy-2" onclick="tt('phy','2')">Mark done</button></div></div>
+        
+        <div class="tc"><div class="tch"><div class="tcn">Waves & Optics</div><span class="pri p-hi">High</span></div><ul class="tcs">
+          <li>Waves</li>
+          <li>Ray Optics and Optical Instruments</li>
+          <li>Wave Optics</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-phy-3" onclick="tt('phy','3')">Mark done</button></div></div>
+        
+        <div class="tc"><div class="tch"><div class="tcn">Electromagnetism</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Electric Charges and Fields</li>
+          <li>Electrostatic Potential & Capacitance</li>
+          <li>Current Electricity</li>
+          <li>Moving Charges and Magnetism</li>
+          <li>Magnetism and Matter</li>
+          <li>Electromagnetic Induction</li>
+          <li>Alternating Current</li>
+          <li>Electromagnetic Waves</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-phy-4" onclick="tt('phy','4')">Mark done</button></div></div>
+        
+        <div class="tc"><div class="tch"><div class="tcn">Modern Physics & Electronics</div><span class="pri p-med">Medium</span></div><ul class="tcs">
+          <li>Dual Nature of Radiation & Matter</li>
+          <li>Atoms</li>
+          <li>Nuclei</li>
+          <li>Semiconductor Electronics</li>
+          <li>Communication Systems</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-phy-5" onclick="tt('phy','5')">Mark done</button></div></div>
       </div>
       <div id="syl-chem" class="tgrid hidden">
-        <div class="tc"><div class="tch"><div class="tcn">Organic Chemistry</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+        <div class="tc"><div class="tch"><div class="tcn">Physical Chemistry - 1</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Atomic Structure</li>
+          <li>Classification & Periodicity</li>
+          <li>Chemical Bonding & Molecular Structure</li>
+          <li>States of Matter: Gases & Liquids</li>
+          <li>Stoichiometry</li>
+          <li>Thermodynamics</li>
+          <li>Chemical Equilibrium & Acids-Bases</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-chem-1" onclick="tt('chem','1')">Mark done</button></div></div>
+        
+        <div class="tc"><div class="tch"><div class="tcn">Inorganic Chemistry - 1</div><span class="pri p-hi">High</span></div><ul class="tcs">
+          <li>Hydrogen and its Compounds</li>
+          <li>The s-Block Elements</li>
+          <li>p-Block Elements (Groups 13 & 14)</li>
+          <li>Environmental Chemistry</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-chem-2" onclick="tt('chem','2')">Mark done</button></div></div>
+        
+        <div class="tc"><div class="tch"><div class="tcn">Organic Chemistry - 1</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Basic Principles & Techniques</li>
           <li>Hydrocarbons</li>
-          <li>Functional Groups</li>
-          <li>Reaction Mechanisms</li>
-          <li>Alcohols & Phenols</li>
-          <li>Carbonyl Compounds</li>
-        </ul><div class="tcf"><div class="tcq">10–12 questions</div><button class="tcb" id="tp-chem-1" onclick="tt('chem','1')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">Atomic Structure & Bonding</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
-          <li>Atomic Models</li>
-          <li>Quantum Numbers</li>
-          <li>Electronic Config.</li>
-          <li>Chemical Bonding</li>
-          <li>VSEPR</li>
-          <li>MOT</li>
-        </ul><div class="tcf"><div class="tcq">5–6 questions</div><button class="tcb" id="tp-chem-2" onclick="tt('chem','2')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">p-Block Elements</div><span class="pri p-hi">High</span></div><ul class="tcs">
-          <li>Group 13–18 Elements</li>
-          <li>Properties & Compounds</li>
-          <li>Industrial Applications</li>
-          <li>Periodic Trends</li>
-        </ul><div class="tcf"><div class="tcq">4–5 questions</div><button class="tcb" id="tp-chem-3" onclick="tt('chem','3')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">Chemical Thermodynamics</div><span class="pri p-hi">High</span></div><ul class="tcs">
-          <li>First & Second Laws</li>
-          <li>Enthalpy</li>
-          <li>Entropy</li>
-          <li>Gibb's Free Energy</li>
-          <li>Hess's Law</li>
-          <li>Spontaneity</li>
-        </ul><div class="tcf"><div class="tcq">4–5 questions</div><button class="tcb" id="tp-chem-4" onclick="tt('chem','4')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">Electrochemistry & Redox</div><span class="pri p-hi">High</span></div><ul class="tcs">
-          <li>Oxidation-Reduction</li>
-          <li>Electrochemical Cells</li>
-          <li>Nernst Equation</li>
-          <li>Electrolysis</li>
-          <li>Corrosion</li>
-        </ul><div class="tcf"><div class="tcq">3–4 questions</div><button class="tcb" id="tp-chem-5" onclick="tt('chem','5')">Mark done</button></div></div>
-        <div class="tc"><div class="tch"><div class="tcn">Chemical Kinetics</div><span class="pri p-med">Medium</span></div><ul class="tcs">
-          <li>Rate of Reaction</li>
-          <li>Order & Molecularity</li>
-          <li>Integrated Rate Laws</li>
-          <li>Activation Energy</li>
-          <li>Arrhenius</li>
-        </ul><div class="tcf"><div class="tcq">3–4 questions</div><button class="tcb" id="tp-chem-6" onclick="tt('chem','6')">Mark done</button></div></div>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-chem-3" onclick="tt('chem','3')">Mark done</button></div></div>
+        
+        <div class="tc"><div class="tch"><div class="tcn">Physical Chemistry - 2</div><span class="pri p-hi">High</span></div><ul class="tcs">
+          <li>Solid State</li>
+          <li>Solutions</li>
+          <li>Electrochemistry & Chemical Kinetics</li>
+          <li>Surface Chemistry</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-chem-4" onclick="tt('chem','4')">Mark done</button></div></div>
+        
+        <div class="tc"><div class="tch"><div class="tcn">Inorganic Chemistry - 2</div><span class="pri p-med">Medium</span></div><ul class="tcs">
+          <li>General Principles of Metallurgy</li>
+          <li>p-Block Elements (Groups 15-18)</li>
+          <li>d and f Block Elements & Coordination</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-chem-5" onclick="tt('chem','5')">Mark done</button></div></div>
+        
+        <div class="tc"><div class="tch"><div class="tcn">Organic Chemistry - 2</div><span class="pri p-must">Must Do</span></div><ul class="tcs">
+          <li>Polymers</li>
+          <li>Biomolecules</li>
+          <li>Chemistry in Everyday Life</li>
+          <li>Halo Alkanes and Halo Arenes</li>
+          <li>Compounds with C, H and O</li>
+          <li>Compounds with Nitrogen</li>
+        </ul><div class="tcf"><div class="tcq"></div><button class="tcb" id="tp-chem-6" onclick="tt('chem','6')">Mark done</button></div></div>
       </div>
     </div>
 

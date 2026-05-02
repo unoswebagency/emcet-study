@@ -168,7 +168,7 @@ body{font-family:'Instrument Sans',sans-serif;background:var(--bg);color:var(--i
 .w-22 { width: 22%; } .w-25 { width: 25%; } .w-30 { width: 30%; }
 
 .menu-btn { display: none; }
-.backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 250; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; backdrop-filter: blur(2px); }
+.backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 250; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
 .backdrop.show { opacity: 1; pointer-events: auto; }
 
 @media(max-width:900px) {
