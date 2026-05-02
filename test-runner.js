@@ -243,6 +243,52 @@ function submitTest(testId) {
     </a>`;
 
   res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // 🚀 Auto-trigger sharing
+  autoSendResults(currentTestName, score, timeStr, answerSheet);
+}
+
+// ── Auto Sharing Logic ──────────────────────────────────────
+function autoSendResults(name, score, time, sheet) {
+  // Format detailed response sheet
+  let sheetSummary = '';
+  sheet.forEach(row => {
+    sheetSummary += `Q${row.num}: ${row.isCorrect ? '✅' : '❌'} (Your: ${row.userOpt || 'Skipped'}, Correct: ${row.correctOpt})\n`;
+  });
+
+  const fullReport = `📄 AP EAPCET RESPONSE SHEET\n` +
+                     `━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+                     `Test: ${name}\n` +
+                     `Score: ${score}/30\n` +
+                     `Time Taken: ${time}\n\n` +
+                     `📝 DETAILED ANSWERS:\n${sheetSummary}\n` +
+                     `━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+                     `Sent via EAPCET Study App`;
+
+  // 1. Trigger Email (Mailto opens in system client)
+  const mailTo = `mailto:haswanth.challa1@gmail.com?subject=${encodeURIComponent('Response Sheet: ' + name)}&body=${encodeURIComponent(fullReport)}`;
+  
+  // 2. Trigger WhatsApp
+  const waLink = `https://wa.me/916300363135?text=${encodeURIComponent(fullReport)}`;
+
+  // Inform the user
+  const statusMsg = document.createElement('div');
+  statusMsg.style = "position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#000; color:#fff; padding:10px 20px; border-radius:8px; z-index:10000; font-size:14px; box-shadow:0 4px 12px rgba(0,0,0,0.3);";
+  statusMsg.innerHTML = "📤 Sending Response Sheet to Email & WhatsApp...";
+  document.body.appendChild(statusMsg);
+
+  // Trigger redirects with slight delay
+  setTimeout(() => {
+    // We open email first as it usually opens a local app
+    window.location.href = mailTo;
+    
+    // Then open WhatsApp in a new tab after 1.5s
+    setTimeout(() => {
+      window.open(waLink, '_blank');
+      statusMsg.innerHTML = "✅ Response Sheet Drafts Prepared!";
+      setTimeout(() => statusMsg.remove(), 3000);
+    }, 1500);
+  }, 1000);
 }
 
 // ── Answer Review Renderer ────────────────────────────────
