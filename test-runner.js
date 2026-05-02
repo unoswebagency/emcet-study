@@ -231,10 +231,6 @@ function submitTest(testId) {
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.83L0 24l6.337-1.501A11.947 11.947 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 0 1-5.003-1.375l-.358-.213-3.76.89.945-3.654-.234-.376A9.793 9.793 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
         WhatsApp
       </a>
-      <a href="${emailLink}" class="share-btn email">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        Email Me
-      </a>
     </div>
     ${buildAnswerReview(answerSheet)}
     <a href="index.html?tab=papers" class="back-to-tests-btn">
@@ -244,11 +240,11 @@ function submitTest(testId) {
 
   res.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-  // 🚀 Auto-trigger sharing
+  // 🚀 Auto-trigger WhatsApp (Directly via location.href)
   autoSendResults(currentTestName, score, timeStr, answerSheet);
 }
 
-// ── Auto Sharing Logic ──────────────────────────────────────
+// ── Auto Sharing Logic (WhatsApp Only) ──────────────────────
 function autoSendResults(name, score, time, sheet) {
   // Format detailed response sheet
   let sheetSummary = '';
@@ -265,30 +261,20 @@ function autoSendResults(name, score, time, sheet) {
                      `━━━━━━━━━━━━━━━━━━━━━━━━\n` +
                      `Sent via EAPCET Study App`;
 
-  // 1. Trigger Email (Mailto opens in system client)
-  const mailTo = `mailto:haswanth.challa1@gmail.com?subject=${encodeURIComponent('Response Sheet: ' + name)}&body=${encodeURIComponent(fullReport)}`;
-  
-  // 2. Trigger WhatsApp
   const waLink = `https://wa.me/916300363135?text=${encodeURIComponent(fullReport)}`;
 
   // Inform the user
   const statusMsg = document.createElement('div');
-  statusMsg.style = "position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#000; color:#fff; padding:10px 20px; border-radius:8px; z-index:10000; font-size:14px; box-shadow:0 4px 12px rgba(0,0,0,0.3);";
-  statusMsg.innerHTML = "📤 Sending Response Sheet to Email & WhatsApp...";
+  statusMsg.style = "position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#075E54; color:#fff; padding:10px 20px; border-radius:8px; z-index:10000; font-size:14px; box-shadow:0 4px 12px rgba(0,0,0,0.3); font-weight:600;";
+  statusMsg.innerHTML = "📤 Sending Response Sheet to WhatsApp...";
   document.body.appendChild(statusMsg);
 
-  // Trigger redirects with slight delay
+  // Trigger WhatsApp directly via location.href (Most reliable for auto-redirect)
   setTimeout(() => {
-    // We open email first as it usually opens a local app
-    window.location.href = mailTo;
-    
-    // Then open WhatsApp in a new tab after 1.5s
-    setTimeout(() => {
-      window.open(waLink, '_blank');
-      statusMsg.innerHTML = "✅ Response Sheet Drafts Prepared!";
-      setTimeout(() => statusMsg.remove(), 3000);
-    }, 1500);
-  }, 1000);
+    window.location.href = waLink;
+    statusMsg.innerHTML = "✅ WhatsApp Draft Prepared!";
+    setTimeout(() => statusMsg.remove(), 3000);
+  }, 1200);
 }
 
 // ── Answer Review Renderer ────────────────────────────────
