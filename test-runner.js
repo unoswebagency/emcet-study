@@ -220,6 +220,9 @@ function submitTest(testId) {
   const res = document.getElementById('res-' + testId);
   res.classList.remove('hidden');
   res.innerHTML = `
+    <div class="completion-status">
+      <span class="status-badge success-badge"><i data-lucide="check-circle"></i> Exam Completed Successfully</span>
+    </div>
     <h3 class="result-score-heading">
       Score: <span class="${scoreClass}">${score} / 30</span>
     </h3>
@@ -327,6 +330,9 @@ function buildAnswerReview(sheet) {
 function buildAlreadySubmittedHTML(score, total, m, s, dateISO, answerSheet) {
   const scoreClass = score >= 20 ? 'score-good' : score >= 10 ? 'score-mid' : 'score-bad';
   return `
+    <div class="completion-status">
+      <span class="status-badge success-badge"><i data-lucide="check-circle"></i> Exam Completed</span>
+    </div>
     <h3 class="result-score-heading">
       Already submitted — Score: <span class="${scoreClass}">${score}/${total}</span>
     </h3>

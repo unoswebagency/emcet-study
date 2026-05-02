@@ -445,3 +445,9 @@ body.loaded .top, body.loaded .content { opacity: 1; transform: translateY(0); }
 
 .ar-ai-btns { display: flex; gap: 10px; flex-wrap: wrap; }
 .ai-btn-claude { background: #fef3c7 !important; border-color: #f59e0b !important; color: #92400e !important; }
+
+/* ── Completion Status Badge ────────────────────── */
+.completion-status { margin-bottom: 20px; text-align: left; }
+.status-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 99px; font-weight: 600; font-size: 0.85rem; }
+.success-badge { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+.success-badge svg { width: 16px; height: 16px; }
