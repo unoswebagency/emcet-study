@@ -209,3 +209,25 @@ body.loaded .top, body.loaded .content { opacity: 1; transform: translateY(0); }
   body.loaded .sidebar { opacity: 1; transform: translateY(0); }
 }
 
+.q-sect { font-size: 14px; font-weight: 600; color: var(--phy); margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); letter-spacing: .02em; }
+.q-sect:first-child { margin-top: 0; }
+.q-item { margin-bottom: 1.5rem; }
+.q-text { font-size: 14px; font-weight: 500; margin-bottom: 0.5rem; color: var(--ink); line-height: 1.5; }
+.q-opts { list-style: none; color: var(--ink2); font-size: 13px; }
+.q-opts li { margin-bottom: 0.35rem; display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 10px; border-radius: var(--r); transition: background 0.15s, color 0.15s; border: 1px solid transparent; }
+.q-opts li:hover { background: var(--bg); color: var(--ink); border-color: var(--border); }
+.ans-key { background: var(--bg); padding: 1.25rem; border-radius: var(--r2); margin-top: 1.5rem; border: 1px solid var(--border); }
+.ans-key h4 { margin-bottom: 0.75rem; font-size: 15px; color: var(--ink); font-family: 'Playfair Display', serif; font-weight: 600; }
+.ans-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 0.75rem; font-size: 13px; font-weight: 600; color: var(--ink2); text-align: center; }
+.q-opts li.selected { background: var(--accent-bg); color: var(--accent); border-color: var(--accent-light); font-weight: 500; }
+.q-opts li.correct { background: var(--chem-bg); color: var(--chem); border-color: #86efac; font-weight: 600; }
+.q-opts li.wrong { background: var(--math-bg); color: var(--math); border-color: #fca5a5; }
+.test-result { background: var(--phy-bg); border: 1px solid #7dd3fc; color: var(--phy); padding: 1.5rem; border-radius: var(--r2); text-align: center; margin-bottom: 2rem; }
+.test-result h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.25rem; font-weight: 600; }
+.test-result p { font-size: 14px; font-weight: 500; opacity: 0.8; }
+.mb-2 { margin-bottom: 2rem; }
+.subj-ph-card { text-align: center; padding: 3rem 1rem; }
+.subj-ph-ic { width: 48px; height: 48px; margin-bottom: 1rem; opacity: 0.5; }
+.subj-ph-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--ink); }
+.subj-ph-desc { color: var(--ink2); }
+.test-card { width: 100%; max-width: 100%; grid-column: 1 / -1; margin-bottom: 2rem; }

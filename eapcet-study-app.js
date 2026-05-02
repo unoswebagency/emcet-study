@@ -91,3 +91,75 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
   }, 2500);
 });
+
+// MOCK TEST LOGIC
+const testAnswers = {
+  'test-1': {1:'B',2:'B',3:'C',4:'B',5:'C',6:'B',7:'C',8:'B',9:'B',10:'B',11:'A',12:'A',13:'B',14:'B',15:'B',16:'B',17:'B',18:'B',19:'C',20:'C',21:'A',22:'B',23:'C',24:'B',25:'B',26:'B',27:'B',28:'B',29:'B',30:'B'},
+  'test-2': {1:'A',2:'B',3:'B',4:'C',5:'D',6:'B',7:'B',8:'B',9:'A',10:'A',11:'B',12:'B',13:'B',14:'D',15:'B',16:'C',17:'B',18:'B',19:'B',20:'B',21:'B',22:'B',23:'C',24:'B',25:'C',26:'C',27:'C',28:'B',29:'B',30:'C'}
+};
+const testSubmitted = { 'test-1': false, 'test-2': false };
+
+function swMockSubj(id, el) {
+  document.querySelectorAll('.mock-subj-container').forEach(c => c.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  
+  // Update active state of subject buttons
+  const subjSsw = el.closest('.ssw');
+  subjSsw.querySelectorAll('.ssb').forEach(b => b.classList.remove('on'));
+  el.classList.add('on');
+}
+
+function swTest(id, el) {
+  document.getElementById('test-1').classList.add('hidden');
+  document.getElementById('test-2').classList.add('hidden');
+  document.getElementById(id).classList.remove('hidden');
+  
+  // Update active state of test buttons
+  const testSsw = el.closest('.ssw');
+  testSsw.querySelectorAll('.ssb').forEach(b => b.classList.remove('sp')); // assuming 'sp' is used for active state of physics papers
+  el.classList.add('sp');
+}
+
+document.querySelectorAll('.q-opts li').forEach(opt => {
+  opt.addEventListener('click', function() {
+    const testId = this.closest('.tgrid').id;
+    if (testSubmitted[testId]) return;
+    const ul = this.closest('ul');
+    ul.querySelectorAll('li').forEach(li => li.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function submitTest(testId) {
+  if (testSubmitted[testId]) return;
+  let score = 0;
+  
+  const testContainer = document.getElementById(testId);
+  
+  testContainer.querySelectorAll('.q-item').forEach(item => {
+    const qid = item.getAttribute('data-qid');
+    const selected = item.querySelector('li.selected');
+    const correctOpt = testAnswers[testId][qid];
+    
+    // Highlight correct answer
+    const correctLi = item.querySelector(`li[data-opt="${correctOpt}"]`);
+    if (correctLi) correctLi.classList.add('correct');
+    
+    if (selected) {
+      const userOpt = selected.getAttribute('data-opt');
+      if (userOpt === correctOpt) {
+        score++;
+      } else {
+        selected.classList.add('wrong');
+      }
+    }
+  });
+  
+  testSubmitted[testId] = true;
+  document.getElementById('submit-test-' + testId.split('-')[1]).style.display = 'none';
+  document.getElementById('ans-' + testId).classList.remove('hidden');
+  
+  const res = document.getElementById('res-' + testId);
+  res.classList.remove('hidden');
+  res.innerHTML = `<h3>Your Score: ${score} / 30</h3><p>${score >= 25 ? 'Excellent preparation!' : score >= 15 ? 'Good effort, keep revising.' : 'Needs more practice. Review your concepts.'}</p>`;
+}
