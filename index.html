@@ -449,5 +449,20 @@
 </div>
 
 <script src="eapcet-study-app.js"></script>
+<script>
+  // Auto-switch to tab specified in URL query param (?tab=papers)
+  (function () {
+    const params = new URLSearchParams(location.search);
+    const tab    = params.get('tab');
+    if (tab) {
+      const btn = document.querySelector(`.ni[onclick*="'${tab}'"]`);
+      if (btn) {
+        btn.click();
+        // Clean URL without reloading
+        history.replaceState(null, '', location.pathname);
+      }
+    }
+  })();
+</script>
 </body>
 </html>

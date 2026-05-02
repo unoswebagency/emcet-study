@@ -369,3 +369,45 @@ body.loaded .top, body.loaded .content { opacity: 1; transform: translateY(0); }
 
 /* Submit test button */
 .submit-test-btn { margin-top: 24px; width: 100%; justify-content: center; padding: 12px; font-size: 1.1rem; }
+
+/* ── Back-to-tests button (shown after exam submission) ── */
+.back-to-tests-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--r);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Instrument Sans', sans-serif;
+  transition: opacity .15s, transform .1s;
+  width: 100%;
+  justify-content: center;
+}
+.back-to-tests-btn:hover { opacity: .9; transform: translateY(-1px); }
+
+/* ── Exit warning toast ──────────────────────── */
+.exit-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: #1c1c1a;
+  color: #fafaf8;
+  padding: 12px 24px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Instrument Sans', sans-serif;
+  z-index: 9999;
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  opacity: 0;
+  transition: transform .3s cubic-bezier(.34,1.56,.64,1), opacity .25s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.exit-toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }

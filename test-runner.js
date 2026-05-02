@@ -8,15 +8,56 @@ const testAnswers = {
 let currentTestId   = null;
 let currentTestName = null;
 let timerInterval   = null;
-let totalSeconds    = 3 * 60 * 60; // 3 hours
+let elapsedSeconds  = 0;   // counts UP from 0
 let testSubmitted   = false;
+
+// ── Navigation Lock ───────────────────────────────────────
+function lockNavigation() {
+  // Push a dummy state so the back button hits it first
+  history.pushState(null, '', location.href);
+
+  window.addEventListener('popstate', function onPop() {
+    if (!testSubmitted) {
+      // Push again to prevent going back
+      history.pushState(null, '', location.href);
+      showExitWarning();
+    } else {
+      // Exam done — allow leaving (remove listener)
+      window.removeEventListener('popstate', onPop);
+    }
+  });
+
+  // Warn on tab close / refresh during exam
+  window.addEventListener('beforeunload', function (e) {
+    if (!testSubmitted) {
+      e.preventDefault();
+      e.returnValue = 'Your exam is still in progress. Are you sure you want to leave?';
+      return e.returnValue;
+    }
+  });
+}
+
+function showExitWarning() {
+  // Show a brief in-page warning toast
+  let toast = document.getElementById('exit-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'exit-toast';
+    toast.className = 'exit-toast';
+    toast.innerHTML = '⚠️ You cannot go back during the exam. Submit first!';
+    document.body.appendChild(toast);
+  }
+  toast.classList.add('show');
+  clearTimeout(toast._hide);
+  toast._hide = setTimeout(() => toast.classList.remove('show'), 2800);
+}
 
 // ── Init ──────────────────────────────────────────────────
 function initTest(testId, testName) {
   currentTestId   = testId;
   currentTestName = testName;
 
-  // Load saved progress text if already submitted
+  // If already submitted, show results and skip
   const saved = JSON.parse(localStorage.getItem('eq-mock-progress') || '{}');
   if (saved[testId]) {
     const d = saved[testId];
@@ -25,12 +66,11 @@ function initTest(testId, testName) {
     const res = document.getElementById('res-' + testId);
     if (res) {
       res.classList.remove('hidden');
-      res.innerHTML = `<h3>Already submitted — Score: ${d.score}/${d.total}</h3>
-        <p>Time taken: ${m}m ${s}s &nbsp;•&nbsp; Completed on ${new Date(d.date).toLocaleDateString()}</p>`;
+      res.innerHTML = buildAlreadySubmittedHTML(d.score, d.total, m, s, d.date);
     }
     document.getElementById('submit-test-' + testId.split('-')[1]).style.display = 'none';
     testSubmitted = true;
-    document.getElementById('time-display').textContent = '00:00:00';
+    document.getElementById('time-display').textContent = formatTime(d.timeTaken);
     return;
   }
 
@@ -44,32 +84,29 @@ function initTest(testId, testName) {
     });
   });
 
+  // Lock back navigation while exam is in progress
+  lockNavigation();
+
+  // Start count-UP timer
   startTimer();
 }
 
-// ── Timer ─────────────────────────────────────────────────
+// ── Timer (counts UP from 0) ──────────────────────────────
 function startTimer() {
   const display   = document.getElementById('time-display');
-  const timerWrap = document.getElementById('test-timer');
+  display.textContent = '00:00:00';
 
-  function tick() {
-    if (totalSeconds <= 0) {
-      clearInterval(timerInterval);
-      submitTest(currentTestId);
-      return;
-    }
-    totalSeconds--;
-    if (totalSeconds < 300) timerWrap.classList.add('warning');   // last 5 min
-    const h = Math.floor(totalSeconds / 3600);
-    const m = Math.floor((totalSeconds % 3600) / 60);
-    const s = totalSeconds % 60;
-    display.textContent =
-      String(h).padStart(2,'0') + ':' +
-      String(m).padStart(2,'0') + ':' +
-      String(s).padStart(2,'0');
-  }
+  timerInterval = setInterval(() => {
+    elapsedSeconds++;
+    display.textContent = formatTime(elapsedSeconds);
+  }, 1000);
+}
 
-  timerInterval = setInterval(tick, 1000);
+function formatTime(totalSec) {
+  const h = Math.floor(totalSec / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+  return String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
 }
 
 // ── AI helpers ────────────────────────────────────────────
@@ -79,7 +116,6 @@ function askChatGPT(questionText, correctAnswer) {
 }
 
 function askClaude(questionText, correctAnswer) {
-  // Claude.ai new-chat with pre-filled prompt via URL hash trick
   const prompt = `Please explain the solution to this AP EAPCET Physics question in detail.\n\nQuestion: ${questionText}\nCorrect Answer: ${correctAnswer}\n\nWhy is this the correct answer? Explain step by step with the relevant physics concepts.`;
   window.open('https://claude.ai/new?q=' + encodeURIComponent(prompt), '_blank');
 }
@@ -91,7 +127,7 @@ function submitTest(testId) {
   clearInterval(timerInterval);
 
   let score    = 0;
-  const answers = testAnswers[testId];
+  const answers   = testAnswers[testId];
   const container = document.getElementById(testId);
 
   container.querySelectorAll('.q-item').forEach(item => {
@@ -100,7 +136,7 @@ function submitTest(testId) {
     const correctOpt = answers[qid];
     const correctLi  = item.querySelector(`li[data-opt="${correctOpt}"]`);
 
-    const questionText    = item.querySelector('.q-text').innerText.replace(/^Q\d+\.\s*/, '').trim();
+    const questionText     = item.querySelector('.q-text').innerText.replace(/^Q\d+\.\s*/, '').trim();
     const correctAnswerTxt = correctLi ? correctLi.innerText.trim() : correctOpt;
 
     if (correctLi) correctLi.classList.add('correct');
@@ -115,19 +151,19 @@ function submitTest(testId) {
       }
     }
 
-    // Add AI buttons for wrong / unanswered questions
+    // AI explanation buttons for wrong / unanswered
     if (!isCorrect) {
-      const btnWrap = document.createElement('div');
+      const btnWrap   = document.createElement('div');
 
-      const gptBtn = document.createElement('button');
+      const gptBtn    = document.createElement('button');
       gptBtn.className = 'ai-btn';
       gptBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> Ask ChatGPT`;
-      gptBtn.onclick = () => askChatGPT(questionText, correctAnswerTxt);
+      gptBtn.onclick  = () => askChatGPT(questionText, correctAnswerTxt);
 
       const claudeBtn = document.createElement('button');
       claudeBtn.className = 'ai-btn ai-btn-claude';
       claudeBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> Ask Claude`;
-      claudeBtn.onclick = () => askClaude(questionText, correctAnswerTxt);
+      claudeBtn.onclick   = () => askClaude(questionText, correctAnswerTxt);
 
       btnWrap.appendChild(gptBtn);
       btnWrap.appendChild(claudeBtn);
@@ -135,11 +171,9 @@ function submitTest(testId) {
     }
   });
 
-  // Hide submit button
   document.getElementById('submit-test-' + testId.split('-')[1]).style.display = 'none';
 
-  // Time taken
-  const timeTaken = (3 * 60 * 60) - totalSeconds;
+  const timeTaken = elapsedSeconds;
   const m = Math.floor(timeTaken / 60);
   const s = timeTaken % 60;
   const timeStr = `${m}m ${s}s`;
@@ -155,15 +189,14 @@ function submitTest(testId) {
   };
   localStorage.setItem('eq-mock-progress', JSON.stringify(progressData));
 
-  // Build result & share block
+  // Build result block
   const scoreClass = score >= 20 ? 'score-good' : score >= 10 ? 'score-mid' : 'score-bad';
-  const verdict = score >= 25
+  const verdict    = score >= 25
     ? '🎉 Excellent preparation!'
     : score >= 15 ? '👍 Good effort — keep revising.'
     : '📚 Needs more practice. Review your concepts.';
 
   const shareText = `I just completed *${currentTestName}* on the EAPCET Study App!%0A%0A✅ Score: ${score}/30%0A⏱ Time: ${timeStr}%0A%0APracticing for AP EAPCET 2026 🚀`;
-
   const waLink    = `https://wa.me/916300363135?text=${shareText}`;
   const emailLink = `mailto:haswanth.challa1@gmail.com?subject=${encodeURIComponent(currentTestName + ' — Results')}&body=${decodeURIComponent(shareText).replace(/%0A/g, '\n')}`;
 
@@ -174,7 +207,7 @@ function submitTest(testId) {
       Score: <span class="${scoreClass}">${score} / 30</span>
     </h3>
     <p style="color:var(--ink2); margin-bottom:4px;">${verdict}</p>
-    <p style="font-size:13px; color:var(--ink3);">Time taken: ${timeStr}</p>
+    <p style="font-size:13px; color:var(--ink3); margin-bottom:16px;">Time taken: ${timeStr}</p>
     <div class="share-bar">
       <span class="share-bar-label">Share results:</span>
       <a href="${waLink}" target="_blank" class="share-btn wa">
@@ -185,5 +218,28 @@ function submitTest(testId) {
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         Email Me
       </a>
-    </div>`;
+    </div>
+    <a href="index.html?tab=papers" class="back-to-tests-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+      Back to Mock Tests
+    </a>`;
+
+  // Scroll result into view
+  res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ── "Already submitted" HTML ──────────────────────────────
+function buildAlreadySubmittedHTML(score, total, m, s, dateISO) {
+  const scoreClass = score >= 20 ? 'score-good' : score >= 10 ? 'score-mid' : 'score-bad';
+  return `
+    <h3 style="font-size:1.4rem; margin-bottom:6px;">
+      Already submitted — Score: <span class="${scoreClass}">${score}/${total}</span>
+    </h3>
+    <p style="color:var(--ink2); margin-bottom:4px;">
+      Time taken: ${m}m ${s}s &nbsp;•&nbsp; Completed on ${new Date(dateISO).toLocaleDateString('en-IN')}
+    </p>
+    <a href="index.html?tab=papers" class="back-to-tests-btn" style="margin-top:16px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+      Back to Mock Tests
+    </a>`;
 }
