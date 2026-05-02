@@ -411,3 +411,37 @@ body.loaded .top, body.loaded .content { opacity: 1; transform: translateY(0); }
   white-space: nowrap;
 }
 .exit-toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+/* ── Result & Answer Review Styles ────────────────── */
+.result-score-heading { font-size: 1.6rem; margin-bottom: 6px; font-family: 'Playfair Display', serif; }
+.result-verdict { color: var(--ink2); margin-bottom: 4px; font-weight: 500; }
+.result-time { font-size: 13px; color: var(--ink3); margin-bottom: 16px; }
+
+.answer-review { margin-top: 32px; border-top: 1px solid var(--border); padding-top: 24px; text-align: left; }
+.answer-review-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 20px; color: var(--ink1); }
+
+.ar-row { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; transition: transform 0.2s; }
+.ar-row:hover { transform: scale(1.01); }
+.ar-row.ar-correct { border-left: 4px solid #10b981; }
+.ar-row.ar-wrong { border-left: 4px solid #ef4444; }
+.ar-row.ar-skipped { border-left: 4px solid #94a3b8; }
+
+.ar-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.ar-num { font-weight: 700; color: var(--ink1); font-size: 1.1rem; }
+.ar-status-badge { padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.ar-correct-badge { background: #d1fae5; color: #065f46; }
+.ar-wrong-badge { background: #fee2e2; color: #991b1b; }
+.ar-skipped-badge { background: #f1f5f9; color: #475569; }
+
+.ar-question { font-size: 1rem; line-height: 1.6; color: var(--ink1); margin-bottom: 16px; font-weight: 500; }
+
+.ar-answers { display: grid; gap: 12px; background: var(--bg); padding: 12px; border-radius: 8px; margin-bottom: 16px; }
+.ar-answer-block { display: flex; flex-direction: column; gap: 2px; }
+.ar-label { font-size: 0.75rem; color: var(--ink3); text-transform: uppercase; font-weight: 600; }
+.ar-value { font-size: 0.95rem; font-weight: 500; }
+.ar-val-correct { color: #059669; }
+.ar-val-wrong { color: #dc2626; }
+.ar-val-skip { color: var(--ink3); font-style: italic; }
+
+.ar-ai-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.ai-btn-claude { background: #fef3c7 !important; border-color: #f59e0b !important; color: #92400e !important; }

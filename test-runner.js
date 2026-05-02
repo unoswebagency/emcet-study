@@ -8,11 +8,10 @@ const testAnswers = {
 let currentTestId   = null;
 let currentTestName = null;
 let timerInterval   = null;
-let elapsedSeconds  = 0;   // counts UP from 0
+let elapsedSeconds  = 0;
 let testSubmitted   = false;
 
 // ── Shuffle Helpers ───────────────────────────────────────
-// Fisher-Yates in-place shuffle
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -21,41 +20,27 @@ function shuffle(arr) {
   return arr;
 }
 
-/**
- * Shuffles:
- *  1. The ORDER of questions inside the test card
- *  2. The ORDER of answer options within every question
- * Renumbers Q1…Q30 labels to match new order.
- * Correct-answer lookup uses data-opt attributes so validation
- * is completely unaffected by the visual shuffle.
- */
 function shuffleTest(testId) {
   const card = document.querySelector(`#${testId} .test-card`);
   if (!card) return;
 
   const resultDiv = card.querySelector('.test-result');
   const submitBtn = card.querySelector('.submit-test-btn');
-
-  // Shuffle question elements
   const items = shuffle(Array.from(card.querySelectorAll('.q-item')));
 
-  // Clear and rebuild card
   card.innerHTML = '';
   if (resultDiv) card.appendChild(resultDiv);
 
   items.forEach((item, idx) => {
-    // Re-label question numbers Q1, Q2 … in new order
     const strong = item.querySelector('.q-text strong');
     if (strong) strong.textContent = `Q${idx + 1}.`;
 
-    // Shuffle options within this question
     const opts = item.querySelector('.q-opts');
     if (opts) {
       const lis = shuffle(Array.from(opts.querySelectorAll('li')));
       opts.innerHTML = '';
       lis.forEach(li => opts.appendChild(li));
     }
-
     card.appendChild(item);
   });
 
@@ -64,21 +49,17 @@ function shuffleTest(testId) {
 
 // ── Navigation Lock ───────────────────────────────────────
 function lockNavigation() {
-  // Push a dummy state so the back button hits it first
   history.pushState(null, '', location.href);
 
   window.addEventListener('popstate', function onPop() {
     if (!testSubmitted) {
-      // Push again to prevent going back
       history.pushState(null, '', location.href);
       showExitWarning();
     } else {
-      // Exam done — allow leaving (remove listener)
       window.removeEventListener('popstate', onPop);
     }
   });
 
-  // Warn on tab close / refresh during exam
   window.addEventListener('beforeunload', function (e) {
     if (!testSubmitted) {
       e.preventDefault();
@@ -89,7 +70,6 @@ function lockNavigation() {
 }
 
 function showExitWarning() {
-  // Show a brief in-page warning toast
   let toast = document.getElementById('exit-toast');
   if (!toast) {
     toast = document.createElement('div');
@@ -108,7 +88,6 @@ function initTest(testId, testName) {
   currentTestId   = testId;
   currentTestName = testName;
 
-  // If already submitted, show results and skip
   const saved = JSON.parse(localStorage.getItem('eq-mock-progress') || '{}');
   if (saved[testId]) {
     const d = saved[testId];
@@ -117,7 +96,7 @@ function initTest(testId, testName) {
     const res = document.getElementById('res-' + testId);
     if (res) {
       res.classList.remove('hidden');
-      res.innerHTML = buildAlreadySubmittedHTML(d.score, d.total, m, s, d.date);
+      res.innerHTML = buildAlreadySubmittedHTML(d.score, d.total, m, s, d.date, d.answerSheet || null);
     }
     document.getElementById('submit-test-' + testId.split('-')[1]).style.display = 'none';
     testSubmitted = true;
@@ -125,10 +104,8 @@ function initTest(testId, testName) {
     return;
   }
 
-  // Shuffle questions and options before the exam starts
   shuffleTest(testId);
 
-  // Bind option clicks (after shuffle so listeners attach to new positions)
   document.querySelectorAll('.q-opts li').forEach(opt => {
     opt.addEventListener('click', function () {
       if (testSubmitted) return;
@@ -138,16 +115,13 @@ function initTest(testId, testName) {
     });
   });
 
-  // Lock back navigation while exam is in progress
   lockNavigation();
-
-  // Start count-UP timer
   startTimer();
 }
 
-// ── Timer (counts UP from 0) ──────────────────────────────
+// ── Timer (counts UP) ─────────────────────────────────────
 function startTimer() {
-  const display   = document.getElementById('time-display');
+  const display = document.getElementById('time-display');
   display.textContent = '00:00:00';
 
   timerInterval = setInterval(() => {
@@ -180,49 +154,39 @@ function submitTest(testId) {
   testSubmitted = true;
   clearInterval(timerInterval);
 
-  let score    = 0;
-  const answers   = testAnswers[testId];
-  const container = document.getElementById(testId);
+  let score         = 0;
+  const answers     = testAnswers[testId];
+  const container   = document.getElementById(testId);
+  const answerSheet = [];
 
+  let qDisplayNum = 0;
   container.querySelectorAll('.q-item').forEach(item => {
-    const qid        = item.getAttribute('data-qid');
-    const selected   = item.querySelector('li.selected');
-    const correctOpt = answers[qid];
-    const correctLi  = item.querySelector(`li[data-opt="${correctOpt}"]`);
+    qDisplayNum++;
+    const qid          = item.getAttribute('data-qid');
+    const selected     = item.querySelector('li.selected');
+    const correctOpt   = answers[qid];
+    const correctLi    = item.querySelector(`li[data-opt="${correctOpt}"]`);
 
     const questionText     = item.querySelector('.q-text').innerText.replace(/^Q\d+\.\s*/, '').trim();
     const correctAnswerTxt = correctLi ? correctLi.innerText.trim() : correctOpt;
+    const userOpt          = selected ? selected.getAttribute('data-opt') : null;
+    const userAnswerTxt    = selected ? selected.innerText.trim() : 'Not answered';
+    const isCorrect        = userOpt === correctOpt;
 
     if (correctLi) correctLi.classList.add('correct');
+    if (selected && !isCorrect) selected.classList.add('wrong');
+    if (isCorrect) score++;
 
-    let isCorrect = false;
-    if (selected) {
-      if (selected.getAttribute('data-opt') === correctOpt) {
-        score++;
-        isCorrect = true;
-      } else {
-        selected.classList.add('wrong');
-      }
-    }
-
-    // AI explanation buttons for wrong / unanswered
-    if (!isCorrect) {
-      const btnWrap   = document.createElement('div');
-
-      const gptBtn    = document.createElement('button');
-      gptBtn.className = 'ai-btn';
-      gptBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> Ask ChatGPT`;
-      gptBtn.onclick  = () => askChatGPT(questionText, correctAnswerTxt);
-
-      const claudeBtn = document.createElement('button');
-      claudeBtn.className = 'ai-btn ai-btn-claude';
-      claudeBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> Ask Claude`;
-      claudeBtn.onclick   = () => askClaude(questionText, correctAnswerTxt);
-
-      btnWrap.appendChild(gptBtn);
-      btnWrap.appendChild(claudeBtn);
-      item.appendChild(btnWrap);
-    }
+    // Store per-question result
+    answerSheet.push({
+      num:           qDisplayNum,
+      question:      questionText,
+      userOpt:       userOpt,
+      userAnswer:    userAnswerTxt,
+      correctOpt:    correctOpt,
+      correctAnswer: correctAnswerTxt,
+      isCorrect:     isCorrect
+    });
   });
 
   document.getElementById('submit-test-' + testId.split('-')[1]).style.display = 'none';
@@ -232,23 +196,22 @@ function submitTest(testId) {
   const s = timeTaken % 60;
   const timeStr = `${m}m ${s}s`;
 
-  // Save to localStorage
+  // Save full record including answer sheet
   const progressData = JSON.parse(localStorage.getItem('eq-mock-progress') || '{}');
   progressData[testId] = {
-    name:      currentTestName,
-    score:     score,
-    total:     30,
-    timeTaken: timeTaken,
-    date:      new Date().toISOString()
+    name:        currentTestName,
+    score:       score,
+    total:       30,
+    timeTaken:   timeTaken,
+    date:        new Date().toISOString(),
+    answerSheet: answerSheet
   };
   localStorage.setItem('eq-mock-progress', JSON.stringify(progressData));
 
-  // Build result block
   const scoreClass = score >= 20 ? 'score-good' : score >= 10 ? 'score-mid' : 'score-bad';
-  const verdict    = score >= 25
-    ? '🎉 Excellent preparation!'
-    : score >= 15 ? '👍 Good effort — keep revising.'
-    : '📚 Needs more practice. Review your concepts.';
+  const verdict    = score >= 25 ? '🎉 Excellent preparation!'
+                   : score >= 15 ? '👍 Good effort — keep revising.'
+                   : '📚 Needs more practice. Review your concepts.';
 
   const shareText = `I just completed *${currentTestName}* on the EAPCET Study App!%0A%0A✅ Score: ${score}/30%0A⏱ Time: ${timeStr}%0A%0APracticing for AP EAPCET 2026 🚀`;
   const waLink    = `https://wa.me/916300363135?text=${shareText}`;
@@ -257,11 +220,11 @@ function submitTest(testId) {
   const res = document.getElementById('res-' + testId);
   res.classList.remove('hidden');
   res.innerHTML = `
-    <h3 style="font-size:1.6rem; margin-bottom:6px;">
+    <h3 class="result-score-heading">
       Score: <span class="${scoreClass}">${score} / 30</span>
     </h3>
-    <p style="color:var(--ink2); margin-bottom:4px;">${verdict}</p>
-    <p style="font-size:13px; color:var(--ink3); margin-bottom:16px;">Time taken: ${timeStr}</p>
+    <p class="result-verdict">${verdict}</p>
+    <p class="result-time">Time taken: ${timeStr}</p>
     <div class="share-bar">
       <span class="share-bar-label">Share results:</span>
       <a href="${waLink}" target="_blank" class="share-btn wa">
@@ -273,26 +236,73 @@ function submitTest(testId) {
         Email Me
       </a>
     </div>
+    ${buildAnswerReview(answerSheet)}
     <a href="index.html?tab=papers" class="back-to-tests-btn">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
       Back to Mock Tests
     </a>`;
 
-  // Scroll result into view
   res.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+// ── Answer Review Renderer ────────────────────────────────
+function buildAnswerReview(sheet) {
+  if (!sheet || !sheet.length) return '';
+
+  const GPT_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>`;
+  const CLD_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`;
+
+  let html = `<div class="answer-review"><h4 class="answer-review-title">📋 Full Answer Sheet</h4>`;
+
+  sheet.forEach(row => {
+    const statusClass = row.isCorrect ? 'ar-correct' : (row.userOpt ? 'ar-wrong' : 'ar-skipped');
+    const statusIcon  = row.isCorrect ? '✅' : (row.userOpt ? '❌' : '⏭');
+    const statusLabel = row.isCorrect ? 'Correct' : (row.userOpt ? 'Wrong' : 'Skipped');
+
+    const aiPrompt  = encodeURIComponent(`Please explain the solution to this AP EAPCET Physics question in detail.\n\nQuestion: ${row.question}\nCorrect Answer: ${row.correctAnswer}\n\nWhy is this the correct answer? Explain step by step with the relevant physics concepts.`);
+    const gptLink   = `https://chatgpt.com/?q=${aiPrompt}`;
+    const cldLink   = `https://claude.ai/new?q=${aiPrompt}`;
+
+    html += `
+      <div class="ar-row ${statusClass}">
+        <div class="ar-top">
+          <span class="ar-num">Q${row.num}</span>
+          <span class="ar-status-badge ${statusClass}-badge">${statusIcon} ${statusLabel}</span>
+        </div>
+        <div class="ar-question">${row.question}</div>
+        <div class="ar-answers">
+          <div class="ar-answer-block">
+            <span class="ar-label">Your answer:</span>
+            <span class="ar-value ${row.isCorrect ? 'ar-val-correct' : (row.userOpt ? 'ar-val-wrong' : 'ar-val-skip')}">${row.userAnswer}</span>
+          </div>
+          ${!row.isCorrect ? `<div class="ar-answer-block">
+            <span class="ar-label">Correct answer:</span>
+            <span class="ar-value ar-val-correct">${row.correctAnswer}</span>
+          </div>` : ''}
+        </div>
+        <div class="ar-ai-btns">
+          <a href="${gptLink}" target="_blank" class="ai-btn">${GPT_ICON} Ask ChatGPT</a>
+          <a href="${cldLink}" target="_blank" class="ai-btn ai-btn-claude">${CLD_ICON} Ask Claude</a>
+        </div>
+      </div>`;
+  });
+
+  html += '</div>';
+  return html;
+}
+
 // ── "Already submitted" HTML ──────────────────────────────
-function buildAlreadySubmittedHTML(score, total, m, s, dateISO) {
+function buildAlreadySubmittedHTML(score, total, m, s, dateISO, answerSheet) {
   const scoreClass = score >= 20 ? 'score-good' : score >= 10 ? 'score-mid' : 'score-bad';
   return `
-    <h3 style="font-size:1.4rem; margin-bottom:6px;">
+    <h3 class="result-score-heading">
       Already submitted — Score: <span class="${scoreClass}">${score}/${total}</span>
     </h3>
-    <p style="color:var(--ink2); margin-bottom:4px;">
+    <p class="result-verdict">
       Time taken: ${m}m ${s}s &nbsp;•&nbsp; Completed on ${new Date(dateISO).toLocaleDateString('en-IN')}
     </p>
-    <a href="index.html?tab=papers" class="back-to-tests-btn" style="margin-top:16px;">
+    ${buildAnswerReview(answerSheet)}
+    <a href="index.html?tab=papers" class="back-to-tests-btn">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
       Back to Mock Tests
     </a>`;
