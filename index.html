@@ -676,10 +676,10 @@
               </ul>
            </div>
 
-           <div class="card formula-card" style="grid-column: 1 / -1;">
+           <div class="card formula-card formula-card-full">
               <h4>4. Conic Sections (Parabola, Ellipse, Hyperbola)</h4>
               <div class="table-wrap">
-                <table class="tttab" style="min-width: 600px;">
+                <table class="tttab tttab-wide">
                   <thead>
                     <tr>
                       <th>Feature</th>
@@ -741,6 +741,97 @@
             <li><strong>The "Point" Test:</strong> If a question asks for the equation of a line, circle, or conic that passes through a specific point, <strong>do not solve the equation.</strong> Plug the point into the options. Usually, only one option will satisfy the coordinates.</li>
             <li><strong>Tangency Shortcut:</strong> Whenever a line \(y=mx+c\) is a tangent to any curve, always use the condition \(p=r\) (perpendicular distance from center equals radius) for circles, or the specific \(c\) formulas for conics.</li>
             <li><strong>Locus Problems:</strong> For locus questions, pick a simple point that satisfies the given condition and check which option's equation is satisfied by that point.</li>
+          </ol>
+        </div>
+
+        <!-- Calculus Section -->
+        <h3 class="f-section-title">Calculus</h3>
+        <div class="formula-grid">
+           <div class="card formula-card">
+              <h4>1. Limits and Continuity</h4>
+              <ul>
+                 <li><strong>Standard Limits:</strong>
+                    <br>\(\lim_{x \to 0} \frac{\sin x}{x} = 1\)
+                    <br>\(\lim_{x \to 0} \frac{e^x - 1}{x} = 1\)
+                    <br>\(\lim_{x \to 0} \frac{\log(1+x)}{x} = 1\)
+                    <br>\(\lim_{x \to 0} (1+x)^{1/x} = e\)
+                 </li>
+                 <li><strong>L’Hopital’s Rule:</strong> If \(\lim_{x \to a} \frac{f(x)}{g(x)}\) results in \(\frac{0}{0}\) or \(\frac{\infty}{\infty}\), then:
+                    <br>\(\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}\)
+                 </li>
+                 <li><strong>Continuity:</strong> A function is continuous at \(x=a\) if \(LHL = RHL = f(a)\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>2. Differentiation</h4>
+              <ul>
+                 <li><strong>Chain Rule:</strong> \(\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)\).</li>
+                 <li><strong>Product Rule:</strong> \((uv)' = u'v + uv'\).</li>
+                 <li><strong>Quotient Rule:</strong> \(\left(\frac{u}{v}\right)' = \frac{vu' - uv'}{v^2}\).</li>
+                 <li><strong>Parametric Differentiation:</strong> If \(x = f(t), y = g(t)\), then \(\frac{dy}{dx} = \frac{dy/dt}{dx/dt}\).</li>
+                 <li><strong>Derivative of Inverse Trig:</strong>
+                    <br>\(\frac{d}{dx}(\sin^{-1}x) = \frac{1}{\sqrt{1-x^2}}\)
+                    <br>\(\frac{d}{dx}(\tan^{-1}x) = \frac{1}{1+x^2}\)
+                 </li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>3. Applications of Derivatives (AOD)</h4>
+              <ul>
+                 <li><strong>Errors and Approximations:</strong> \(\Delta y \approx f'(x) \Delta x\).</li>
+                 <li><strong>Tangent and Normal:</strong>
+                    <br>Slope of tangent \(m = f'(x_1)\).
+                    <br>Slope of normal \(m' = -1/f'(x_1)\).
+                 </li>
+                 <li><strong>Maxima and Minima:</strong>
+                    <br>Find \(f'(x) = 0\) for critical points.
+                    <br>If \(f''(x) > 0\), it is a <strong>Minima</strong>.
+                    <br>If \(f''(x) < 0\), it is a <strong>Maxima</strong>.
+                 </li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>4. Integration (Indefinite)</h4>
+              <ul>
+                 <li><strong>Standard Integrals:</strong>
+                    <br>\(\int \frac{1}{x^2+a^2} dx = \frac{1}{a} \tan^{-1}(\frac{x}{a}) + C\)
+                    <br>\(\int \frac{1}{\sqrt{a^2-x^2}} dx = \sin^{-1}(\frac{x}{a}) + C\)
+                    <br>\(\int e^x [f(x) + f'(x)] dx = e^x f(x) + C\)
+                 </li>
+                 <li><strong>Integration by Parts:</strong> \(\int uv dx = u \int v dx - \int [u' \int v dx] dx\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>5. Definite Integrals</h4>
+              <ul>
+                 <li><strong>King's Property:</strong> \(\int_a^b f(x) dx = \int_a^b f(a+b-x) dx\). (Very important for EAMCET).</li>
+                 <li><strong>Even/Odd Functions:</strong> \(\int_{-a}^a f(x) dx = 2\int_0^a f(x) dx\) if \(f(x)\) is even, and \(0\) if \(f(x)\) is odd.</li>
+                 <li><strong>Area Under Curve:</strong> \(A = \int_a^b y dx\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>6. Differential Equations</h4>
+              <ul>
+                 <li><strong>Variable Separable:</strong> \(\int f(y) dy = \int g(x) dx\).</li>
+                 <li><strong>Linear Differential Equation:</strong> \(\frac{dy}{dx} + Py = Q\).
+                    <br><strong>Integrating Factor (I.F.):</strong> \(e^{\int P dx}\).
+                    <br><strong>Solution:</strong> \(y(I.F.) = \int Q(I.F.) dx + C\).
+                 </li>
+              </ul>
+           </div>
+        </div>
+
+        <div class="strategy-card">
+          <h4>💡 Quick Calculus Strategy for EAMCET:</h4>
+          <ol class="strategy-list">
+            <li><strong>Differentiate the Options:</strong> For Indefinite Integration, if the question looks too complex to solve, simply differentiate the four options. The one that results in the question's integrand is the answer.</li>
+            <li><strong>L'Hopital's is your Best Friend:</strong> Don't waste time on algebraic expansions for limits. Apply L'Hopital's rule immediately for \(0/0\) forms.</li>
+            <li><strong>Property 4 (King's Rule):</strong> In Definite Integrals, if you see a complicated trig function with limits like \(0\) to \(\pi/2\), \(90\%\) of the time the answer will involve \(\int f(x) + f(\pi/2-x)\).</li>
           </ol>
         </div>
       </div>

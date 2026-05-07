@@ -464,3 +464,5 @@ body.loaded .top, body.loaded .content { opacity: 1; transform: translateY(0); }
 .strategy-card p { font-size: 13px; color: var(--ink); line-height: 1.6; }
 .strategy-list { padding-left: 1.5rem; font-size: 13px; color: var(--ink); line-height: 1.6; margin-top: 0.5rem; }
 .strategy-list li { margin-bottom: 0.25rem; }
+.formula-card-full { grid-column: 1 / -1; }
+.tttab-wide { min-width: 600px; }
