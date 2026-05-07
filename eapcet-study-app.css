@@ -466,3 +466,17 @@ body.loaded .top, body.loaded .content { opacity: 1; transform: translateY(0); }
 .strategy-list li { margin-bottom: 0.25rem; }
 .formula-card-full { grid-column: 1 / -1; }
 .tttab-wide { min-width: 600px; }
+.formula-card h5 { margin-top: 1rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; color: var(--ink); }
+.strategy-list img { max-width: 100%; height: auto; margin-top: 0.5rem; border-radius: 6px; border: 1px solid var(--border); }
+.test-topics { background: var(--bg); padding: 1.25rem; border: 1px solid var(--border); border-radius: var(--r2); margin-bottom: 1.5rem; font-size: 14px; color: var(--ink2); }
+.test-topics strong { color: var(--ink); font-size: 15px; display: block; margin-bottom: 0.5rem; }
+.test-topics ul { padding-left: 1.5rem; list-style-type: disc; line-height: 1.6; }
+
+/* Grand Test UI Styles */
+.grand-test-card { border: 2px solid var(--pri); background: linear-gradient(135deg, rgba(37,99,235,0.05) 0%, rgba(37,99,235,0.02) 100%); position: relative; overflow: hidden; }
+.grand-test-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--pri); }
+.grand-badge { position: absolute; top: 1rem; right: 1rem; background: var(--pri); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.full-mock-theme .test-header { border-bottom: 2px solid var(--pri); background: rgba(37,99,235,0.03); }
+.full-mock-theme .test-card { border: 1px solid var(--pri-hover); box-shadow: 0 4px 12px rgba(37,99,235,0.08); }
+.grand-title { color: var(--pri); }
+.grand-submit-btn { width: 100%; margin-top: 2rem; }
