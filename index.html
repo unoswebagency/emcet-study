@@ -341,6 +341,16 @@
         <button class="ssb sc" onclick="swMockSubj('mock-chem', this)"><i data-lucide="flask-conical" class="ic-sm"></i> Chemistry</button>
       </div>
 
+      <div class="progress-card">
+        <div class="progress-card-header">
+          <h3 class="progress-card-title"><i data-lucide="bar-chart-2" class="ic-sm"></i> Your Progress</h3>
+          <button class="pb2 btn-download" onclick="downloadProgress()"><i data-lucide="download" class="ic-sm"></i> Download Report</button>
+        </div>
+        <div id="progress-dashboard" class="progress-dashboard-list">
+          <p class="progress-empty">No mock tests completed yet. Start a test below! 👇</p>
+        </div>
+      </div>
+
       <div id="mock-math" class="mock-subj-container hidden">
         <div class="card subj-ph-card">
           <i data-lucide="hammer" class="subj-ph-ic c-math"></i>
@@ -350,24 +360,30 @@
       </div>
 
       <div id="mock-chem" class="mock-subj-container hidden">
-        <div class="card subj-ph-card">
-          <i data-lucide="flask-conical" class="subj-ph-ic c-chem"></i>
-          <h3 class="subj-ph-title">Chemistry Tests</h3>
-          <p class="subj-ph-desc">We are preparing high-quality mock papers. Check back soon!</p>
+        <div class="test-card-grid">
+          <div class="card mock-paper-card">
+            <div class="mock-paper-icon">
+              <i data-lucide="file-text"></i>
+            </div>
+            <h3 class="mock-paper-title">Chemistry Paper 1</h3>
+            <p class="mock-paper-meta">Group 15 • 30 Questions</p>
+            <a href="mock-test-3.html" class="pb2 pri mock-paper-btn">Start Test</a>
+          </div>
+
+          <div class="card mock-paper-card">
+            <div class="mock-paper-icon">
+              <i data-lucide="file-text"></i>
+            </div>
+            <h3 class="mock-paper-title">Chemistry Paper 2</h3>
+            <p class="mock-paper-meta">Group 16 • 30 Questions</p>
+            <a href="mock-test-4.html" class="pb2 pri mock-paper-btn">Start Test</a>
+          </div>
         </div>
       </div>
 
       <div id="mock-phy" class="mock-subj-container">
         
-        <div class="progress-card">
-          <div class="progress-card-header">
-            <h3 class="progress-card-title"><i data-lucide="bar-chart-2" class="ic-sm"></i> Your Progress</h3>
-            <button class="pb2 btn-download" onclick="downloadProgress()"><i data-lucide="download" class="ic-sm"></i> Download Report</button>
-          </div>
-          <div id="progress-dashboard" class="progress-dashboard-list">
-            <p class="progress-empty">No mock tests completed yet. Start a test below! 👇</p>
-          </div>
-        </div>
+
 
         <div class="test-card-grid">
           <div class="card mock-paper-card">

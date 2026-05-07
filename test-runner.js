@@ -1,7 +1,9 @@
 // ── Answer Keys ──────────────────────────────────────────
 const testAnswers = {
   'test-1': {1:'B',2:'B',3:'C',4:'B',5:'C',6:'B',7:'C',8:'B',9:'B',10:'B',11:'A',12:'A',13:'B',14:'B',15:'B',16:'B',17:'B',18:'B',19:'C',20:'C',21:'A',22:'B',23:'C',24:'B',25:'B',26:'B',27:'B',28:'B',29:'B',30:'B'},
-  'test-2': {1:'A',2:'B',3:'B',4:'C',5:'D',6:'B',7:'B',8:'B',9:'A',10:'A',11:'B',12:'B',13:'B',14:'D',15:'B',16:'C',17:'B',18:'B',19:'B',20:'B',21:'B',22:'B',23:'C',24:'B',25:'C',26:'C',27:'C',28:'B',29:'B',30:'C'}
+  'test-2': {1:'A',2:'B',3:'B',4:'C',5:'D',6:'B',7:'B',8:'B',9:'A',10:'A',11:'B',12:'B',13:'B',14:'D',15:'B',16:'C',17:'B',18:'B',19:'B',20:'B',21:'B',22:'B',23:'C',24:'B',25:'C',26:'C',27:'C',28:'B',29:'B',30:'C'},
+  'test-3': {1:'B',2:'B',3:'C',4:'C',5:'C',6:'B',7:'B',8:'A',9:'A',10:'B',11:'D',12:'A',13:'B',14:'C',15:'A',16:'B',17:'B',18:'B',19:'A',20:'D',21:'C',22:'C',23:'B',24:'A',25:'B',26:'A',27:'B',28:'B',29:'B',30:'A'},
+  'test-4': {1:'C',2:'B',3:'B',4:'C',5:'B',6:'D',7:'B',8:'B',9:'B',10:'B',11:'D',12:'B',13:'A',14:'D',15:'B',16:'D',17:'C',18:'B',19:'A',20:'B',21:'A',22:'B',23:'B',24:'C',25:'B',26:'B',27:'B',28:'C',29:'A',30:'B'}
 };
 
 // ── State ─────────────────────────────────────────────────
@@ -139,12 +141,12 @@ function formatTime(totalSec) {
 
 // ── AI helpers ────────────────────────────────────────────
 function askChatGPT(questionText, correctAnswer) {
-  const prompt = `Please explain the solution to this AP EAPCET Physics question in detail.\n\nQuestion: ${questionText}\nCorrect Answer: ${correctAnswer}\n\nWhy is this the correct answer? Explain step by step with the relevant physics concepts.`;
+  const prompt = `Please explain the solution to this AP EAPCET question in detail.\n\nQuestion: ${questionText}\nCorrect Answer: ${correctAnswer}\n\nWhy is this the correct answer? Explain step by step with the relevant concepts.`;
   window.open('https://chatgpt.com/?q=' + encodeURIComponent(prompt), '_blank');
 }
 
 function askClaude(questionText, correctAnswer) {
-  const prompt = `Please explain the solution to this AP EAPCET Physics question in detail.\n\nQuestion: ${questionText}\nCorrect Answer: ${correctAnswer}\n\nWhy is this the correct answer? Explain step by step with the relevant physics concepts.`;
+  const prompt = `Please explain the solution to this AP EAPCET question in detail.\n\nQuestion: ${questionText}\nCorrect Answer: ${correctAnswer}\n\nWhy is this the correct answer? Explain step by step with the relevant concepts.`;
   window.open('https://claude.ai/new?q=' + encodeURIComponent(prompt), '_blank');
 }
 
@@ -294,7 +296,7 @@ function buildAnswerReview(sheet) {
     const statusIcon  = row.isCorrect ? '✅' : (row.userOpt ? '❌' : '⏭');
     const statusLabel = row.isCorrect ? 'Correct' : (row.userOpt ? 'Wrong' : 'Skipped');
 
-    const aiPrompt  = encodeURIComponent(`Please explain the solution to this AP EAPCET Physics question in detail.\n\nQuestion: ${row.question}\nCorrect Answer: ${row.correctAnswer}\n\nWhy is this the correct answer? Explain step by step with the relevant physics concepts.`);
+    const aiPrompt  = encodeURIComponent(`Please explain the solution to this AP EAPCET question in detail.\n\nQuestion: ${row.question}\nCorrect Answer: ${row.correctAnswer}\n\nWhy is this the correct answer? Explain step by step with the relevant concepts.`);
     const gptLink   = `https://chatgpt.com/?q=${aiPrompt}`;
     const cldLink   = `https://claude.ai/new?q=${aiPrompt}`;
 
