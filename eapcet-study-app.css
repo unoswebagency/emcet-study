@@ -462,3 +462,5 @@ body.loaded .top, body.loaded .content { opacity: 1; transform: translateY(0); }
 .strategy-card { background: var(--math-bg); border: 1px solid #fca5a5; border-radius: var(--r2); padding: 1.5rem; margin-top: 1rem; }
 .strategy-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--math); margin-bottom: 0.5rem; }
 .strategy-card p { font-size: 13px; color: var(--ink); line-height: 1.6; }
+.strategy-list { padding-left: 1.5rem; font-size: 13px; color: var(--ink); line-height: 1.6; margin-top: 0.5rem; }
+.strategy-list li { margin-bottom: 0.25rem; }

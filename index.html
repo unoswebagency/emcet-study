@@ -621,10 +621,126 @@
 
         <div class="strategy-card">
           <h4>💡 Quick Vector Algebra Strategy for EAMCET:</h4>
-          <ol style="padding-left:1.5rem; font-size:13px; color:var(--ink); line-height:1.6; margin-top:0.5rem">
+          <ol class="strategy-list">
             <li><strong>Work with Components:</strong> Most EAMCET questions give vectors in \(\hat{i}, \hat{j}, \hat{k}\) form. Use the determinant method for cross products and STP to avoid calculation errors.</li>
             <li><strong>Angle Shortcut:</strong> If you need to find the angle between two vectors, always use the <strong>Dot Product</strong> (\(\cos \theta\)) rather than the Cross Product—it is much faster and avoids square roots in the numerator.</li>
             <li><strong>The Zero Vector:</strong> If the question mentions that vectors form a triangle or a closed loop, remember \(\vec{a} + \vec{b} + \vec{c} = 0\). Using this often simplifies complex product questions.</li>
+          </ol>
+        </div>
+
+        <!-- Coordinate Geometry Section -->
+        <h3 class="f-section-title">Coordinate Geometry</h3>
+        <div class="formula-grid">
+           <div class="card formula-card">
+              <h4>1. Basics & Straight Lines</h4>
+              <ul>
+                 <li><strong>Distance Formula:</strong> \(d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}\).</li>
+                 <li><strong>Section Formula:</strong> \(P = \left( \frac{mx_2+nx_1}{m+n}, \frac{my_2+ny_1}{m+n} \right)\).</li>
+                 <li><strong>Area of Triangle:</strong> \(\frac{1}{2} |x_1(y_2-y_3) + x_2(y_3-y_1) + x_3(y_1-y_2)|\).</li>
+                 <li><strong>Slope (\(m\)):</strong> \(m = \tan \theta = \frac{y_2-y_1}{x_2-x_1}\).</li>
+                 <li><strong>Equations of Line:</strong>
+                    <br>Point-Slope: \(y - y_1 = m(x - x_1)\).
+                    <br>Intercept Form: \(\frac{x}{a} + \frac{y}{b} = 1\).
+                    <br>Normal Form: \(x \cos \alpha + y \sin \alpha = p\).
+                 </li>
+                 <li><strong>Angle between lines:</strong> \(\tan \theta = \left| \frac{m_1 - m_2}{1 + m_1m_2} \right|\).</li>
+                 <li><strong>Distance from point \((x_1, y_1)\) to line \(ax+by+c=0\):</strong> \(d = \frac{|ax_1 + by_1 + c|}{\sqrt{a^2+b^2}}\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>2. Pair of Straight Lines</h4>
+              <ul>
+                 <li><strong>General Equation:</strong> \(ax^2 + 2hxy + by^2 = 0\) (passing through origin).</li>
+                 <li><strong>Angle:</strong> \(\tan \theta = \frac{2\sqrt{h^2-ab}}{|a+b|}\).</li>
+                 <li><strong>Condition for Perpendicularity:</strong> \(a + b = 0\).</li>
+                 <li><strong>Condition for Parallelism:</strong> \(h^2 = ab\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>3. Circle & System of Circles</h4>
+              <ul>
+                 <li><strong>Standard Eq:</strong> \((x-h)^2 + (y-k)^2 = r^2\).</li>
+                 <li><strong>General Eq:</strong> \(x^2 + y^2 + 2gx + 2fy + c = 0\).
+                    <br>Center: \((-g, -f)\).
+                    <br>Radius: \(\sqrt{g^2+f^2-c}\).
+                 </li>
+                 <li><strong>Power of Point \(P(x_1, y_1)\):</strong> \(S_{11} = x_1^2 + y_1^2 + 2gx_1 + 2fy_1 + c\).</li>
+                 <li><strong>Common Tangents:</strong>
+                    <br>Intersecting circles: 2 common tangents.
+                    <br>Touching externally: 3 common tangents (\(C_1C_2 = r_1+r_2\)).
+                    <br>Touching internally: 1 common tangent (\(C_1C_2 = |r_1-r_2|\)).
+                 </li>
+                 <li><strong>Radical Axis:</strong> \(S - S' = 0\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card" style="grid-column: 1 / -1;">
+              <h4>4. Conic Sections (Parabola, Ellipse, Hyperbola)</h4>
+              <div class="table-wrap">
+                <table class="tttab" style="min-width: 600px;">
+                  <thead>
+                    <tr>
+                      <th>Feature</th>
+                      <th>Parabola (\(y^2=4ax\))</th>
+                      <th>Ellipse (\(\frac{x^2}{a^2} + \frac{y^2}{b^2}=1\))</th>
+                      <th>Hyperbola (\(\frac{x^2}{a^2} - \frac{y^2}{b^2}=1\))</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Eccentricity (\(e\))</strong></td>
+                      <td>\(e = 1\)</td>
+                      <td>\(e = \sqrt{1-\frac{b^2}{a^2}} < 1\)</td>
+                      <td>\(e = \sqrt{1+\frac{b^2}{a^2}} > 1\)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Focus</strong></td>
+                      <td>\((a, 0)\)</td>
+                      <td>\((\pm ae, 0)\)</td>
+                      <td>\((\pm ae, 0)\)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Directrix</strong></td>
+                      <td>\(x = -a\)</td>
+                      <td>\(x = \pm a/e\)</td>
+                      <td>\(x = \pm a/e\)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Latus Rectum</strong></td>
+                      <td>\(4a\)</td>
+                      <td>\(2b^2/a\)</td>
+                      <td>\(2b^2/a\)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Tangency Cond.</strong></td>
+                      <td>\(c = a/m\)</td>
+                      <td>\(c^2 = a^2m^2 + b^2\)</td>
+                      <td>\(c^2 = a^2m^2 - b^2\)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+           </div>
+
+           <div class="card formula-card">
+              <h4>5. Three Dimensional Geometry</h4>
+              <ul>
+                 <li><strong>Distance:</strong> \(\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}\).</li>
+                 <li><strong>Direction Cosines (DCs):</strong> \(l, m, n\) where \(l^2+m^2+n^2=1\).</li>
+                 <li><strong>Angle between two lines:</strong> \(\cos \theta = l_1l_2 + m_1m_2 + n_1n_2\).</li>
+                 <li><strong>Plane Equation:</strong> \(ax + by + cz + d = 0\).</li>
+              </ul>
+           </div>
+        </div>
+
+        <div class="strategy-card">
+          <h4>💡 Quick Coordinate Geometry Strategy for EAMCET:</h4>
+          <ol class="strategy-list">
+            <li><strong>The "Point" Test:</strong> If a question asks for the equation of a line, circle, or conic that passes through a specific point, <strong>do not solve the equation.</strong> Plug the point into the options. Usually, only one option will satisfy the coordinates.</li>
+            <li><strong>Tangency Shortcut:</strong> Whenever a line \(y=mx+c\) is a tangent to any curve, always use the condition \(p=r\) (perpendicular distance from center equals radius) for circles, or the specific \(c\) formulas for conics.</li>
+            <li><strong>Locus Problems:</strong> For locus questions, pick a simple point that satisfies the given condition and check which option's equation is satisfied by that point.</li>
           </ol>
         </div>
       </div>
