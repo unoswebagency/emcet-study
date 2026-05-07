@@ -451,3 +451,14 @@ body.loaded .top, body.loaded .content { opacity: 1; transform: translateY(0); }
 .status-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 99px; font-weight: 600; font-size: 0.85rem; }
 .success-badge { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
 .success-badge svg { width: 16px; height: 16px; }
+
+/* ── Formulas Styles ─────────────────────────── */
+.formula-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.f-section-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600; margin: 2rem 0 1rem; color: var(--ink); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.formula-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r2); padding: 1.5rem; }
+.formula-card h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent); }
+.formula-card ul { padding-left: 1.25rem; list-style-type: disc; font-size: 13px; color: var(--ink2); line-height: 1.6; }
+.formula-card li { margin-bottom: 0.5rem; }
+.strategy-card { background: var(--math-bg); border: 1px solid #fca5a5; border-radius: var(--r2); padding: 1.5rem; margin-top: 1rem; }
+.strategy-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--math); margin-bottom: 0.5rem; }
+.strategy-card p { font-size: 13px; color: var(--ink); line-height: 1.6; }

@@ -103,6 +103,16 @@ function swMockSubj(id, el) {
   el.classList.add('on');
 }
 
+// FORMULAS LOGIC
+function swFormulas(id, el) {
+  document.querySelectorAll('.formulas-container').forEach(c => c.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  
+  const subjSsw = el.closest('.ssw');
+  subjSsw.querySelectorAll('.ssb').forEach(b => b.classList.remove('on'));
+  el.classList.add('on');
+}
+
 function loadProgressDashboard() {
   const progressData = JSON.parse(localStorage.getItem('eq-mock-progress') || '{}');
   const dashboard = document.getElementById('progress-dashboard');

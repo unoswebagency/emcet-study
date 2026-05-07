@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AP EAPCET 2026 — Study Planner</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
 <link rel="stylesheet" href="eapcet-study-app.css">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
@@ -34,6 +35,7 @@
     <div class="slbl">Study</div>
     <button class="ni" onclick="nav(this,'syllabus')"><i data-lucide="book-open" class="ni-ic"></i>Syllabus</button>
     <button class="ni" onclick="nav(this,'weightage')"><i data-lucide="pie-chart" class="ni-ic"></i>Weightage</button>
+    <button class="ni" onclick="nav(this,'formulas')"><i data-lucide="function-square" class="ni-ic"></i>Formulas</button>
     <button class="ni" onclick="nav(this,'papers')"><i data-lucide="file-text" class="ni-ic"></i>Mock Tests</button>
 
     <div class="slbl">Tools</div>
@@ -330,6 +332,161 @@
 
 
 
+    <!-- FORMULAS -->
+    <div class="page" id="page-formulas">
+      <div class="ptitle">Formula Sheet</div>
+      <div class="psub">Quick reference for all important formulas</div>
+      
+      <div class="ssw mb-2">
+        <button class="ssb sm on" onclick="swFormulas('form-math', this)"><i data-lucide="calculator" class="ic-sm"></i> Mathematics</button>
+        <button class="ssb sp" onclick="swFormulas('form-phy', this)"><i data-lucide="zap" class="ic-sm"></i> Physics</button>
+        <button class="ssb sc" onclick="swFormulas('form-chem', this)"><i data-lucide="flask-conical" class="ic-sm"></i> Chemistry</button>
+      </div>
+
+      <div id="form-math" class="formulas-container">
+        <!-- Algebra Section -->
+        <h3 class="f-section-title">Algebra</h3>
+        <div class="formula-grid">
+           <div class="card formula-card">
+              <h4>1. Functions</h4>
+              <ul>
+                 <li><strong>Domain and Range:</strong> For \(\sqrt{f(x)}\), \(f(x) \geq 0\). For \(\frac{1}{f(x)}\), \(f(x) \neq 0\). For \(\log(f(x))\), \(f(x) > 0\).</li>
+                 <li><strong>Composite Functions:</strong> \((g \circ f)(x) = g(f(x))\).</li>
+                 <li><strong>Inverse Functions:</strong> \(f(f^{-1}(x)) = x\). A function must be <strong>bijective</strong> (one-to-one and onto) to have an inverse.</li>
+                 <li><strong>Types:</strong> <strong>Even:</strong> \(f(-x) = f(x)\). <strong>Odd:</strong> \(f(-x) = -f(x)\).</li>
+              </ul>
+           </div>
+           
+           <div class="card formula-card">
+              <h4>2. Mathematical Induction</h4>
+              <ul>
+                 <li><strong>Sum of first \(n\) natural numbers:</strong> \(\sum n = \frac{n(n+1)}{2}\).</li>
+                 <li><strong>Sum of squares:</strong> \(\sum n^2 = \frac{n(n+1)(2n+1)}{6}\).</li>
+                 <li><strong>Sum of cubes:</strong> \(\sum n^3 = \left[\frac{n(n+1)}{2}\right]^2\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>3. Matrices</h4>
+              <ul>
+                 <li><strong>Determinant (\(2 \times 2\)):</strong> \(|A| = ad - bc\).</li>
+                 <li><strong>Inverse:</strong> \(A^{-1} = \frac{\text{adj}(A)}{|A|}\).</li>
+                 <li><strong>Adjoint Properties:</strong>
+                    <br>\(A(\text{adj } A) = (\text{adj } A)A = |A|I\).
+                    <br>\(|\text{adj } A| = |A|^{n-1}\).
+                    <br>\(\text{adj}(AB) = \text{adj}(B)\text{adj}(A)\).
+                 </li>
+                 <li><strong>System of Equations (Cramer's Rule):</strong> \(x = \frac{\Delta_1}{\Delta}, y = \frac{\Delta_2}{\Delta}, z = \frac{\Delta_3}{\Delta}\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>4. Complex Numbers</h4>
+              <ul>
+                 <li><strong>Form:</strong> \(z = a + ib\); \(|z| = \sqrt{a^2+b^2}\).</li>
+                 <li><strong>Argument:</strong> \(\theta = \tan^{-1}(b/a)\).</li>
+                 <li><strong>Cube Roots of Unity:</strong> \(1, \omega, \omega^2\).
+                    <br>\(1 + \omega + \omega^2 = 0\).
+                    <br>\(\omega^3 = 1\).
+                 </li>
+                 <li><strong>Square root of \(a+ib\):</strong> \(\pm \left[ \sqrt{\frac{|z|+a}{2}} + i\text{sgn}(b)\sqrt{\frac{|z|-a}{2}} \right]\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>5. De Moivre’s Theorem</h4>
+              <ul>
+                 <li><strong>Theorem:</strong> \((\cos \theta + i\sin \theta)^n = \cos(n\theta) + i\sin(n\theta)\).</li>
+                 <li><strong>\(n\)-th roots of unity:</strong> \(z_k = e^{i\frac{2k\pi}{n}}\) for \(k = 0, 1, ..., n-1\).
+                    <br>Sum of \(n\)-th roots \(= 0\).
+                    <br>Product of \(n\)-th roots \(= (-1)^{n-1}\).
+                 </li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>6. Quadratic Expressions</h4>
+              <ul>
+                 <li><strong>Roots:</strong> \(x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\).</li>
+                 <li><strong>Nature of Roots (\(\Delta = b^2-4ac\)):</strong>
+                    <br>\(\Delta > 0\): Real and distinct.
+                    <br>\(\Delta = 0\): Real and equal.
+                    <br>\(\Delta < 0\): Complex conjugates.
+                 </li>
+                 <li><strong>Maximum/Minimum Value:</strong> For \(ax^2+bx+c\):
+                    <br>If \(a > 0\), Min value is \(\frac{4ac-b^2}{4a}\) at \(x = -b/2a\).
+                    <br>If \(a < 0\), Max value is \(\frac{4ac-b^2}{4a}\) at \(x = -b/2a\).
+                 </li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>7. Theory of Equations</h4>
+              <ul>
+                 <li><strong>Relation between roots and coefficients (Cubic):</strong> \(ax^3+bx^2+cx+d=0\)
+                    <br>\(\alpha + \beta + \gamma = -b/a\).
+                    <br>\(\alpha\beta + \beta\gamma + \gamma\alpha = c/a\).
+                    <br>\(\alpha\beta\gamma = -d/a\).
+                 </li>
+                 <li><strong>Condition for Arithmetic Progression (AP):</strong> \(2b^3 - 9abc + 27a^2d = 0\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>8. Permutations & Combinations</h4>
+              <ul>
+                 <li><strong>Permutations:</strong> \(^nP_r = \frac{n!}{(n-r)!}\).</li>
+                 <li><strong>Combinations:</strong> \(^nC_r = \frac{n!}{r!(n-r)!}\).</li>
+                 <li><strong>Circular Permutation:</strong> \((n-1)!\).</li>
+                 <li><strong>Key Identity:</strong> \(^nC_r + ^nC_{r-1} = ^{n+1}C_r\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>9. Binomial Theorem</h4>
+              <ul>
+                 <li><strong>General Term:</strong> \(T_{r+1} = ^nC_r x^{n-r} a^r\).</li>
+                 <li><strong>Middle Term:</strong>
+                    <br>If \(n\) is even: \((\frac{n}{2} + 1)^{th}\) term.
+                    <br>If \(n\) is odd: \((\frac{n+1}{2})^{th}\) and \((\frac{n+3}{2})^{th}\) terms.
+                 </li>
+                 <li><strong>Sum of Coefficients:</strong> Put all variables \(= 1\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>10. Partial Fractions</h4>
+              <ul>
+                 <li><strong>Linear Factors:</strong> \(\frac{1}{(x-a)(x-b)} = \frac{A}{x-a} + \frac{B}{x-b}\).</li>
+                 <li><strong>Repeated Factors:</strong> \(\frac{1}{(x-a)^2} = \frac{A}{x-a} + \frac{B}{(x-a)^2}\).</li>
+                 <li><strong>Quadratic Factors:</strong> \(\frac{1}{ax^2+bx+c} = \frac{Ax+B}{ax^2+bx+c}\).</li>
+              </ul>
+           </div>
+        </div>
+        
+        <div class="strategy-card">
+          <h4>💡 Quick Algebra Strategy for EAMCET:</h4>
+          <p><strong>Substitution is King:</strong> In Algebra, 40% of questions can be solved by substituting \(n=1, 2\) or \(x=1, 0\). This is especially true for Matrices, Induction, and Binomial Theorem. If the options contain \(n\), always test with a small number first!</p>
+        </div>
+      </div>
+      
+      <div id="form-phy" class="formulas-container hidden">
+         <div class="card subj-ph-card">
+          <i data-lucide="zap" class="subj-ph-ic c-phy"></i>
+          <h3 class="subj-ph-title">Physics Formulas</h3>
+          <p class="subj-ph-desc">We are preparing the physics formula sheet. Check back soon!</p>
+        </div>
+      </div>
+
+      <div id="form-chem" class="formulas-container hidden">
+         <div class="card subj-ph-card">
+          <i data-lucide="flask-conical" class="subj-ph-ic c-chem"></i>
+          <h3 class="subj-ph-title">Chemistry Formulas</h3>
+          <p class="subj-ph-desc">We are preparing the chemistry formula sheet. Check back soon!</p>
+        </div>
+      </div>
+    </div>
+
     <!-- MOCK TESTS -->
     <div class="page" id="page-papers">
       <div class="ptitle">Mock Tests</div>
@@ -465,6 +622,8 @@
 </div>
 
 <script src="eapcet-study-app.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 <script>
   // Auto-switch to tab specified in URL query param (?tab=papers)
   (function () {
