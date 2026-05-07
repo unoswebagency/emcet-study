@@ -834,6 +834,75 @@
             <li><strong>Property 4 (King's Rule):</strong> In Definite Integrals, if you see a complicated trig function with limits like \(0\) to \(\pi/2\), \(90\%\) of the time the answer will involve \(\int f(x) + f(\pi/2-x)\).</li>
           </ol>
         </div>
+
+        <!-- Dispersion & Probability Section -->
+        <h3 class="f-section-title">Dispersion & Probability</h3>
+        <div class="formula-grid">
+           <div class="card formula-card">
+              <h4>1. Measures of Dispersion</h4>
+              <ul>
+                 <li><strong>Mean (\(\bar{x}\)):</strong> \(\bar{x} = \frac{\sum x_i}{n}\).</li>
+                 <li><strong>Variance (\(\sigma^2\)):</strong>
+                    <br>\(\sigma^2 = \frac{\sum (x_i - \bar{x})^2}{n}\)
+                    <br>Alternative: \(\sigma^2 = \frac{\sum x_i^2}{n} - (\bar{x})^2\).
+                 </li>
+                 <li><strong>Standard Deviation (\(\sigma\)):</strong> \(\sigma = \sqrt{\text{Variance}}\).</li>
+                 <li><strong>Coefficient of Variation (C.V.):</strong> \(C.V. = \frac{\sigma}{\bar{x}} \times 100\).</li>
+                 <li><strong>Mean Deviation (M.D.):</strong>
+                    <br>About Mean: \(M.D. = \frac{\sum |x_i - \bar{x}|}{n}\).
+                    <br>About Median: \(M.D. = \frac{\sum |x_i - \text{Median}|}{n}\).
+                 </li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>2. Probability</h4>
+              <ul>
+                 <li><strong>Basic Formula:</strong> \(P(A) = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}}\).</li>
+                 <li><strong>Addition Theorem:</strong> \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\).</li>
+                 <li><strong>Conditional Probability:</strong> \(P(A|B) = \frac{P(A \cap B)}{P(B)}\).</li>
+                 <li><strong>Independent Events:</strong> \(P(A \cap B) = P(A) \cdot P(B)\).</li>
+                 <li><strong>Bayes' Theorem:</strong>
+                    <br>\(P(E_i|A) = \frac{P(E_i)P(A|E_i)}{\sum P(E_j)P(A|E_j)}\).
+                    <br>(Used when an event has already occurred and you need to find the probability of a specific cause).
+                 </li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>3. Random Variables & Distributions</h4>
+              <ul>
+                 <li><strong>Probability Mass Function (PMF):</strong> \(\sum P(X=x_i) = 1\).</li>
+                 <li><strong>Mean (Expected Value):</strong> \(\mu = E(X) = \sum x_i P(x_i)\).</li>
+                 <li><strong>Variance:</strong> \(V(X) = E(X^2) - [E(X)]^2\), where \(E(X^2) = \sum x_i^2 P(x_i)\).</li>
+              </ul>
+              
+              <h5 style="margin-top:1rem; margin-bottom:0.5rem; font-size:1rem; font-weight:600; color:var(--ink)">Binomial Distribution</h5>
+              <ul>
+                 <li><strong>Formula:</strong> \(P(X=r) = ^nC_r p^r q^{n-r}\) (where \(q = 1-p\)).</li>
+                 <li><strong>Mean:</strong> \(np\).</li>
+                 <li><strong>Variance:</strong> \(npq\).</li>
+              </ul>
+              
+              <h5 style="margin-top:1rem; margin-bottom:0.5rem; font-size:1rem; font-weight:600; color:var(--ink)">Poisson Distribution</h5>
+              <ul>
+                 <li><strong>Formula:</strong> \(P(X=x) = \frac{e^{-\lambda} \lambda^x}{x!}\).</li>
+                 <li><strong>Mean and Variance:</strong> Both are equal to \(\lambda\).</li>
+              </ul>
+           </div>
+        </div>
+
+        <div class="strategy-card">
+          <h4>💡 Quick Dispersion & Probability Strategy for EAMCET:</h4>
+          <ol class="strategy-list">
+            <li><strong>Venn Diagrams:</strong> For any "Set-based" probability question (e.g., "Probability that at least one of A or B occurs"), draw a quick Venn diagram. It is much harder to make a mistake visually than algebraically.
+              <br><img src="http://googleusercontent.com/image_content/183" alt="Venn Diagram Strategy" style="max-width:100%; height:auto; margin-top:0.5rem; border-radius:6px; border:1px solid var(--border);">
+            </li>
+            <li><strong>Property of Variance:</strong> Remember that \(Var(ax + b) = a^2 Var(x)\). Adding a constant to every observation does <strong>not</strong> change the variance, but multiplying every observation by a constant \(a\) changes the variance by \(a^2\).</li>
+            <li><strong>The "At Least" Trick:</strong> When a question asks for the probability of "at least one" success, it is almost always faster to calculate \(1 - P(\text{No success})\).</li>
+            <li><strong>Symmetry in Distributions:</strong> In Binomial distribution questions, if \(p = q = 0.5\), the distribution is symmetric, and the middle term will be the maximum probability.</li>
+          </ol>
+        </div>
       </div>
       
       <div id="form-phy" class="formulas-container hidden">
