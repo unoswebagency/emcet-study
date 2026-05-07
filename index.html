@@ -906,18 +906,142 @@
       </div>
       
       <div id="form-phy" class="formulas-container hidden">
-         <div class="card subj-ph-card">
-          <i data-lucide="zap" class="subj-ph-ic c-phy"></i>
-          <h3 class="subj-ph-title">Physics Formulas</h3>
-          <p class="subj-ph-desc">We are preparing the physics formula sheet. Check back soon!</p>
+        <h3 class="f-section-title">Mechanics & General Physics</h3>
+        <div class="formula-grid">
+           <div class="card formula-card">
+              <h4>1. Kinematics & Dynamics</h4>
+              <ul>
+                 <li><strong>Equations of Motion:</strong>
+                    <br>\(v = u + at\)
+                    <br>\(s = ut + \frac{1}{2}at^2\)
+                    <br>\(v^2 = u^2 + 2as\)
+                 </li>
+                 <li><strong>Newton's Second Law:</strong> \(F = ma = \frac{dp}{dt}\).</li>
+                 <li><strong>Work, Energy, Power:</strong>
+                    <br>\(W = \vec{F} \cdot \vec{d} = Fd \cos \theta\)
+                    <br>\(KE = \frac{1}{2}mv^2\), \(PE = mgh\)
+                    <br>\(P = \frac{W}{t} = \vec{F} \cdot \vec{v}\)
+                 </li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>2. Rotational Motion</h4>
+              <ul>
+                 <li><strong>Moment of Inertia:</strong> \(I = \sum m_i r_i^2\).
+                    <br>Ring: \(MR^2\), Disc: \(\frac{1}{2}MR^2\).
+                 </li>
+                 <li><strong>Torque:</strong> \(\vec{\tau} = \vec{r} \times \vec{F} = I\alpha\).</li>
+                 <li><strong>Angular Momentum:</strong> \(\vec{L} = \vec{r} \times \vec{p} = I\omega\).</li>
+              </ul>
+           </div>
+        </div>
+
+        <h3 class="f-section-title">Electromagnetism</h3>
+        <div class="formula-grid">
+           <div class="card formula-card">
+              <h4>3. Electrostatics & Circuits</h4>
+              <ul>
+                 <li><strong>Coulomb's Law:</strong> \(F = \frac{1}{4\pi\epsilon_0} \frac{q_1q_2}{r^2}\).</li>
+                 <li><strong>Electric Potential:</strong> \(V = \frac{W}{q}\).</li>
+                 <li><strong>Ohm's Law:</strong> \(V = IR\).</li>
+                 <li><strong>Capacitance:</strong> \(C = \frac{Q}{V}\).
+                    <br>Parallel Plate: \(C = \frac{\epsilon_0 A}{d}\).
+                 </li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>4. Magnetism & EMI</h4>
+              <ul>
+                 <li><strong>Magnetic Force:</strong> \(F = q(\vec{v} \times \vec{B})\).</li>
+                 <li><strong>Faraday's Law:</strong> \(\mathcal{E} = -\frac{d\Phi}{dt}\).</li>
+                 <li><strong>Transformer:</strong> \(\frac{V_s}{V_p} = \frac{N_s}{N_p}\).</li>
+              </ul>
+           </div>
+        </div>
+
+        <h3 class="f-section-title">Optics & Modern Physics</h3>
+        <div class="formula-grid">
+           <div class="card formula-card">
+              <h4>5. Ray & Wave Optics</h4>
+              <ul>
+                 <li><strong>Mirror/Lens Formula:</strong> \(\frac{1}{f} = \frac{1}{v} + \frac{1}{u}\) (Mirror), \(\frac{1}{f} = \frac{1}{v} - \frac{1}{u}\) (Lens).</li>
+                 <li><strong>Snell's Law:</strong> \(n_1 \sin \theta_1 = n_2 \sin \theta_2\).</li>
+                 <li><strong>Fringe Width:</strong> \(\beta = \frac{\lambda D}{d}\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>6. Modern Physics</h4>
+              <ul>
+                 <li><strong>Photoelectric Equation:</strong> \(h\nu = \Phi + K_{max}\).</li>
+                 <li><strong>De Broglie Wavelength:</strong> \(\lambda = \frac{h}{p} = \frac{h}{mv}\).</li>
+                 <li><strong>Mass-Energy Equivalence:</strong> \(E = mc^2\).</li>
+              </ul>
+           </div>
+        </div>
+
+        <div class="strategy-card">
+          <h4>💡 Physics Strategy for EAMCET:</h4>
+          <ol class="strategy-list">
+            <li><strong>Unit Check:</strong> Always verify units. If an answer is in Newtons, but your calculation used cm instead of meters, you'll pick the wrong option.</li>
+            <li><strong>Dimension Analysis:</strong> In complex formula-based questions, check the dimensions of the four options. Often, only one option has the correct dimensions for the quantity asked.</li>
+            <li><strong>Focus on High Weightage:</strong> Mechanics and Electromagnetism usually carry the most marks. Master these two first.</li>
+          </ol>
         </div>
       </div>
 
       <div id="form-chem" class="formulas-container hidden">
-         <div class="card subj-ph-card">
-          <i data-lucide="flask-conical" class="subj-ph-ic c-chem"></i>
-          <h3 class="subj-ph-title">Chemistry Formulas</h3>
-          <p class="subj-ph-desc">We are preparing the chemistry formula sheet. Check back soon!</p>
+        <h3 class="f-section-title">Physical & Inorganic Chemistry</h3>
+        <div class="formula-grid">
+           <div class="card formula-card">
+              <h4>1. Stoichiometry & Gases</h4>
+              <ul>
+                 <li><strong>Number of Moles (n):</strong> \(n = \frac{\text{mass}}{\text{molar mass}}\).</li>
+                 <li><strong>Ideal Gas Equation:</strong> \(PV = nRT\).</li>
+                 <li><strong>Graham's Law of Diffusion:</strong> \(\frac{r_1}{r_2} = \sqrt{\frac{M_2}{M_1}}\).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>2. Atomic Structure & Solutions</h4>
+              <ul>
+                 <li><strong>Bohr's Energy:</strong> \(E_n = -13.6 \frac{Z^2}{n^2}\) eV.</li>
+                 <li><strong>Molarity (M):</strong> \(\frac{\text{moles of solute}}{\text{vol of sol (L)}}\).</li>
+                 <li><strong>pH:</strong> \(pH = -\log [H^+]\).</li>
+              </ul>
+           </div>
+        </div>
+
+        <h3 class="f-section-title">Organic & General Chemistry</h3>
+        <div class="formula-grid">
+           <div class="card formula-card">
+              <h4>3. Chemical Bonding</h4>
+              <ul>
+                 <li><strong>Bond Order:</strong> \(\frac{1}{2}(N_b - N_a)\).</li>
+                 <li><strong>Formal Charge:</strong> \(V - L - \frac{1}{2}B\).</li>
+                 <li><strong>Hybridization:</strong> Based on sterric number (bonded atoms + lone pairs).</li>
+              </ul>
+           </div>
+
+           <div class="card formula-card">
+              <h4>4. Organic Tests</h4>
+              <ul>
+                 <li><strong>Lucas Test:</strong> Alcohols (3° > 2° > 1°).</li>
+                 <li><strong>Tollens' Test:</strong> Aldehydes (Silver Mirror).</li>
+                 <li><strong>Fehling's Test:</strong> Aliphatic Aldehydes (Red ppt).</li>
+              </ul>
+           </div>
+        </div>
+
+        <div class="strategy-card">
+          <h4>💡 Chemistry Strategy for EAMCET:</h4>
+          <ol class="strategy-list">
+            <li><strong>Inorganic is Free Marks:</strong> Trends in the periodic table (electronegativity, atomic radius, ionization energy) are frequently asked. Memorize these trends!</li>
+            <li><strong>Organic Mechanisms:</strong> Focus on Name Reactions (Wurtz, Kolbe, Reimer-Tiemann). They almost always appear in the exam.</li>
+            <li><strong>Calculations:</strong> Use approximations in Physical Chemistry (e.g., use \(0.082\) for R in gas laws) to save time on multiplication and division.</li>
+          </ol>
         </div>
       </div>
     </div>
@@ -944,10 +1068,43 @@
       </div>
 
       <div id="mock-math" class="mock-subj-container hidden">
-        <div class="card subj-ph-card">
-          <i data-lucide="hammer" class="subj-ph-ic c-math"></i>
-          <h3 class="subj-ph-title">Mathematics Tests</h3>
-          <p class="subj-ph-desc">We are preparing high-quality mock papers. Check back soon!</p>
+        <div class="test-card-grid">
+          <div class="card mock-paper-card">
+            <div class="mock-paper-icon">
+              <i data-lucide="file-text"></i>
+            </div>
+            <h3 class="mock-paper-title">Math Paper 1</h3>
+            <p class="mock-paper-meta">Coordinate Geometry • 30 Questions</p>
+            <a href="mock-test-12.html" class="pb2 pri mock-paper-btn">Start Test</a>
+          </div>
+
+          <div class="card mock-paper-card">
+            <div class="mock-paper-icon">
+              <i data-lucide="file-text"></i>
+            </div>
+            <h3 class="mock-paper-title">Math Paper 2</h3>
+            <p class="mock-paper-meta">Calculus • 30 Questions</p>
+            <a href="mock-test-13.html" class="pb2 pri mock-paper-btn">Start Test</a>
+          </div>
+
+          <div class="card mock-paper-card">
+            <div class="mock-paper-icon">
+              <i data-lucide="file-text"></i>
+            </div>
+            <h3 class="mock-paper-title">Math Paper 3</h3>
+            <p class="mock-paper-meta">Dispersion & Prob. • 30 Questions</p>
+            <a href="mock-test-14.html" class="pb2 pri mock-paper-btn">Start Test</a>
+          </div>
+
+          <div class="card mock-paper-card grand-test-card">
+            <div class="grand-badge">Grand Test</div>
+            <div class="mock-paper-icon">
+              <i data-lucide="award"></i>
+            </div>
+            <h3 class="mock-paper-title">Math Full Mock Test</h3>
+            <p class="mock-paper-meta">All Topics • 60 Questions</p>
+            <a href="mock-test-16.html" class="pb2 pri mock-paper-btn">Start Grand Test</a>
+          </div>
         </div>
       </div>
 
@@ -987,6 +1144,25 @@
             <h3 class="mock-paper-title">Chemistry Paper 4</h3>
             <p class="mock-paper-meta">Group 18 • 30 Questions</p>
             <a href="mock-test-6.html" class="pb2 pri mock-paper-btn">Start Test</a>
+          </div>
+
+          <div class="card mock-paper-card">
+            <div class="mock-paper-icon">
+              <i data-lucide="file-text"></i>
+            </div>
+            <h3 class="mock-paper-title">Chemistry Paper 5</h3>
+            <p class="mock-paper-meta">Organic Chemistry I • 30 Questions</p>
+            <a href="mock-test-15.html" class="pb2 pri mock-paper-btn">Start Test</a>
+          </div>
+
+          <div class="card mock-paper-card grand-test-card">
+            <div class="grand-badge">Grand Test</div>
+            <div class="mock-paper-icon">
+              <i data-lucide="award"></i>
+            </div>
+            <h3 class="mock-paper-title">Chem Full Mock Test</h3>
+            <p class="mock-paper-meta">All Topics • 60 Questions</p>
+            <a href="mock-test-17.html" class="pb2 pri mock-paper-btn">Start Grand Test</a>
           </div>
         </div>
       </div>
