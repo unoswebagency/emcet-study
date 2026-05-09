@@ -37,6 +37,7 @@
     <button class="ni" onclick="nav(this,'weightage')"><i data-lucide="pie-chart" class="ni-ic"></i>Weightage</button>
     <button class="ni" onclick="nav(this,'formulas')"><i data-lucide="function-square" class="ni-ic"></i>Formulas</button>
     <button class="ni" onclick="nav(this,'papers')"><i data-lucide="file-text" class="ni-ic"></i>Mock Tests</button>
+    <button class="ni" onclick="nav(this,'shortcuts')"><i data-lucide="zap" class="ni-ic"></i>Shortcuts</button>
 
     <div class="slbl">Tools</div>
     <button class="ni" onclick="nav(this,'todo')"><i data-lucide="check-square" class="ni-ic"></i>To-Do List</button>
@@ -1096,15 +1097,7 @@
             <a href="mock-test-14.html" class="pb2 pri mock-paper-btn">Start Test</a>
           </div>
 
-          <div class="card mock-paper-card grand-test-card">
-            <div class="grand-badge">Grand Test</div>
-            <div class="mock-paper-icon">
-              <i data-lucide="award"></i>
-            </div>
-            <h3 class="mock-paper-title">Math Full Mock Test</h3>
-            <p class="mock-paper-meta">All Topics • 60 Questions</p>
-            <a href="mock-test-16.html" class="pb2 pri mock-paper-btn">Start Grand Test</a>
-          </div>
+
         </div>
       </div>
 
@@ -1155,15 +1148,7 @@
             <a href="mock-test-15.html" class="pb2 pri mock-paper-btn">Start Test</a>
           </div>
 
-          <div class="card mock-paper-card grand-test-card">
-            <div class="grand-badge">Grand Test</div>
-            <div class="mock-paper-icon">
-              <i data-lucide="award"></i>
-            </div>
-            <h3 class="mock-paper-title">Chem Full Mock Test</h3>
-            <p class="mock-paper-meta">All Topics • 60 Questions</p>
-            <a href="mock-test-17.html" class="pb2 pri mock-paper-btn">Start Grand Test</a>
-          </div>
+
         </div>
       </div>
 
@@ -1239,6 +1224,3001 @@
       </div>
     </div>
 
+
+    <!-- SHORTCUTS -->
+<div class="page" id="page-shortcuts">
+  <div class="ptitle">Math Shortcuts</div>
+  <div class="psub">Top shortcuts per chapter to save time in the exam.</div>
+  <div class="ssw mb-2">
+    <button class="ssb sm on" onclick="swFormulas('short-math', this)"><i data-lucide="calculator" class="ic-sm"></i> Mathematics</button>
+  </div>
+  <div id="short-math" class="formulas-container">
+    <h3 class="f-section-title" style="margin-top: 2rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">Chapter 1 - Matrices & Determinants</h3>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 1: Determinant Value Hacks (Zero Calculation)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>1. The Arithmetic Progression (A.P.) Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If the elements of any row or column of a 3 × 3 determinant are in A.P., the determinant is ALWAYS 0.</li>
+             <li><strong>Example:</strong> |2 4 6; 1 5 9; 10 20 30|. Look at Row 1 (common diff = 2) and Row 2 (common diff = 4). Answer = 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>2. The Logarithmic Geometric Progression (G.P.) Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If the elements of a determinant are log values of terms in a G.P., the determinant is ALWAYS 0.</li>
+             <li><strong>Example:</strong> |log 2 log 4 log 8; log 3 log 9 log 27; log 5 log 25 log 125|. (Since 2, 4, 8 is a G.P., their logs form an A.P.). Answer = 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>3. Odd-Order Skew-Symmetric Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The determinant of ANY skew-symmetric matrix (Aᵀ = -A) of odd order (3 × 3, 5 × 5) is ALWAYS 0.</li>
+             <li><strong>Example:</strong> |0 7 -4; -7 0 5; 4 -5 0|. (Diagonals are 0, and aᵢⱼ = -aⱼᵢ). Answer = 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>4. Even-Order Skew-Symmetric Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The determinant of a skew-symmetric matrix of even order (2 × 2, 4 × 4) is ALWAYS a Perfect Square.</li>
+             <li><strong>Example:</strong> If asked for the determinant of a 4 × 4 skew-symmetric matrix and the options are (A) 14, (B) 16, (C) 18, (D) 20. Answer = 16 (only perfect square).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>5. Maximum Value with {0, 1}</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The maximum possible value of a 3 × 3 determinant whose elements are strictly 0 or 1 is exactly 2.</li>
+             <li><strong>Example:</strong> "What is the maximum value of a determinant formed using only the binary digits 0 and 1?" Answer = 2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>6. Maximum Value with {-1, 1}</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The maximum possible value of a 3 × 3 determinant whose elements are strictly -1 or 1 is exactly 4.</li>
+             <li><strong>Example:</strong> "What is the max value of a 3 × 3 matrix A where aᵢⱼ ∈ {-1, 1}?" Answer = 4.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>7. Diagonal/Triangular Product Rule</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> For any upper triangular, lower triangular, or diagonal matrix, the determinant is simply the product of its principal diagonal elements.</li>
+             <li><strong>Example:</strong> |5 8 9; 0 2 7; 0 0 -3|. Answer = 5 × 2 × (-3) = -30.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>8. The Vandermonde Standard</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> |1 1 1; a b c; a² b² c²| = (a-b)(b-c)(c-a).</li>
+             <li><strong>Example:</strong> |1 1 1; 4 5 6; 16 25 36|. Here a=4, b=5, c=6. Answer = (4-5)(5-6)(6-4) = (-1)(-1)(2) = 2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>9. The Circulant Root Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> For |x a a; a x a; a a x| = 0, the roots are ALWAYS -2a, a, a.</li>
+             <li><strong>Example:</strong> |x 5 5; 5 x 5; 5 5 x| = 0. Answer: Roots are -10, 5, 5.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>10. Cyclic Symmetric Expansion</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> |a b c; b c a; c a b| = -(a³ + b³ + c³ - 3abc).</li>
+             <li><strong>Example:</strong> |1 2 3; 2 3 1; 3 1 2|. Answer = -(1³ + 2³ + 3³ - 3(1)(2)(3)) = -(1 + 8 + 27 - 18) = -18.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 2: Adjoint & Inverse Hacks</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>11. The 2 times 2 Inverse Flash-Solve</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> For A = [a b; c d], A⁻¹ = 1/(ad-bc) [d -b; -c a]. (Swap main diagonal, flip signs of the other).</li>
+             <li><strong>Example:</strong> A = [2 3; 1 4]. Answer: A⁻¹ = 1/5 [4 -3; -1 2].</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>12. Adjoint Determinant Rule</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> |adj(A)| = |A|ⁿ⁻¹. For a 3 × 3 matrix, it is simply |A|².</li>
+             <li><strong>Example:</strong> If A is a 3 × 3 matrix and |A| = 4, find |adj A|. Answer = 4² = 16.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>13. Double Adjoint Determinant Rule</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> |adj(adj(A))| = |A|⁽ⁿ⁻¹⁾². For a 3 × 3 matrix, it is |A|⁴.</li>
+             <li><strong>Example:</strong> If A is a 3 × 3 matrix and |A| = 2, find |adj(adj(A))|. Answer = 2⁴ = 16.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>14. Double Adjoint Matrix Rule</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> adj(adj(A)) = |A|ⁿ⁻² · A.</li>
+             <li><strong>Example:</strong> If A = [1 5; 2 7], find adj(adj(A)). Since it's a 2 × 2 matrix, n-2 = 0. Answer = A = [1 5; 2 7].</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>15. Scalar Adjoint Rule</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> adj(kA) = kⁿ⁻¹ adj(A). For a 3 × 3 matrix, it becomes k² adj(A).</li>
+             <li><strong>Example:</strong> If A is a 3 × 3 matrix, find adj(3A). Answer = 9 adj(A).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>16. Reverse Cayley-Hamilton (Polynomial Inverse)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If A² - 4A + 3I = 0, find A⁻¹ by multiplying the equation by A⁻¹.</li>
+             <li><strong>Example:</strong> A - 4I + 3A⁻¹ = 0 ⇒ 3A⁻¹ = 4I - A. Answer: A⁻¹ = 1/3(4I - A).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>17. Single Cofactor Check (MCQ Hack)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> When finding adj(A) from 4 options, calculate ONLY C₁₁ (Row 1, Col 1). Look at the top-left element of the options.</li>
+             <li><strong>Example:</strong> A = [3 1 2; 2 -3 5; 5 2 -3]. C₁₁ = (-3)(-3) - (5)(2) = 9-10 = -1. Answer: Choose the option with -1 in the top-left corner.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 3: System of Equations</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>18. Homogeneous Non-Trivial Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If ax+by+cz=0, dx+ey+fz=0, gx+hy+iz=0 has a "non-trivial solution," the determinant of coefficients Δ MUST equal 0.</li>
+             <li><strong>Example:</strong> x+y+z=0, 2x-y+3z=0, kx+y+2z=0 has non-trivial solutions. Find k. Set |1 1 1; 2 -1 3; k 1 2| = 0. Answer: k = 5/2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>19. The "Linear Combination" Bypass</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> In a homogeneous system, if Equation 1 + Equation 2 matches the x and y coefficients of Equation 3, the determinant is automatically 0.</li>
+             <li><strong>Example:</strong> x+2y+z=0, 2x-y+3z=0, 3x+y+λz=0. Eq 1 + Eq 2 gives 3x + y + 4z = 0. To have non-trivial solutions, Eq 3 must be identical. Answer: λ = 4.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>20. Non-Homogeneous Infinite Solutions</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If the system has "infinite solutions," then Δ = 0, Δₓ = 0, Δᵧ = 0, Δz = 0.</li>
+             <li><strong>Example:</strong> Use Δ = 0 to quickly find the missing variable before checking the rest.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>21. Non-Homogeneous No Solution</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If the system has "no solution," then Δ = 0, but at least one of Δₓ, Δᵧ, Δz ≠ 0.</li>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 4: Properties of Special Matrices</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>22. Orthogonal Matrix Inverse</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If a matrix is orthogonal (AAᵀ = I), its inverse requires ZERO calculation. A⁻¹ = Aᵀ.</li>
+             <li><strong>Example:</strong> If A = [cosθ sinθ; -sinθ cosθ], find A⁻¹. Answer: Aᵀ = [cosθ -sinθ; sinθ cosθ].</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>23. Idempotent Matrix Determinant</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If A is idempotent (A² = A), its determinant can ONLY be 0 or 1.</li>
+             <li><strong>Example:</strong> If a matrix satisfies A² = A and is non-singular, what is |A|? Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>24. Involutory Matrix Inverse</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If A is involutory (A² = I), it is its own inverse. A⁻¹ = A.</li>
+             <li><strong>Example:</strong> The Pauli spin matrix σₓ = [0 1; 1 0] squares to I. Answer: Its inverse is [0 1; 1 0].</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>25. Nilpotent Matrix Trace & Determinant</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If A is nilpotent (Aᵏ = 0), its determinant is ALWAYS 0 and its Trace is ALWAYS 0.</li>
+             <li><strong>Example:</strong> If A = [0 5 6; 0 0 7; 0 0 0], A³ = 0. Answer: |A| = 0 and Trace = 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>26. Symmetric Product Commutativity</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If A and B are symmetric matrices, their product AB is symmetric IF AND ONLY IF they commute (AB = BA).</li>
+             <li><strong>Example:</strong> True/False: If A and B are symmetric, AB-BA is symmetric. Answer: False. AB-BA is ALWAYS skew-symmetric.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 5: Characteristic Equation & Eigen Hacks</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>27. The  2 times 2 Characteristic Shortcut</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Any 2 × 2 matrix A ALWAYS satisfies the equation: A² - (Trace)A + |A|I = 0.</li>
+             <li><strong>Example:</strong> A = [4 1; 2 3]. Trace = 4+3=7. |A| = 12-2 = 10. Answer: The equation is A² - 7A + 10I = 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>28. Trace = Sum of Roots</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The sum of the roots (eigenvalues) of a matrix is exactly equal to its Trace (sum of principal diagonal elements).</li>
+             <li><strong>Example:</strong> A = [5 1 2; 0 3 4; 0 0 -2]. Answer: Sum of roots = 5 + 3 - 2 = 6.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>29. Determinant = Product of Roots</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The product of the roots (eigenvalues) is exactly equal to the Determinant of the matrix (|A|).</li>
+             <li><strong>Example:</strong> For an upper triangular matrix, the roots are the diagonal elements. Product = 5 × 3 × (-2) = -30. Answer: |A| = -30</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>30. Determinant Parameter Isolation (D value hack)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If expanding a determinant with a variable λ yields Aλ³ + Bλ² + Cλ + D, you can find the constant term D instantly by plugging λ = 0 into the original determinant.</li>
+             <li><strong>Example:</strong> |2-λ 1; 3 4-λ| = λ² - 6λ + D. Find D. Substitute λ=0 ⇒ |2 1; 3 4| = 8 - 3. Answer: D = 5.</li>
+          </ul>
+       </div>
+    </div>
+    <h3 class="f-section-title" style="margin-top: 2rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">Chapter 2 - Permutations & Combinations</h3>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 1: Words, Numbers & Arrangements</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>1. The "Sum of All Numbers" Hack (No Zeros)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Sum = (n-1)! x (Sum of given digits) x (111... n times).</li>
+             <li><strong>Pattern:</strong> "Find the sum of all 4-digit numbers formed by 1, 2, 3, 4 without repetition."</li>
+             <li><strong>Example:</strong> n=4. Sum of digits = 1+2+3+4=10.Answer: 3! x 10 x 1111 = 6 x 10 x 1111 = 66660.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>2. The "Sum of All Numbers" Hack (With Zero)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Sum = [(n-1)! x (Sum) x (111... n times)] - [(n-2)! x (Sum) x (111... n-1 times)].</li>
+             <li><strong>Pattern:</strong> "Find the sum of all 4-digit numbers formed by 0, 1, 2, 3."</li>
+             <li><strong>Example:</strong> n=4. Sum = 6.Answer: [3! x 6 x 1111] - [2! x 6 x 111] = 39996 - 1332 = 38664.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>3. Circular Permutation (People around a table)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Exactly (n-1)! ways.</li>
+             <li><strong>Pattern:</strong> "In how many ways can 5 people sit around a circular table?"</li>
+             <li><strong>Example:</strong> (5-1)! = 4! = 24.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>4. Circular Permutation (Garland/Necklace)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Exactly (n-1)! / 2 ways. (Because clockwise and anti-clockwise look exactly the same).</li>
+             <li><strong>Pattern:</strong> "In how many ways can 6 distinct flowers form a garland?"</li>
+             <li><strong>Example:</strong> (6-1)! / 2 = 5! / 2 = 120 / 2 = 60.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>5. The "Always Together" Hack (String Method)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Tie the items that must be together into 1 single unit. Factorial of total units x Factorial of tied items.</li>
+             <li><strong>Pattern:</strong> "Arrange 'MOBILE' so that vowels are always together."</li>
+             <li><strong>Example:</strong> Vowels (O, I, E) = 1 unit. Consonants (M, B, L) = 3 units. Total = 4 units.Answer: 4! x 3! = 24 x 6 = 144.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>6. Difference of Permutations Formula</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> nPr - (n-1)Pr = r x (n-1)P(r-1).</li>
+             <li><strong>Pattern:</strong> "Evaluate 20P3 - 19P3."</li>
+             <li><strong>Example:</strong> Answer is simply 3 x 19P2 = 3 x (19 x 18) = 1026.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 2: Factors & Divisors</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>7. Total Number of Factors</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Prime factorize the number N = p^a x q^b x r^c. Total factors = (a+1)(b+1)(c+1).</li>
+             <li><strong>Pattern:</strong> "Find the total number of divisors of 60."</li>
+             <li><strong>Example:</strong> 60 = 2^2 x 3^1 x 5^1.Answer: (2+1)(1+1)(1+1) = 3 x 2 x 2 = 12.</li>
+          </ul>
+       </div>
+             <li><strong>Example:</strong> 60 = 2^2 x 3^1 x 5^1.Answer: (2+1)(1+1)(1+1) = 3 x 2 x 2 = 12.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>8. Number of ODD Factors</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Prime factorize. Ignore the power of 2 completely. Just add 1 to the other powers and multiply.</li>
+             <li><strong>Pattern:</strong> "Find the number of odd divisors of 360."</li>
+             <li><strong>Example:</strong> 360 = 2^3 x 3^2 x 5^1. Ignore the 2^3.Answer: (2+1)(1+1) = 3 x 2 = 6.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>9. Number of EVEN Factors</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Do not add 1 to the power of 2. Just use a(b+1)(c+1).</li>
+             <li><strong>Pattern:</strong> "Find the number of even divisors of 360."</li>
+             <li><strong>Example:</strong> 360 = 2^3 x 3^2 x 5^1.Answer: 3 x (2+1) x (1+1) = 3 x 3 x 2 = 18.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>10. Resolving into Two Factors</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If the number is not a perfect square, the ways to split it into two factors is exactly 1/2 x (Total Factors).</li>
+             <li><strong>Pattern:</strong> "In how many ways can 60 be written as a product of two factors?"</li>
+             <li><strong>Example:</strong> Total factors of 60 is 12.Answer: 12 / 2 = 6 ways.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>11. The Fractional Equation Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The number of positive integer solutions for 1/x + 1/y = 1/n is exactly the Total number of factors of n^2.</li>
+             <li><strong>Pattern:</strong> "Find the positive integral solutions for 1/x + 1/y = 1/10."</li>
+             <li><strong>Example:</strong> n^2 = 100 = 2^2 x 5^2.Answer: Factors of 100 = (2+1)(2+1) = 3 x 3 = 9.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 3: Distribution & Equations (Beggar's Method)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>12. Non-Negative Integral Solutions</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> For x1 + x2 + ... + xr = n, the number of non-negative solutions (>= 0) is (n+r-1)C(r-1).</li>
+             <li><strong>Pattern:</strong> "Find the non-negative integer solutions of x + y + z = 10."</li>
+             <li><strong>Example:</strong> n=10, r=3.Answer: (10+3-1)C(3-1) = 12C2 = 66.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>13. Positive Integral Solutions</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> For x1 + x2 + ... + xr = n, the number of positive solutions (>= 1) is (n-1)C(r-1).</li>
+             <li><strong>Pattern:</strong> "Find the positive integer solutions of x + y + z = 10."</li>
+             <li><strong>Example:</strong> n=10, r=3.Answer: (10-1)C(3-1) = 9C2 = 36.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>14. The Inequality Solutions Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> For x1 + x2 + ... + xr <= n, introduce a dummy variable. The answer is directly (n+r)Cr.</li>
+             <li><strong>Pattern:</strong> "Find the non-negative solutions for x + y + z &lt;= 10."</li>
+             <li><strong>Example:</strong> n=10, r=3.Answer: (10+3)C3 = 13C3 = 286.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 4: Geometry Hacks</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>15. Number of Diagonals</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> For an n-sided polygon, the number of diagonals is n(n-3)/2.</li>
+             <li><strong>Pattern:</strong> "Find the number of diagonals in a decagon (10 sides)."</li>
+             <li><strong>Example:</strong> n=10. Answer: 10(7)/2 = 35.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>16. Handshakes / Lines from points</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Between n people or points, the number of handshakes or straight lines is nC2 = n(n-1)/2.</li>
+             <li><strong>Pattern:</strong> "10 people meet and shake hands. How many handshakes?"</li>
+             <li><strong>Example:</strong> Answer: (10 x 9)/2 = 45.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>17. Lines with Collinear Points</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If there are n points and m of them are in a straight line, total lines = nC2 - mC2 + 1.</li>
+             <li><strong>Pattern:</strong> "10 points in a plane, 4 are collinear. How many lines can be drawn?"</li>
+             <li><strong>Example:</strong> Answer: 10C2 - 4C2 + 1 = 45 - 6 + 1 = 40.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>18. Triangles from points</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> From n points, you can make nC3 triangles.</li>
+             <li><strong>Pattern:</strong> "How many triangles from 8 non-collinear points?"</li>
+             <li><strong>Example:</strong> Answer: 8C3 = 56.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>19. Triangles with Collinear Points</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If m points are collinear out of n, total triangles = nC3 - mC3. (No "+1" here because collinear points cannot make a triangle).</li>
+             <li><strong>Pattern:</strong> "10 points in a plane, 4 are collinear. How many triangles?"</li>
+             <li><strong>Example:</strong> Answer: 10C3 - 4C3 = 120 - 4 = 116.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>20. Intersection of Lines</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The maximum number of intersection points for n straight lines is nC2.</li>
+             <li><strong>Pattern:</strong> "Find the maximum intersection points of 5 straight lines."</li>
+             <li><strong>Example:</strong> Answer: 5C2 = 10.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>21. Intersection of Circles</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The maximum number of intersection points for n circles is 2 x nC2 = n(n-1).</li>
+             <li><strong>Pattern:</strong> "Find maximum intersection points of 5 circles."</li>
+             <li><strong>Example:</strong> Answer: 5 x 4 = 20.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>22. Maximum Regions by Lines</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The maximum number of regions a plane is divided into by n lines is n(n+1)/2 + 1.</li>
+             <li><strong>Pattern:</strong> "Into how many maximum parts can 4 lines cut a paper?"</li>
+             <li><strong>Example:</strong> Answer: (4 x 5)/2 + 1 = 10 + 1 = 11.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 5: Grids, Boards & Derangements</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>23. Rectangles in a Grid (Chessboard)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> In an n x n grid, the number of rectangles is (n(n+1)/2)^2.</li>
+             <li><strong>Pattern:</strong> "How many rectangles are on a standard 8 x 8 chessboard?"</li>
+             <li><strong>Example:</strong> n=8. Answer: ((8 x 9)/2)^2 = 36^2 = 1296.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>24. Squares in a Grid (Chessboard)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> In an n x n grid, the number of squares is n(n+1)(2n+1)/6 (Sum of squares of first n numbers).</li>
+             <li><strong>Pattern:</strong> "How many squares are on a standard 8 x 8 chessboard?"</li>
+             <li><strong>Example:</strong> n=8. Answer: (8 x 9 x 17)/6 = 204.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>25. Shortest Grid Pathways</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The number of shortest paths from (0,0) to (m,n) on a grid is (m+n)Cm.</li>
+             <li><strong>Pattern:</strong> "Find the number of shortest paths from (0,0) to (3,4)."</li>
+             <li><strong>Example:</strong> m=3, n=4. Answer: (3+4)C3 = 7C3 = 35.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>26. The Derangement Memorization</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Derangements mean "nothing goes in its correct place" (like letters in wrong envelopes). Do not calculate it. Just memorize: D3 = 2, D4 = 9, D5 = 44.</li>
+             <li><strong>Pattern:</strong> "4 letters are put into 4 envelopes randomly. Ways that ALL are in the wrong envelope?"</li>
+             <li><strong>Example:</strong> Answer: D4 = 9.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>27. Selection from IDENTICAL items</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> To select at least 1 item from p identical items of one kind, q of another, and r of another: (p+1)(q+1)(r+1) - 1.</li>
+             <li><strong>Pattern:</strong> "Ways to select at least one fruit from 3 identical apples and 2 identical bananas."</li>
+             <li><strong>Example:</strong> Answer: (3+1)(2+1) - 1 = 12 - 1 = 11.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>28. Selection from DISTINCT items</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> To select at least 1 item from n distinctly different items: 2^n - 1.</li>
+             <li><strong>Pattern:</strong> "Ways a student can pass an exam having 5 distinct subjects."</li>
+             <li><strong>Example:</strong> Answer: 2^5 - 1 = 32 - 1 = 31.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>29. Exactly One Pair of Twin Items</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Number of ways to select r items from n pairs of shoes, such that there is EXACTLY one pair: nC1 x (n-1)C(r-2) x 2^(r-2).</li>
+             <li><strong>Pattern:</strong> "From 5 pairs of shoes, select 4 shoes such that exactly 1 pair is formed."</li>
+             <li><strong>Example:</strong> n=5, r=4. Answer: 5C1 x 4C2 x 2^2 = 5 x 6 x 4 = 120.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>30. Pascal's Triangle Addition</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> nCr + nC(r-1) = (n+1)Cr. (Increase top index by 1, keep the biggest bottom index).</li>
+             <li><strong>Pattern:</strong> "Evaluate 15C6 + 15C5."</li>
+             <li><strong>Example:</strong> The top matches (15), the bottom are neighbors (6, 5).Answer: Add 1 to top, keep biggest bottom -> 16C6.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 6: The Dictionary Rank Bypasses</h4>
+    <div class="formula-grid">
+             <li style="list-style-type: none; margin-left: -1rem; padding-top: 0.5rem; opacity: 0.8; font-size: 0.9em;">Traditional method: Drawing alphabetical trees and counting factorials manually.</li>
+       <div class="card formula-card">
+          <h4>31. The "Right-Side Smaller" Hack (Word Rank without repetition)</h4>
+          <ul>
+             <li style="list-style-type: none; margin-left: -1rem; padding-top: 0.5rem; opacity: 0.8; font-size: 0.9em;">The Shortcut: Write the word. Number letters alphabetically. Above each letter, write how many smaller numbers are to its right. Multiply these from right-to-left by 0!, 1!, 2!, 3!$ etc. Add 1 at the end.</li>
+             <li><strong>Example:</strong> Rank of MATH. (Alphabetical: A=1, H=2, M=3, T=4).</li>
+          </ul>
+       </div>
+             <li style="list-style-type: none; margin-left: -1rem; padding-top: 0.5rem; opacity: 0.8; font-size: 0.9em;">M(3) A(1) T(4) H(2).</li>
+             <li style="list-style-type: none; margin-left: -1rem; padding-top: 0.5rem; opacity: 0.8; font-size: 0.9em;">Smaller to right: M has 2 (A,H). A has 0. T has 1 (H). H has 0.</li>
+             <li style="list-style-type: none; margin-left: -1rem; padding-top: 0.5rem; opacity: 0.8; font-size: 0.9em;">Multiply: (2 × 3!) + (0 × 2!) + (1 × 1!) + (0 × 0!) = 12 + 0 + 1 + 0 = 13.</li>
+             <li style="list-style-type: none; margin-left: -1rem; padding-top: 0.5rem; opacity: 0.8; font-size: 0.9em;">Answer: 13 + 1 = 14.</li>
+       <div class="card formula-card">
+          <h4>32. The "Reverse Dictionary" Hack</h4>
+          <ul>
+             <li style="list-style-type: none; margin-left: -1rem; padding-top: 0.5rem; opacity: 0.8; font-size: 0.9em;">The Shortcut: If asked for the rank from the bottom (end of dictionary), simply find the normal rank of the word, and subtract it from the (Total possible words + 1).</li>
+    </div>
+    <h3 class="f-section-title" style="margin-top: 2rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">Chapter 3 - Sequence & Series</h3>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 1: Arithmetic Progression (A.P.)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>1. The "Reverse Term" Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The r-th term is exactly (m + n - r).</li>
+             <li><strong>Pattern:</strong> "If the m-th term of an A.P. is n, and the n-th term is m, find the r-th term."</li>
+             <li><strong>Example:</strong> The 10th term is 5, and the 5th term is 10. Find the 15th term. Answer: 10 + 5 - 15 = 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>2. The "Reverse Sum" Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The sum of (m + n) terms is always -(m + n).</li>
+             <li><strong>Pattern:</strong> "If the sum of m terms of an A.P. is n, and the sum of n terms is m, find the sum of m+n terms."</li>
+             <li><strong>Example:</strong> S10 = 20, and S20 = 10. Find S30. Answer: -(10 + 20) = -30.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>3. The "Equal Multiples" Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The (m + n)-th term is always 0.</li>
+             <li><strong>Pattern:</strong> "If m times the m-th term of an A.P. is equal to n times the n-th term, find the (m+n)-th term."</li>
+             <li><strong>Example:</strong> 5 · T5 = 8 · T8. Find T13. Answer: T13 = 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>4. The "Equal Sums" Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The sum of (m + n) terms is always 0.</li>
+             <li><strong>Pattern:</strong> "If the sum of the first m terms of an A.P. equals the sum of the first n terms..."</li>
+             <li><strong>Example:</strong> If S5 = S10, find S15. Answer: S15 = 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>5. Ratio of Sums to Ratio of Terms</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Replace 'n' with (2n - 1) in the given ratio.</li>
+             <li><strong>Pattern:</strong> "Given the ratio of the sums of n terms of two A.P.s, find the ratio of their n-th terms."</li>
+             <li><strong>Example:</strong> Ratio of sums is (3n + 1) : (2n - 3). Find the ratio of 5th terms. Substitute n = 2(5) - 1 = 9. Answer: (27+1) : (18-3) = 28 : 15.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>6. Ratio of Terms to Ratio of Sums</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Replace 'n' with ½(n + 1) in the given ratio.</li>
+             <li><strong>Pattern:</strong> "Given the ratio of the n-th terms of two A.P.s, find the ratio of the sum of their n terms."</li>
+             <li><strong>Example:</strong> Ratio of terms is (2n + 1) : (n + 3). Find the ratio of the sum of 7 terms. Substitute n = (7+1)/2 = 4. Answer: (8+1) : (4+3) = 9 : 7.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>7. Common Terms of Two A.P.s</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The common terms form a new A.P. whose common difference is the LCM of the two original common differences.</li>
+             <li><strong>Pattern:</strong> "Find the number of common terms between two given A.P.s."</li>
+             <li><strong>Example:</strong> A.P. 1 has a common difference of 3. A.P. 2 has a common difference of 4. The new common A.P. will have a difference of LCM(3, 4) = 12.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>8. Sum of an Odd Number of Terms</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Sum = n * (Middle Term).</li>
+             <li><strong>Pattern:</strong> "The sum of n terms (where n is odd) of an A.P. is given..."</li>
+             <li><strong>Example:</strong> Find the sum of 11 terms of an A.P. if its 6th term (middle term) is 20. Answer: 11 × 20 = 220.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>9. The Fractional Terms Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The (mn)-th term is exactly 1. The sum of (mn) terms is ½(mn + 1).</li>
+             <li><strong>Pattern:</strong> "If the p-th term of an A.P. is ¹/q and the q-th term is ¹/p..."</li>
+             <li><strong>Example:</strong> T3 = ¼, and T4 = ⅓. Find T12. Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>10. Maximum Sum of an A.P.</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Identify the last positive term in the series. The sum up to that term is the absolute maximum.</li>
+             <li><strong>Pattern:</strong> "Find the maximum possible sum of the given A.P. (which starts positive and decreases)."</li>
+             <li><strong>Example:</strong> A.P. is 20, 18, 16... The last positive term is 2 (which is the 10th term). The maximum sum is S10.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>11. Three Terms in A.P.</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> ALWAYS assume the three terms as (a - d), (a), and (a + d).</li>
+             <li><strong>Pattern:</strong> "The sum of three numbers in A.P. is S and their product is P."</li>
+             <li><strong>Example:</strong> The sum of three numbers in A.P. is 15. (a-d) + a + (a+d) = 15 --> 3a = 15 --> a = 5. (Instantly finds the middle term).</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 2: Geometric Progression (G.P.)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>12. Product of 'n' Terms in G.P.</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Product = (First Term × Last Term)n/2.</li>
+             <li><strong>Pattern:</strong> "Find the product of the first n terms of a G.P."</li>
+             <li><strong>Example:</strong> Product of 5 terms where the 1st term is 2 and the 5th term is 32. Answer: (2 × 32)5/2 = (64)5/2 = 215.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>13. Three Terms in G.P.</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> ALWAYS assume the three terms as (a/r), (a), and (ar).</li>
+             <li><strong>Pattern:</strong> "The product of three numbers in G.P. is P."</li>
+             <li><strong>Example:</strong> The product of 3 numbers is 216. (a/r) · a · (ar) = a3 = 216 --> a = 6. (Instantly finds the middle term).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>14. The Exponent Cancellation Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The value of xq-r · yr-p · zp-q is ALWAYS exactly 1.</li>
+             <li><strong>Pattern:</strong> "If the p-th, q-th, and r-th terms of a G.P. are x, y, z respectively, evaluate..."</li>
+             <li><strong>Example:</strong> (Matches pattern exactly). Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>15. Logarithms of a G.P.</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If a, b, c are in G.P., then log(a), log(b), log(c) are ALWAYS in A.P.</li>
+             <li><strong>Pattern:</strong> "If a, b, c are in G.P., then log_x(a), log_x(b), log_x(c) are in..."</li>
+             <li><strong>Example:</strong> (Matches pattern exactly). Answer: Arithmetic Progression (A.P.).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>16. Infinite G.P. Condition Trick</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> S∞ = a / (1 - r). But it is a trap! This formula is ONLY valid if -1 < r < 1.</li>
+             <li><strong>Pattern:</strong> "Evaluate the infinite geometric series for x..."</li>
+             <li><strong>Example:</strong> If 1 + x + x2 ... = 4, find x. Answer: 1 / (1-x) = 4 --> 1 = 4 - 4x --> x = ¾. (Valid because ¾ is between -1 and 1).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>17. Recurring Decimals to Fractions</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> 0.pqr_pqr_pqr... = pqr / 999.</li>
+             <li><strong>Pattern:</strong> "Convert the recurring decimal into a fraction using geometric series."</li>
+             <li><strong>Example:</strong> Convert 0.123123... into a fraction. Answer: 123 / 999 (which simplifies to 41 / 333).</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 3: Harmonic Progression (H.P.) & Means</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>18. The Progression Test Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Check the ratio (a - b) / (b - c). It equals 1 for A.P., (a / b) for G.P., and (a / c) for H.P.</li>
+             <li><strong>Pattern:</strong> "Determine if a, b, c are in A.P., G.P., or H.P."</li>
+             <li><strong>Example:</strong> For the numbers 2, 3, 6. The ratio is (2-3)/(3-6) = -1/-3 = 1/3. Since 1/3 matches a/c (2/6), the numbers are in H.P.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>19. H.P. Reverse Term Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The r-th term is exactly (mn / r).</li>
+             <li><strong>Pattern:</strong> "If the m-th term of an H.P. is n, and the n-th term is m, find the r-th term."</li>
+             <li><strong>Example:</strong> 4th term is 5, 5th term is 4. Find the 10th term. Answer: (4 * 5) / 10 = 2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>20. The "Means" Relation</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The Arithmetic (A), Geometric (G), and Harmonic (H) means always satisfy: G2 = A · H.</li>
+             <li><strong>Pattern:</strong> "Given two of the means between two numbers, find the third."</li>
+             <li><strong>Example:</strong> AM = 5, HM = 3.2. Find GM. G^2 = 5 * 3.2 = 16 --> G = 4.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>21. Find Numbers from their Means</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The two numbers are the roots of the quadratic equation: x2 - 2Ax + G2 = 0.</li>
+             <li><strong>Pattern:</strong> "If A and G are the arithmetic and geometric means between two numbers, find the numbers."</li>
+             <li><strong>Example:</strong> A = 5, G = 4. Equation is x2 - 10x + 16 = 0. Roots are 8 and 2. Answer: The numbers are 8 and 2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>22. AM >= GM Inequality Bypass</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The minimum value of an algebraic sum involving inverses is found by setting AM ≥ GM.</li>
+             <li><strong>Pattern:</strong> "Find the minimum value of (x + a/x) where x > 0."</li>
+             <li><strong>Example:</strong> Find min of x + 9/x. AM ≥ GM --> (x + 9/x)/2 ≥ sqrt(x · 9/x) --> (x + 9/x)/2 ≥ 3. Answer: Minimum value is 6.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 4: Special Series & Sums</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>23. Telescopic Series (Method of Differences)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Sum = (1 / d) · [ (1 / First Factor) - (1 / Last Factor) ].</li>
+             <li><strong>Pattern:</strong> "Find the sum of 1/[a(a+d)] + 1/[(a+d)(a+2d)] + ..."</li>
+             <li><strong>Example:</strong> Find sum of 1/(1·3) + 1/(3·5) + 1/(5·7) ... up to n terms. d=2. Answer: (½) · [ 1/1 - 1/(2n+1) ].</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>24. The Natural Fraction Standard</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> 1/(1·2) + 1/(2·3) + ... + 1/[n(n+1)] = n / (n + 1).</li>
+             <li><strong>Pattern:</strong> "Evaluate the sum of the series 1/2 + 1/6 + 1/12 ..."</li>
+             <li><strong>Example:</strong> Sum of 99 terms of this series. Answer: 99 / 100.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>25. Sum of First 'n' ODD Numbers</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The sum is exactly n2.</li>
+             <li><strong>Pattern:</strong> "Find the sum of 1 + 3 + 5 + 7... up to n terms."</li>
+             <li><strong>Example:</strong> Sum of the first 20 odd numbers. Answer: 202 = 400.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>26. Sum of First 'n' EVEN Numbers</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The sum is exactly n(n + 1).</li>
+             <li><strong>Pattern:</strong> "Find the sum of 2 + 4 + 6 + 8... up to n terms."</li>
+             <li><strong>Example:</strong> Sum of the first 20 even numbers. Answer: 20 × 21 = 420.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>27. Finding 'd' from a Sum Equation</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If Sn = An2 + Bn, then the common difference (d) is exactly 2A.</li>
+             <li><strong>Pattern:</strong> "If the sum of n terms of an A.P. is given by a quadratic expression, find the common difference."</li>
+             <li><strong>Example:</strong> Sn = 3n2 + 5n. Here A = 3. Answer: d = 2 × 3 = 6.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>28. Finding 'a' from a Sum Equation</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If Sn = An2 + Bn, then the first term (a) is exactly A + B.</li>
+             <li><strong>Pattern:</strong> "If the sum of n terms of an A.P. is given by a quadratic expression, find the first term."</li>
+             <li><strong>Example:</strong> Sn = 3n2 + 5n. Answer: a = 3 + 5 = 8.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>29. Arithmetico-Geometric Progression (AGP) Infinity</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> S∞ = a / (1 - r) + dr / (1 - r)2.</li>
+             <li><strong>Pattern:</strong> "Find the sum to infinity of a series where the terms are products of an A.P. and a G.P."</li>
+             <li><strong>Example:</strong> Find sum of 1 + 2(1/2) + 3(1/4) + 4(1/8)... Here a=1, d=1, r=1/2. Answer: [1 / (1/2)] + [(1 * 1/2) / (1/4)] = 2 + 2 = 4.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>30. The "Put n = 1" MCQ Hack (Ultimate Time Saver)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> NEVER expand complex sum formulas. Simply plug n = 1 into the given series to find the value of the first term. Then, plug n = 1 into the four multiple-choice options. The correct option MUST equal your first term.</li>
+             <li><strong>Pattern:</strong> "The sum of the series 12 + 23 + 3*4 ... + n(n+1) is equal to [Options with 'n']"</li>
+             <li><strong>Example:</strong> Step 1: Put n = 1 in the series. The first term is 1 × 2 = 2. Step 2: Check Option A: [n(n+1)(n+2)] / 3. Put n=1 --> [1·2·3]/3 = 2. Answer: Option A is correct. No complex algebra needed!</li>
+          </ul>
+       </div>
+    </div>
+    <h3 class="f-section-title" style="margin-top: 2rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">Chapter 4 - Indefinite Integration</h3>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 1: The MCQ Option Elimination Hacks (Zero Integration)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>1. The "Reverse Derivative" Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When you are given a highly complex integral and 4 distinct, relatively simple multiple-choice options.</li>
+             <li><strong>Shortcut:</strong> Integration is just anti-derivation. Differentiate the simplest-looking option mentally. If it matches the question, that is your answer.</li>
+             <li><strong>Example:</strong> Question: Integrate a complex algebraic fraction. Option A is log(x+1). Differentiating Option A gives 1/(x+1). If the question simplifies to 1/(x+1), Option A is correct.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>2. The "Put x = 0" Value Match</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When differentiating all 4 options algebraically would take too much time.</li>
+             <li><strong>Shortcut:</strong> Put x = 0 (or x = 1) into the question's integrand to get a numerical value. Then, mentally differentiate the 4 options, immediately plug in that same x value, and find which option gives the exact same number.</li>
+             <li><strong>Example:</strong> The question expression equals 5 at x = 0. Differentiating Option A and putting x = 0 gives 3. Differentiating Option B and putting x = 0 gives 5. Option B is correct.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>3. The Degree/Dimensionality Match</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating a polynomial or an algebraic fraction where the numerator's degree is higher than the denominator's.</li>
+             <li><strong>Shortcut:</strong> The degree of the answer MUST be exactly one higher than the effective degree of the integrand.</li>
+             <li><strong>Example:</strong> Integrate ∫(x3 + 2x) / (x + 1) dx. The numerator degree is 3, denominator is 1. The effective degree is 2 (x2). Therefore, the answer MUST have a highest power of x3. Eliminate options with x4 or x2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>4. The Parity (Odd/Even) Eliminator</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating a purely odd or purely even function.</li>
+             <li><strong>Shortcut:</strong> The integral of an ODD function is ALWAYS an EVEN function (plus C). The integral of an EVEN function is ALWAYS an ODD function (plus C).</li>
+             <li><strong>Example:</strong> Integrate ∫x3 cos(x) dx. Since this is an odd function, the answer MUST be an even function. Eliminate any options that are odd functions.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>5. The "Improper Fraction" Log Spotter</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating a rational function where the Degree of Numerator = Degree of Denominator.</li>
+             <li><strong>Shortcut:</strong> The answer MUST contain an isolated 'x' term outside of any logs. Eliminate options that ONLY have log terms.</li>
+             <li><strong>Example:</strong> Integrate ∫x / (x+1) dx. Both degrees are 1. The answer must have an isolated x. Answer: x - log|x+1| + C.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 2: The "Reverse Rule" Spotters (Visual Patterns)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>6. The Reverse Product Rule Bypass</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating a sum of two terms, where one term has an x attached to it, and the other term is its integral.</li>
+             <li><strong>Shortcut:</strong> If the integral fits the pattern ∫ [ f(x) + x · f'(x) ] dx, the answer is ALWAYS exactly: x · f(x) + C.</li>
+             <li><strong>Example:</strong> Integrate ∫[log(x) + 1] dx. Rewrite as log(x) + x · (1/x). Here f(x) = log(x). Answer: x log(x) + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>7. The Reverse Quotient Rule Bypass</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating a fraction with x2 in the denominator and a subtraction in the numerator.</li>
+             <li><strong>Shortcut:</strong> If you see the pattern ∫ [ (x · f'(x) - f(x)) / x2 ] dx, the answer is ALWAYS exactly: f(x) / x + C.</li>
+             <li><strong>Example:</strong> Integrate ∫[ (xcos x - sin x) / x2 ] dx. Here f(x) = sin x. Answer: (sin x) / x + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>8. The Disguised Chain Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If an integral looks like a nested function multiplied by the exact derivative of the inside.</li>
+             <li><strong>Shortcut:</strong> Integrate ONLY the outside function, leaving the inside untouched.</li>
+             <li><strong>Example:</strong> Integrate ∫[sec²(x) · etan x] dx. The derivative of tan x is sec² x. So, integrate einside. Answer: etan x + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>9. The Logarithmic Bracket Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating a fraction multiplied by the log of its own denominator.</li>
+             <li><strong>Shortcut:</strong> ∫ [ (f'(x) / f(x)) · log|f(x)| ] dx is ALWAYS: (1/2) · (log|f(x)|)² + C.</li>
+             <li><strong>Example:</strong> Integrate ∫[ (2x / (x²+1)) · log(x²+1) ] dx. Answer: (1/2) · [log(x²+1)]² + C.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 3: Algebraic Fraction Bypasses</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>10. Heaviside Cover-Up Method (Partial Fractions Hack)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating 1 divided by distinct linear factors.</li>
+             <li><strong>Shortcut:</strong> To find the numerator constant A for (x-a), hide (x-a) in the original fraction and plug x=a into whatever is left.</li>
+             <li><strong>Example:</strong> Integrate ∫1 / ((x-1)(x-2)) dx. For (x-1): hide it, put x=1 in 1/(x-2) → -1. For (x-2): hide it, put x=2 in 1/(x-1) → 1. Answer: -log|x-1| + log|x-2| + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>11. Linear / Linear Fraction Coefficient Trick</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When you have a first-degree polynomial divided by another first-degree polynomial: (ax+b)/(cx+d).</li>
+             <li><strong>Shortcut:</strong> Answer = (a/c)x - [ (ad - bc) / c2 ] · log|cx+d| + C.</li>
+             <li><strong>Example:</strong> Integrate ∫(5x - 2) / (3x + 4) dx. a=5, b=-2, c=3, d=4. Determinant (ad-bc) = 20 - (-6) = 26. Answer: (5/3)x - (26/9)log|3x + 4| + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>12. The "Max Power Pullout" Trick</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating forms like 1 / [ xn · (1 + xn)1/n ].</li>
+             <li><strong>Shortcut:</strong> Pull out the HIGHEST power of x from inside the bracket. It will form the exact derivative of the new bracket in the numerator.</li>
+             <li><strong>Example:</strong> Pull out xn from the bracket. It becomes x outside, making the denominator xn+1. Substitute (1 + 1/xn) = t.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>13. The x(x^n + 1) Log Trick</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When you see a single x outside a bracket, and x to a power + 1 inside the bracket in the denominator.</li>
+             <li><strong>Shortcut:</strong> ∫ 1 / [x(xn + 1)] dx is ALWAYS: (1/n) · log | xn / (xn + 1) | + C.</li>
+             <li><strong>Example:</strong> Integrate ∫1 / [x(x7 + 1)] dx. Here, n = 7. Answer: (1/7) · log | x7 / (x7 + 1) | + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>14. The x(x^n - 1) Log Trick</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When you see a single x outside a bracket, and x to a power - 1 inside the bracket.</li>
+             <li><strong>Shortcut:</strong> ∫ 1 / [x(xn - 1)] dx is ALWAYS: (1/n) · log | (xn - 1) / xn | + C. (Notice the fraction is flipped).</li>
+             <li><strong>Example:</strong> Integrate ∫1 / [x(x5 - 1)] dx. Answer: (1/5) · log | (x5 - 1) / x5 | + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>15. The x^4 + 1 Twin Integral Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating (x2 + 1) / (x4 + 1) or (x2 - 1) / (x4 + 1).</li>
+             <li><strong>Shortcut:</strong> ALWAYS divide the numerator and denominator by x2.</li>
+             <li><strong>Example:</strong> Integrate ∫(x2 + 1) / (x4 + 1) dx. Divide by x2. It becomes (1 + 1/x2) / ((x - 1/x)² + 2). Substitute (x - 1/x) = t.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 4: The D.I. Tabular Method (Beating Integration by Parts)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>16. Polynomial × Exponential Tabular Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Any time a question has a polynomial (x2, x3) multiplied by an exponential (ex).</li>
+             <li><strong>Shortcut:</strong> Make a D (Derivative) column and an I (Integral) column. Diff the polynomial to 0. Integrate the exponential. Multiply diagonally with alternating (+), (-), (+) signs.</li>
+             <li><strong>Example:</strong> Integrate ∫x2 ex dx.D column: x2 → 2x → 2 → 0.I column: ex → ex → ex → ex.Multiply diagonally: (+)(x2 ex) - (2x ex) + (2 ex). Answer: ex(x2 - 2x + 2) + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>17. Polynomial × Sine/Cosine Tabular Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Any time a question has a polynomial multiplied by a sine or cosine function.</li>
+             <li><strong>Shortcut:</strong> Same as #16. Diff the polynomial to 0. Integrate the trig function repeatedly. Multiply diagonally with (+), (-), (+) signs.</li>
+             <li><strong>Example:</strong> Integrate ∫x2 sin(x) dx.D column: x2 → 2x → 2 → 0.I column: sin x → -cos x → -sin x → cos x.Answer: -x2cos(x) + 2xsin(x) + 2cos(x) + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>18. The "Alone Inverse" Attachment</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating a single inverse trigonometric function like arcsin(x) or arccos(x) alone.</li>
+             <li><strong>Shortcut:</strong> Attach x to the function, then ADD or SUBTRACT the standard root derivative.</li>
+             <li><strong>Example:</strong> Integrate ∫arcsin(x) dx. Answer: xarcsin(x) + √(1-x2) + C.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 5: Trigonometric Substitutions & Traps</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>19. Linear Trig / Linear Trig Coefficient Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When you have sine and cosine added together in the numerator, divided by sine and cosine added together in the denominator.</li>
+             <li><strong>Shortcut:</strong> For (acos x + bsin x) / (ccos x + dsin x), the answer is ALWAYS: Ax + Blog|Denominator|.Where A = (ac + bd) / (c2 + d2) and B = (ad - bc) / (c2 + d2).</li>
+             <li><strong>Example:</strong> Integrate ∫(3cos x + 2sin x) / (4cos x + 5sin x) dx.A = (12+10)/(16+25) = 22/41. B = (15-8)/41 = 7/41.Answer: (22/41)x + (7/41)log|4cos x + 5sin x| + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>20. The a^2 cos^2 + b^2 sin^2 Denominator Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating 1 / (a2 cos² x + b2 sin² x).</li>
+             <li><strong>Shortcut:</strong> The answer ALWAYS has the exact form: (1/ab) · arctan((b/a)tan x) + C.</li>
+             <li><strong>Example:</strong> Integrate ∫1 / (9 cos² x + 16 sin² x) dx. Here a=3, b=4. Answer: (1/12) arctan((4/3)tan x) + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>21. The Conjugate Flip (sec + tan)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating 1 divided by the sum of secant and tangent.</li>
+             <li><strong>Shortcut:</strong> ∫ [ 1 / (sec x + tan x) ] dx is instantly ∫ [ sec x - tan x ] dx.</li>
+             <li><strong>Example:</strong> Integral becomes sec x - tan x. Answer: log|sec x + tan x| - log|sec x| + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>22. The Conjugate Flip (csc + cot)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating 1 divided by the sum of cosecant and cotangent.</li>
+             <li><strong>Shortcut:</strong> ∫ [ 1 / (csc x + cot x) ] dx is instantly ∫ [ csc x - cot x ] dx.</li>
+             <li><strong>Example:</strong> Integral becomes csc x - cot x. Answer: log|csc x - cot x| - log|sin x| + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>23. The Root Ratio Rationalizer</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating √((a-x)/(a+x)).</li>
+             <li><strong>Shortcut:</strong> Rationalize the NUMERATOR (multiply top and bottom by √(a-x)). It splits into two easy standard fractions.</li>
+             <li><strong>Example:</strong> The fraction becomes (a-x) / √(a2-x2) = a/√(a2-x2) - x/√(a2-x2).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>24. The Perfect Square Trig Denominator</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When you see √(1 + sin(2x)) in the denominator.</li>
+             <li><strong>Shortcut:</strong> √(1 + sin(2x)) is exactly (sin x + cos x).</li>
+             <li><strong>Example:</strong> Integrate ∫(cos x - sin x) / √(1 + sin(2x)) dx. The denominator becomes (sin x + cos x). The numerator is its exact derivative. Answer: log|sin x + cos x| + C.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 6: The "Disguised e^x" Manipulations</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>25. The "Adding Zero" e^x Trap</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating ex [ x / (x+1)2 ].</li>
+             <li><strong>Shortcut:</strong> Add and subtract 1 in the algebraic numerator to perfectly force the ex [f(x) + f'(x)] pattern.</li>
+             <li><strong>Example:</strong> Write x as (x+1-1). Fraction splits to 1/(x+1) - 1/(x+1)2. This perfectly matches f(x) + f'(x). Answer: ex / (x+1) + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>26. The Quadratic e^x Trap</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating ex [ (x2+1) / (x+1)2 ].</li>
+             <li><strong>Shortcut:</strong> Add and subtract 2x in the numerator to force the split.</li>
+             <li><strong>Example:</strong> Write x2+1 as (x2 - 1 + 2). The split forms the f(x) + f'(x) pattern. Answer: ex (x-1)/(x+1) + C.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>27. The Log Substitution e^x Bypass</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating sin(log x) + cos(log x).</li>
+             <li><strong>Shortcut:</strong> Substitute log x = t (so x = et). The integral transforms into the classic et [f(t) + f'(t)].</li>
+             <li><strong>Example:</strong> Becomes et(sin t + cos t). Answer: et sin t = x sin(log x) + C.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 7: Specific Irrational Root Rules</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>28. The 1 / (Linear × sqrt(Linear)) Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating 1 / [ (ax+b) √(cx+d) ].</li>
+             <li><strong>Shortcut:</strong> NEVER use parts. ALWAYS substitute the entire inside of the root: cx+d = t2.</li>
+             <li><strong>Example:</strong> Integrate ∫1 / [ (x+1)√(x+2) ] dx. Put x+2 = t2 → dx = 2t dt. The substitution will clear the root completely.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>29. The 1 / (Linear × sqrt(Quadratic)) Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating 1 / [ x √(x2+1) ].</li>
+             <li><strong>Shortcut:</strong> You must substitute the LINEAR part OUTSIDE the root as 1/t.</li>
+             <li><strong>Example:</strong> Put x = 1/t → dx = -1/t2 dt. The quadratic inside collapses easily.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>30. The "Trig Inverse Root" Bypass</h4>
+          <ul>
+             <li><strong>Pattern:</strong> When integrating arctan(√((1-x)/(1+x))).</li>
+             <li><strong>Shortcut:</strong> Substitute x = cos(2t). The entire root collapses into tan(t), and the arctan cancels it out completely.</li>
+             <li><strong>Example:</strong> Put x = cos(2t). Root becomes tan(t). Integral is just t. Answer is (1/2)arccos(x) + C.</li>
+          </ul>
+       </div>
+    </div>
+    <h3 class="f-section-title" style="margin-top: 2rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">Chapter 5 - Definite Integration</h3>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 1: The "King's Rule" Bypasses</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>1. The Universal (b-a)/2 Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS exactly (b - a) / 2.</li>
+             <li><strong>Pattern:</strong> ∫ₐᵇ [f(x) / (f(x) + f(a + b - x))] dx. (The numerator is one of the terms in the denominator).</li>
+             <li><strong>Example:</strong> ∫₂⁷ [√x / (√x + √9-x)] dx. Here a=2, b=7, and a+b=9. Answer: (7 - 2) / 2 = 5/2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>2. The π/4 Trig Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS exactly π/4, regardless of the power n.</li>
+             <li><strong>Pattern:</strong> ∫₀^{π/2} [sinⁿ x / (sinⁿ x + cosⁿ x)] dx (Also works for tan/cot and sec/csc).</li>
+             <li><strong>Example:</strong> ∫₀^{π/2} [tan²⁰²⁴ x / (1 + tan²⁰²⁴ x)] dx. (This is just sin/cos disguised). Answer: π/4.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>3. The Shifted π/4 Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS exactly π/12.</li>
+             <li><strong>Pattern:</strong> ∫_{π/6}^{π/3} [1 / (1 + √tan x)] dx (or cot x, or any power of them).</li>
+             <li><strong>Example:</strong> Notice a + b = π/6 + π/3 = π/2. Using the (b - a) / 2 hack: (π/3 - π/6) / 2 = (π/6) / 2 = π/12.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>4. The Logarithmic Cancellation</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The integral evaluates to exactly 0.</li>
+             <li><strong>Pattern:</strong> ∫ₐᵇ log[x / (a + b - x)] dx.</li>
+             <li><strong>Example:</strong> ∫₄⁶ log[x / (10 - x)] dx. By King's Rule, the numerator and denominator flip, making it -log, which cancels the original. Answer: 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>5. The f(x) ⋅ f(a + b - x) = 1 Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If f(x) ⋅ f(a + b - x) = 1, then ∫ₐᵇ [1 / (1 + f(x))] dx is exactly (b - a) / 2.</li>
+             <li><strong>Pattern:</strong> ∫ₐᵇ [1 / (1 + eˣ)] dx variants or aˣ variants.</li>
+             <li><strong>Example:</strong> ∫₂⁸ [1 / (1 + 3⁵⁻ˣ)] dx. Here f(x) = 3⁵⁻ˣ. Notice f(x) ⋅ f(10 - x) = 3⁵⁻ˣ ⋅ 3ˣ⁻⁵ = 1. Answer: (8 - 2) / 2 = 3.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 2: Symmetric Limits (-a to a)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>6. The Odd Function Annihilator</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS exactly 0.</li>
+             <li><strong>Pattern:</strong> ∫₋ₐᵃ f(x) dx where f(-x) = -f(x). (Look for sin x, x³, x cos x, or log[(a-x)/(a+x)]).</li>
+             <li><strong>Example:</strong> ∫₋₅⁵ x² sin x dx. x² is even, sin x is odd. Even × Odd = Odd. Answer: 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>7. The $\log$ Fraction Trap</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS exactly 0.</li>
+             <li><strong>Pattern:</strong> ∫₋ₐᵃ log[(k - x) / (k + x)] dx.</li>
+             <li><strong>Example:</strong> ∫₋₂² log[(5 - x) / (5 + x)] dx. If you put -x, the fraction flips, creating a negative log. It's an odd function. Answer: 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>8. The $1 + a^x$ Denominator Eraser</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The 1 + aˣ denominator completely disappears. The integral becomes just ∫₀ᵃ f(x) dx.</li>
+             <li><strong>Pattern:</strong> ∫₋ₐᵃ [f(x) / (1 + kˣ)] dx where f(x) is an EVEN function.</li>
+             <li><strong>Example:</strong> ∫₋ₚᵢᵖⁱ [cos² x / (1 + 2ˣ)] dx. Since cos² x is even, drop the denominator and change limits: ∫₀ᵖⁱ cos² x dx = π/2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>9. The "Constant Sum" Hack (From previous papers)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If f(x) ⋅ f(-x) = k², the integral is EXACTLY a/k.</li>
+             <li><strong>Pattern:</strong> ∫₋ₐᵃ [1 / (k + f(x))] dx.</li>
+             <li><strong>Example:</strong> ∫₋₁₀¹⁰ [1 / (4 + 3ˣ)] dx. Here f(x) = 3ˣ, and f(x)f(-x) = 1. This means k² = 16, so k=4. Answer: 10/4 = 5/2.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 3: Periodic & Modulus Functions</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>10. The Periodic Lobe (Mod Sine/Cos)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The area of one "lobe" of |sin x| or |cos x| from 0 to π is exactly 2. For n half-periods, the answer is 2n.</li>
+             <li><strong>Pattern:</strong> ∫₀ⁿᵖⁱ |sin x| dx or ∫₀ⁿᵖⁱ |cos x| dx.</li>
+             <li><strong>Example:</strong> ∫₀¹⁰ᵖⁱ |sin x| dx. This contains 10 lobes. Answer: 10 × 2 = 20.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>11. The Fractional Part Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The integral of the fractional part function {x} from 0 to n (integer) is exactly n/2.</li>
+             <li><strong>Pattern:</strong> ∫₀ⁿ {x} dx.</li>
+             <li><strong>Example:</strong> ∫₀⁵⁰ {x} dx. Answer: 50 / 2 = 25.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>12. The Greatest Integer Function (GIF) Step Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The integral of [x] from 0 to n (integer) is the sum of the first n-1 integers: n(n-1)/2.</li>
+             <li><strong>Pattern:</strong> ∫₀ⁿ [x] dx.</li>
+             <li><strong>Example:</strong> ∫₀¹⁰ [x] dx. Answer: (10 × 9) / 2 = 45.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>13. The Shifted Period Bypass</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> You can completely ignore the starting point 'a'. The answer is simply n × ∫₀ᵀ f(x) dx.</li>
+             <li><strong>Pattern:</strong> ∫ₐᵃ⁺ⁿᵀ f(x) dx, where T is the period of f(x).</li>
+             <li><strong>Example:</strong> ∫₁₀¹⁰⁺⁶ᵖⁱ |sin x| dx. The period of |sin x| is π. Ignore the 10. You just have 6 periods. Answer: 6 × 2 = 12.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>14. Modulus V-Shape Area</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The answer is exactly ((c - a)² + (b - c)²) / 2.</li>
+             <li><strong>Pattern:</strong> ∫ₐᵇ |x - c| dx (where c is between a and b).</li>
+             <li><strong>Example:</strong> ∫₀⁵ |x - 2| dx. Here a=0, b=5, c=2. Answer: [(2-0)² + (5-2)²] / 2 = (4 + 9) / 2 = 13/2.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 4: Wallis’ Formula (0 to pi/2 limits)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>15. Wallis Sine/Cosine (Odd Power)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Keep subtracting 2 from the power until you hit 1 (for numerator) and 2 (for denominator). Multiply the fractions.</li>
+             <li><strong>Pattern:</strong> ∫₀ᵖⁱ/² sinⁿ x dx where n is an ODD number.</li>
+             <li><strong>Example:</strong> ∫₀ᵖⁱ/² sin⁵ x dx. Numerator: 4 × 2. Denominator: 5 × 3 × 1. Answer: 8/15.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>16. Wallis Sine/Cosine (Even Power)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Same as #15, but you MUST multiply the final answer by π/2.</li>
+             <li><strong>Pattern:</strong> ∫₀ᵖⁱ/² cosⁿ x dx where n is an EVEN number.</li>
+             <li><strong>Example:</strong> ∫₀ᵖⁱ/² cos⁶ x dx. Fraction: (5 × 3 × 1) / (6 × 4 × 2) = 15/48 = 5/16. Multiply by π/2. Answer: 5π/32.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>17. Wallis Product (Both Powers Even)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Apply Wallis to both powers on top. On the bottom, add the powers, then subtract 2 until you hit 2. Since both are even, multiply by π/2.</li>
+             <li><strong>Pattern:</strong> ∫₀ᵖⁱ/² sinᵐ x cosⁿ x dx (where m, n are even).</li>
+             <li><strong>Example:</strong> ∫₀ᵖⁱ/² sin² x cos⁴ x dx. Numerator: (1) × (3 × 1) = 3. Denominator: (6 × 4 × 2) = 48. Multiply by π/2. Answer: (3/48) × π/2 = π/32.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>18. Wallis Product (One or Both Odd)</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Same process as #17, but do NOT multiply by π/2. Just leave the fraction as it is.</li>
+             <li><strong>Pattern:</strong> ∫₀ᵖⁱ/² sinᵐ x cosⁿ x dx (where at least one is odd).</li>
+             <li><strong>Example:</strong> ∫₀ᵖⁱ/² sin³ x cos² x dx. Numerator: (2) × (1) = 2. Denominator: (5 × 3 × 1) = 15. Answer: 2/15.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 5: Area Under Curves (Zero Integration)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>19. Parabola and Line Area</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Area is exactly 8a² / 3m³.</li>
+             <li><strong>Pattern:</strong> Area bounded by y² = 4ax and y = mx.</li>
+             <li><strong>Example:</strong> Area between y² = 16x and y = 2x. 4a=16 ⇒ a=4. m=2. Answer: (8 × 16) / (3 × 8) = 16/3.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>20. Two Parabolas Area</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Area is exactly 16ab / 3.</li>
+             <li><strong>Pattern:</strong> Area bounded by y² = 4ax and x² = 4by.</li>
+             <li><strong>Example:</strong> Area between y² = 4x and x² = 8y. 4a=4 ⇒ a=1. 4b=8 ⇒ b=2. Answer: (16 × 1 × 2) / 3 = 32/3.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>21. Ellipse Area</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Area is exactly πab.</li>
+             <li><strong>Pattern:</strong> Area bounded by (x²/a²) + (y²/b²) = 1.</li>
+             <li><strong>Example:</strong> Area of (x²/16) + (y²/9) = 1. Here a=4, b=3. Answer: π × 4 × 3 = 12π.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>22. Modulus Diamond Area</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Area is exactly 2ab.</li>
+             <li><strong>Pattern:</strong> Area bounded by |x/a| + |y/b| = 1.</li>
+             <li><strong>Example:</strong> Area bounded by |x/3| + |y/4| = 1. Here a=3, b=4. Answer: 2 × 3 × 4 = 24.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>23. Parabola and X-Axis Area</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Area is exactly (|a| / 6)(β - α)³, where α and β are the roots (x-intercepts).</li>
+             <li><strong>Pattern:</strong> Area bounded by y = ax² + bx + c and the x-axis.</li>
+             <li><strong>Example:</strong> Area between y = 2x - x² and the x-axis. Roots are 0 and 2. Here a = -1. Answer: (1/6)(2 - 0)³ = 8/6 = 4/3.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>24. Parabola Latus Rectum Area</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Area is exactly 8a² / 3.</li>
+             <li><strong>Pattern:</strong> Area bounded by y² = 4ax and its latus rectum x = a.</li>
+             <li><strong>Example:</strong> Area of y^2 = 12x cut off by its latus rectum. 4a = 12 implies a = 3. Answer: $(8 \times 9) / 3 = \mathbf{24}$.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 6: Special Integrals & Advanced Bypasses</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>25. The Inverse Function Addition Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The answer is exactly b ⋅ f(b) - a ⋅ f(a).</li>
+             <li><strong>Pattern:</strong> ∫ₐᵇ f(x) dx + ∫f₍ₐ₎ᶠ⁽ᵇ⁾ f⁻¹(x) dx.</li>
+             <li><strong>Example:</strong> ∫₁² x³ dx + ∫₁⁸ x¹/³ dx. Notice that f(x)=x³, f(1)=1, f(2)=8. The second integral is the inverse. Answer: (2 × 8) - (1 × 1) = 16 - 1 = 15.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>26. The "Limit of a Sum" Bypass</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> Replace Σ with ∫, replace r/n with x, and replace 1/n with dx. Limits usually become 0 to 1.</li>
+             <li><strong>Pattern:</strong> limₙ→∞ (1/n) Σᵣ₌₁ⁿ f(r/n).</li>
+             <li><strong>Example:</strong> limₙ→∞ Σᵣ₌₁ⁿ (1 / (n + r)). Divide by n to get (1/n) Σ (1 / (1 + (r/n))). This becomes ∫₀¹ (1 / (1 + x)) dx = log(1 + x). Answer: log 2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>27. Newton-Leibniz Differentiation Rule</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> To differentiate an integral, plug the upper limit into the function and multiply by the derivative of the upper limit. Subtract the same for the lower limit.</li>
+             <li><strong>Pattern:</strong> d/dx ∫g₍ₓ₎ʰ⁽ˣ⁾ f(t) dt.</li>
+             <li><strong>Example:</strong> d/dx ∫₀ˣ² sin t dt. Plug in x²: sin(x²). Multiply by derivative of x²: 2x. Answer: 2x sin(x²).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>28. The Bounding Inequality Hack</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> If you need to find the range of an integral, find the absolute minimum (m) and maximum (M) of the function. The integral lies between m(b - a) and M(b - a).</li>
+             <li><strong>Pattern:</strong> Find the minimum and maximum values of ∫₀¹ e⁻ˣ² dx.</li>
+             <li><strong>Example:</strong> In [0,1], e⁻ˣ² ranges from e⁻¹ to 1. Multiply by interval length (1-0)=1. Answer: The integral lies between 1/e and 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>29. The Standard "Log Sine" Definite</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS exactly -(π/2) log 2. DO NOT calculate this in the exam.</li>
+             <li><strong>Pattern:</strong> ∫₀ᵖⁱ/² log(sin x) dx OR ∫₀ᵖⁱ/² log(cos x) dx.</li>
+             <li><strong>Example:</strong> (Matches pattern exactly). Answer: -(π/2) log 2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>30. The Infinite Gaussian Standard</h4>
+          <ul>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS exactly ½√(π/a).</li>
+             <li><strong>Pattern:</strong> ∫₀ⁱⁿᶠ e⁻ᵃˣ² dx.</li>
+             <li><strong>Example:</strong> ∫₀ⁱⁿᶠ e⁻⁴ˣ² dx. Here a=4. Answer: ½√(π/4) = ½ × (√π/2) = √π/4.</li>
+          </ul>
+       </div>
+    </div>
+    <h3 class="f-section-title" style="margin-top: 2rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">Chapter 6 - Functions</h3>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 1: Functional Equation "Instant Guess" Hacks</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>1. The "Additive to Multiplicative" Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If f(x + y) = f(x) ⋅ f(y).</li>
+             <li><strong>Shortcut:</strong> The function is ALWAYS an exponential: f(x) = ax.</li>
+             <li><strong>Example:</strong> If f(x+y) = f(x)f(y) and f(1) = 3, find f(4). Since f(1) = a1 = 3, then a = 3. So f(x) = 3x. Answer: f(4) = 34 = 81.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>2. The "Multiplicative to Additive" Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If f(x ⋅ y) = f(x) + f(y).</li>
+             <li><strong>Shortcut:</strong> The function is ALWAYS logarithmic: f(x) = k ⋅ log(x).</li>
+             <li><strong>Example:</strong> If f(xy) = f(x) + f(y) and f(e) = 1, find f(e2). Since f(e) = k ⋅ log(e) = 1, k = 1. So f(x) = log(x). Answer: f(e2) = 2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>3. The "Additive to Additive" Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If f(x + y) = f(x) + f(y).</li>
+             <li><strong>Shortcut:</strong> The function is ALWAYS a straight line through the origin: f(x) = kx.</li>
+             <li><strong>Example:</strong> If f(x+y) = f(x) + f(y) and f(2) = 10, find f(5). Since f(2) = 2k = 10, k = 5. So f(x) = 5x. Answer: f(5) = 25.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>4. The "Multiplicative to Multiplicative" Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If f(x ⋅ y) = f(x) ⋅ f(y).</li>
+             <li><strong>Shortcut:</strong> The function is ALWAYS a power function: f(x) = xn.</li>
+             <li><strong>Example:</strong> If f(xy) = f(x)f(y) and f(2) = 8, find f(3). Since f(2) = 2n = 8, n = 3. So f(x) = x3. Answer: f(3) = 33 = 27.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>5. The Polynomial Identity Bypass</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If f(x) ⋅ f(1/x) = f(x) + f(1/x), and f(x) is a polynomial.</li>
+             <li><strong>Shortcut:</strong> The function is ALWAYS exactly f(x) = 1 + xn OR f(x) = 1 - xn.</li>
+             <li><strong>Example:</strong> If f(x)f(1/x) = f(x) + f(1/x) and f(3) = 28, find f(4). Try 1 + xn: 1 + 3n = 28 → 3n = 27 → n = 3. So f(x) = 1 + x3. Answer: f(4) = 1 + 43 = 65.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 2: Inverse Function Hacks</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>6. The "Linear Fraction" Inverse Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the inverse of f(x) = (ax + b) / (cx + d).</li>
+             <li><strong>Shortcut:</strong> Swap 'a' and 'd', and change their signs. Inverse is f-1(x) = (-dx + b) / (cx - a).</li>
+             <li><strong>Example:</strong> Find the inverse of f(x) = (2x + 3) / (5x - 4). Swap 2 and -4, change signs: 4 and -2. Answer: (4x + 3) / (5x - 2).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>7. The "Self-Inverse" Spotter</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the inverse of a fraction where a = -d, like f(x) = (3x + 1) / (2x - 3).</li>
+             <li><strong>Shortcut:</strong> If a = -d in the fraction (ax+b)/(cx+d), the function is its OWN inverse. f-1(x) = f(x).</li>
+             <li><strong>Example:</strong> Here a=3, d=-3. They are negative opposites. Answer: f-1(x) is exactly (3x + 1) / (2x - 3).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>8. The Inverse Intersection Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the intersection point of f(x) and its inverse f-1(x).</li>
+             <li><strong>Shortcut:</strong> The curves of f(x) and f-1(x) ALWAYS intersect exactly on the line y = x. Do not equate f(x) = f-1(x). Just equate f(x) = x.</li>
+             <li><strong>Example:</strong> Find intersection of f(x) = 3x - 4 and its inverse. Set 3x - 4 = x -> 2x = 4 -> x = 2. Since it's on y=x, y is also 2. Answer: (2, 2).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>9. The Exponential-Log Inverse Flip</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the inverse of an exponential like f(x) = 10x+5.</li>
+             <li><strong>Shortcut:</strong> The inverse of f(x) = ax is always f-1(x) = loga(x). Don't solve it manually.</li>
+             <li><strong>Example:</strong> Let y = 10x+5. Take log base 10: log10(y) = x + 5. Answer: f-1(x) = log(x) - 5.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>10. The Quadratic Inverse Bypass</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the inverse of a quadratic function like ax2 + bx + c (with restricted domain).</li>
+             <li><strong>Shortcut:</strong> Complete the square to a(x-h)2 + k. The inverse is always h + √((x-k)/a).</li>
+             <li><strong>Example:</strong> f(x) = x2 - 4x + 5 (for x > 2). Complete square: (x-2)2 + 1. Here h=2, k=1, a=1. Answer: 2 + √(x-1).</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 3: Domain & Range Bypasses</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>11. The Inner Minimum Hack (Logarithms)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the range of f(x) = loga(quadratic).</li>
+             <li><strong>Shortcut:</strong> Treat the inner function as a quadratic. Find its minimum value. Apply the log to that minimum value to get the start of the range.</li>
+             <li><strong>Example:</strong> Find range of log2(x2 - 4x + 12). Inner quadratic min value is at x = -b/2a = 2. Value = 4 - 8 + 12 = 8. Now apply log: log2(8) = 3. Answer: [3, ∞).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>12. The a sin(x) + b cos(x) Range</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the range of f(x) = 3sin(x) - 4cos(x) + 10.</li>
+             <li><strong>Shortcut:</strong> The range is ALWAYS [c - R, c + R] where R = √(a2 + b2) and c is the constant.</li>
+             <li><strong>Example:</strong> R = √(32 + (-4)2) = 5. Range is [10 - 5, 10 + 5]. Answer: [5, 15].</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>13. The Rational Range Hack (Discriminant method)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the range of (x2 + x + 1) / (x2 - x + 1).</li>
+             <li><strong>Shortcut:</strong> Set the fraction equal to 'y'. Cross multiply to form a quadratic in 'x'. Since 'x' is real, apply Discriminant ≥ 0 (b2 - 4ac ≥ 0) to find the limits of 'y'.</li>
+             <li><strong>Example:</strong> (Matches pattern). Applying D >= 0 leads to y^2 - 14y + 1 <= 0. Answer: [1/3, 3].</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>14. The Standard x / (1+x^2) Range</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the range or max/min value of x / (1 + x2).</li>
+             <li><strong>Shortcut:</strong> The range of x / (1 + x2) is ALWAYS exactly [-1/2, 1/2]. Memorize this to save 3 minutes of calculus.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: Max is 1/2, Min is -1/2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>15. The Domain of Root Fractions</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the domain of √((x-a)/(x-b)).</li>
+             <li><strong>Shortcut:</strong> Assuming a < b, the domain is ALWAYS x <= a OR x > b. Notice the round bracket for 'b' because denominator cannot be zero.</li>
+             <li><strong>Example:</strong> Find domain of √((x-2)/(x-5)). Here a=2, b=5. Answer: (-∞, 2] ∪ (5, ∞).</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 4: Periodicity (Instant Spotters)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>16. The sinn(x) / cosn(x) Period</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the fundamental period of sinn(x) or cosn(x) (like sin4(x) or cos3(x)).</li>
+             <li><strong>Shortcut:</strong> If 'n' is ODD, the period is 2π. If 'n' is EVEN, the period is π.</li>
+             <li><strong>Example:</strong> Period of sin4(x). Since 4 is even, Answer: π.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>17. The Modulus Trig Period</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the period of f(x) = |sin(x)|, |cos(x)|, or |tan(x)|.</li>
+             <li><strong>Shortcut:</strong> The period of absolute value trig functions is ALWAYS π.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: π.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>18. The "Twin Modulus" Exception</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the period of f(x) = |sin x| + |cos x|.</li>
+             <li><strong>Shortcut:</strong> The period of |sin x| + |cos x| is ALWAYS π/2.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: π/2. (This happens because at π/2 + x, sine becomes cosine and cosine becomes sine, leaving the sum unchanged).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>19. The Fractional Part Period</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the period of f(x) = {x} (the fractional part function).</li>
+             <li><strong>Shortcut:</strong> The fundamental period of {x} is ALWAYS 1.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>20. The Coefficient Division Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the period of a shifted/scaled function like sin(3x + 5).</li>
+             <li><strong>Shortcut:</strong> If the period of f(x) is T, then the period of f(ax + b) is T / |a|. (Ignore the constant 'b' completely).</li>
+             <li><strong>Example:</strong> Period of sin(x) is 2π. Here a = 3. Answer: 2π / 3.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 5: Odd & Even Function Traps</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>21. The "Zero at Origin" Odd Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If f(x) is an odd function and continuous at x = 0, evaluate f(0).</li>
+             <li><strong>Shortcut:</strong> If f(x) is an odd function AND is continuous at the origin, then f(0) MUST be exactly 0.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>22. The Derivative Flip Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If f(x) is an even function, what type of function is f'(x)?</li>
+             <li><strong>Shortcut:</strong> The derivative of an EVEN function is always ODD. The derivative of an ODD function is always EVEN.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: Odd function.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>23. The Logarithmic Odd Spotter</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Check if log(x + √(x2 + a2)) is an even or odd function.</li>
+             <li><strong>Shortcut:</strong> The function f(x) = log(x + √(x2 + a2)) is ALWAYS an ODD function. f(-x) = -f(x).</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: Odd.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>24. The Function Splitter Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the even part or odd part of a general function like f(x) = ex.</li>
+             <li><strong>Shortcut:</strong> ANY function can be written as the sum of an even and odd function. Even part = (f(x) + f(-x)) / 2. Odd part = (f(x) - f(-x)) / 2.</li>
+             <li><strong>Example:</strong> Find the even part of ex. Even part = (ex + e-x) / 2. Answer: cosh(x).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>25. The Product Parity Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If f(x) = x3 ⋅ sin(x), is the total function even or odd?</li>
+             <li><strong>Shortcut:</strong> Even * Even = Even. Odd * Odd = EVEN. Even * Odd = ODD. (Treat Even like a '+' sign, and Odd like a '-' sign for multiplication).</li>
+             <li><strong>Example:</strong> x3 is odd (-). sin(x) is odd (-). Negative * Negative = Positive. Answer: Even function.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 6: Types of Mappings (One-One & Onto)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>26. The Even Power Many-One Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Classify an even-degree polynomial like f(x) = x4 - 2x2 + 3 from R to R.</li>
+             <li><strong>Shortcut:</strong> ANY polynomial function with an EVEN highest degree (quadratics, quartics) from R to R is ALWAYS Many-One and Into. (Never One-One, Never Onto).</li>
+             <li><strong>Example:</strong> Highest power is 4 (even). Answer: Many-one and Into.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>27. The Odd Power Onto Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Classify an odd-degree polynomial like f(x) = x3 + 2x2 - x + 5 from R to R.</li>
+             <li><strong>Shortcut:</strong> ANY polynomial function with an ODD highest degree from R to R is ALWAYS Onto (Surjective).</li>
+             <li><strong>Example:</strong> Highest power is 3 (odd). Answer: Yes, it is Onto.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>28. Total Number of Functions</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Set A has 'm' elements, Set B has 'n' elements. How many total functions exist from A to B?</li>
+             <li><strong>Shortcut:</strong> The total number of functions from A to B is exactly nm.</li>
+             <li><strong>Example:</strong> Set A has 3 elements, Set B has 4 elements. Here m=3, n=4. Answer: 43 = 64.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>29. Total Number of One-One Functions (Injections)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Set A has 'm' elements, Set B has 'n' elements. How many One-One functions exist?</li>
+             <li><strong>Shortcut:</strong> If m > n, answer is 0. If m <= n, the answer is exactly nPm (Permutations of n taken m at a time).</li>
+             <li><strong>Example:</strong> Set A has 3 elements, Set B has 5 elements. Here m=3, n=5. Since 3 < 5, use 5P3. Answer: 5 * 4 * 3 = 60.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>30. Total Number of Bijections</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Set A has 'm' elements, Set B has 'n' elements. How many bijections exist?</li>
+             <li><strong>Shortcut:</strong> Bijective functions (One-One AND Onto) can ONLY exist if set A and set B have the EXACT same number of elements (m = n). If they do, the answer is always n!.</li>
+             <li><strong>Example:</strong> Set A has 4 elements, Set B has 4 elements. Here m = n = 4. Answer: 4! = 24.</li>
+          </ul>
+       </div>
+    </div>
+    <h3 class="f-section-title" style="margin-top: 2rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">Chapter 7 - Complex Numbers & De Moivre’s Theorem</h3>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 1: The "Powers of i" Bypasses</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>1. The Four Consecutive Powers Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the sum of four consecutive powers of 'i' (like in + in+1 + in+2 + in+3).</li>
+             <li><strong>Shortcut:</strong> The sum of any four consecutive integer powers of 'i' is ALWAYS 0.</li>
+             <li><strong>Example:</strong> Find i2024 + i2025 + i2026 + i2027. Answer: 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>2. The (1+i) and (1-i) Power Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate massive powers of (1+i) or (1-i), such as (1+i)n.</li>
+             <li><strong>Shortcut:</strong> Memorize the squares: (1+i)2 = 2i, and (1-i)2 = -2i. Divide the total power by 2 and apply.</li>
+             <li><strong>Example:</strong> Find (1+i)20. Rewrite as ((1+i)2)10. This becomes (2i)10 = 210 * i10. Since i10 = -1, Answer: -1024.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>3. The Standard Fraction Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate fractions containing (1+i) and (1-i) in the numerator and denominator.</li>
+             <li><strong>Shortcut:</strong> ½(1+i)/(1-i) is EXACTLY 'i'. And ½(1-i)/(1+i) is EXACTLY '-i'.</li>
+             <li><strong>Example:</strong> Evaluate (½(1+i)/(1-i))100. This simplifies instantly to i100. Since 100 is a multiple of 4, Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>4. The Factorial Power Trap</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate in! (where n is a factorial).</li>
+             <li><strong>Shortcut:</strong> For any n ≥ 4, the factorial n! is a multiple of 4. Therefore, in! is ALWAYS 1 for any n ≥ 4.</li>
+             <li><strong>Example:</strong> Find i5!. Since 5! = 120 (a multiple of 4), Answer: 1.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 2: Cube Roots of Unity (1, ω, ω2)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>5. The Massive ω Power Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate huge powers of ω, like ωn.</li>
+             <li><strong>Shortcut:</strong> Since ω3 = 1, just divide the power 'n' by 3 and find the remainder (R). The answer is ωR. (If remainder is 0, answer is 1).</li>
+             <li><strong>Example:</strong> Find ω2024. Sum of digits of 2024 is 8. 8 divided by 3 gives remainder 2. Answer: ω2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>6. The Alternating Sign Sum Trap</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate polynomial expressions containing sums and differences of 1, ω, and ω2.</li>
+             <li><strong>Shortcut:</strong> The sum 1 + ω + ω2 is ALWAYS 0. Use this to substitute: ω2 = -1 - ω, or ω = -1 - ω2, or 1+ω = -ω2.</li>
+             <li><strong>Example:</strong> Find (1 - ω + ω2)5. Group the positive terms: (1 + ω2) - ω. Substitute (1 + ω2) with -ω. The expression becomes (-ω - ω)5 = (-2ω)5 = -32ω5. Since ω5 = ω2, Answer: -32ω2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>7. The a3 + b3 Factorization Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Factorizing sums of cubes in the complex plane.</li>
+             <li><strong>Shortcut:</strong> a3 + b3 = (a + b)(a + bω)(a + bω2).</li>
+             <li><strong>Example:</strong> Find the roots of x3 + 8 = 0. Rewrite as x3 + 23 = 0. The roots are instantly: -2, -2ω, -2ω2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>8. The a3 - b3 Factorization Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Factorizing differences of cubes in the complex plane.</li>
+             <li><strong>Shortcut:</strong> a3 - b3 = (a - b)(a - bω)(a - bω2).</li>
+             <li><strong>Example:</strong> Find the roots of x3 - 1 = 0. The roots are instantly: 1, ω, ω2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>9. The Special Quadratic Root Spotter</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Finding the roots or evaluating expressions based on x2 + x + 1 = 0 or x2 - x + 1 = 0.</li>
+             <li><strong>Shortcut:</strong> The roots of x2 + x + 1 = 0 are EXACTLY ω and ω2. The roots of x2 - x + 1 = 0 are EXACTLY -ω and -ω2.</li>
+             <li><strong>Example:</strong> If x2 + x + 1 = 0, find x31 + x32. Put x = ω. This becomes ω31 + ω32 = ω1 + ω2. Since 1+ω+ω2 = 0, Answer: -1.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 3: De Moivre's Theorem Hacks</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>10. The Cosine Addition Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Given z + (1/z) = 2cos(θ), find zn + (1/zn).</li>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS 2cos(n * θ).</li>
+             <li><strong>Example:</strong> If z + 1/z = 2cos(30°), find z3 + 1/z3. Answer: 2cos(3 * 30°) = 2cos(90°) = 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>11. The Sine Subtraction Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Given z + (1/z) = 2cos(θ), find zn - (1/zn).</li>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS 2i * sin(n * θ).</li>
+             <li><strong>Example:</strong> If z + 1/z = 2cos(30°), find z3 - 1/z3. Answer: 2i * sin(90°) = 2i.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>12. The cis(theta) Division Trick</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Division of complex numbers given in polar form: (cos A + i sin A) / (cos B + i sin B).</li>
+             <li><strong>Shortcut:</strong> cis(A) / cis(B) is EXACTLY cis(A - B). Just subtract the angles.</li>
+             <li><strong>Example:</strong> cis(75) / cis(15). Answer: cis(75 - 15) = cis(60) = cos(60) + i sin(60) = ½ + i(√(3)/2).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>13. The De Moivre "Wrong Order" Trap</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Expanding powers where sine comes first: (sin A + i cos A)n.</li>
+             <li><strong>Shortcut:</strong> De Moivre's theorem ONLY works for (cos A + i sin A). To fix it, swap them by using (90 - A). Answer: cos[n(90 - A)] + i sin[n(90 - A)].</li>
+             <li><strong>Example:</strong> Expand (sin 30 + i cos 30)3. Change to cis(90 - 30)3 = cis(60)3. Apply power: cis(180) = cos(180) + i sin(180). Answer: -1.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 4: Modulus & Conjugate Bypasses</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>14. The Parallelogram Law (Sum to Difference)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Given |z1 + z2| and asked for |z1 - z2| (or vice versa).</li>
+             <li><strong>Shortcut:</strong> |z1 + z2|2 + |z1 - z2|2 = 2( |z1|2 + |z2|2 ).</li>
+             <li><strong>Example:</strong> If |z1|=1, |z2|=1, and |z1+z2| = √(2). Find |z1-z2|. (√(2))2 + |z1-z2|2 = 2(1 + 1) -> 2 + X2 = 4 -> X2 = 2. Answer: √(2).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>15. The Unimodular Fraction Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluating the modulus of | (z - a) / (1 - a*z) | where the modulus of z is 1.</li>
+             <li><strong>Shortcut:</strong> If |z| = 1 and 'a' is a real number, the modulus of this entire specific fraction is ALWAYS exactly 1.</li>
+             <li><strong>Example:</strong> If |z| = 1, find | (z - 5) / (1 - 5z) |. Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>16. Max/Min Value of |z + a|</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Finding the maximum or minimum value of |z + a| when |z| = r is given.</li>
+             <li><strong>Shortcut:</strong> The maximum value is |z| + |a|. The minimum value is | |z| - |a| |. (Triangle Inequality).</li>
+             <li><strong>Example:</strong> If |z| = 4, find the max value of |z + 3i|. Here |3i| = 3. Max = 4 + 3. Answer: 7.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>17. The Modulus Squared Substitution</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Simplifying expressions with z multiplied by its conjugate (z̄).</li>
+             <li><strong>Shortcut:</strong> z * z̄ is EXACTLY equal to |z|2.</li>
+             <li><strong>Example:</strong> If |z| = 5, evaluate z * z̄. Answer: 52 = 25.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>18. The Purely Real/Imaginary Conjugate Check</h4>
+          <ul>
+             <li><strong>Pattern:</strong> The question states a complex number is "purely real" or "purely imaginary."</li>
+             <li><strong>Shortcut:</strong> If purely real, z = z̄. If purely imaginary, z = -z̄.</li>
+             <li><strong>Example:</strong> If z is purely imaginary, find z + z̄. Answer: 0.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 5: Geometry & Locus Spotters</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>19. The Perpendicular Bisector Locus</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the locus of z when |(z - z1) / (z - z2)| = 1, or |z - z1| = |z - z2|.</li>
+             <li><strong>Shortcut:</strong> The locus is ALWAYS the perpendicular bisector of the line segment joining points z1 and z2.</li>
+             <li><strong>Example:</strong> |z - 2| = |z - 4|. This means distance from x=2 equals distance from x=4. Locus is the vertical line x = 3.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>20. The Circle Diameter Locus</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the locus of z when arg((z - z1) / (z - z2)) = +π/2 or -π/2.</li>
+             <li><strong>Shortcut:</strong> The locus is ALWAYS a circle with z1 and z2 acting as the endpoints of the diameter.</li>
+             <li><strong>Example:</strong> arg((z-1)/(z+1)) = π/2. Locus is a circle with diameter endpoints at (1,0) and (-1,0).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>21. The Ellipse Locus Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the locus of z when |z - z1| + |z - z2| = 2a.</li>
+             <li><strong>Shortcut:</strong> If 2a is GREATER than the distance between z1 and z2 (|z1 - z2|), the locus is ALWAYS an Ellipse.</li>
+             <li><strong>Example:</strong> |z - 3| + |z + 3| = 10. Distance between 3 and -3 is 6. Since 10 > 6, Answer: Ellipse.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>22. The Hyperbola Locus Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the locus of z when |z - z1| - |z - z2| = 2a.</li>
+             <li><strong>Shortcut:</strong> If 2a is LESS than the distance between z1 and z2 (|z1 - z2|), the locus is ALWAYS a Hyperbola.</li>
+             <li><strong>Example:</strong> |z - 5| - |z + 5| = 8. Distance between 5 and -5 is 10. Since 8 < 10, Answer: Hyperbola.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>23. The Standard Circle Locus</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the locus or area of |z - z0| = r.</li>
+             <li><strong>Shortcut:</strong> This is ALWAYS a circle with its center at z0 and a radius of r.</li>
+             <li><strong>Example:</strong> |z - (2+3i)| = 5. Answer: Circle with center (2,3) and radius 5.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>24. Equilateral Triangle with Origin</h4>
+          <ul>
+             <li><strong>Pattern:</strong> A geometric condition where z1, z2, and the origin (0,0) form an equilateral triangle.</li>
+             <li><strong>Shortcut:</strong> If they form an equilateral triangle with the origin, the exact relationship is ALWAYS: z12 + z22 - z1*z2 = 0.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: z12 + z22 = z1*z2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>25. General Equilateral Triangle Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> A geometric condition where any three points z1, z2, z3 form an equilateral triangle.</li>
+             <li><strong>Shortcut:</strong> The relationship is ALWAYS: z12 + z22 + z32 = z1z2 + z2z3 + z3*z1.</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 6: Argument (Angle) Hacks</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>26. Argument of Pure Numbers</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the argument of a purely real or purely imaginary number.</li>
+             <li><strong>Shortcut:</strong> Purely positive real -> arg = 0. Purely negative real -> arg = π. Purely positive imaginary -> arg = π/2. Purely negative imaginary -> arg = -π/2.</li>
+             <li><strong>Example:</strong> Find arg(-5). It is purely negative real. Answer: π.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>27. The Logarithmic Argument Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Finding the argument of products (z1*z2) or quotients (z1/z2).</li>
+             <li><strong>Shortcut:</strong> Treat "arg" exactly like "log". arg(z1 * z2) = arg(z1) + arg(z2). arg(z1 / z2) = arg(z1) - arg(z2).</li>
+             <li><strong>Example:</strong> Find arg((1+i)/(1-i)). arg(1+i) = 45°. arg(1-i) = -45°. Answer: 45° - (-45°) = 90°.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>28. Argument of a Conjugate</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Finding the argument of z̄ when arg(z) is known.</li>
+             <li><strong>Shortcut:</strong> arg(z̄) is EXACTLY the negative of arg(z). arg(z̄) = -arg(z).</li>
+             <li><strong>Example:</strong> If arg(z) = 30°, find arg(z̄). Answer: -30°.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>29. Argument of a Power</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Finding the argument of zn.</li>
+             <li><strong>Shortcut:</strong> arg(z^n) = n * arg(z). (Again, exactly like logarithms).</li>
+             <li><strong>Example:</strong> Find arg((1+i)4). arg(1+i) = π/4. Answer: 4 * (π/4) = π.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 7: Roots of Equations</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>30. The "Roots of Unity" Sum/Product Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Finding the sum or product of all n-th roots of unity (1, ω, ω2... ωn-1).</li>
+             <li><strong>Shortcut:</strong> The SUM of all n-th roots of unity is ALWAYS exactly 0. The PRODUCT of all n-th roots of unity is (-1)n-1.</li>
+             <li><strong>Example:</strong> Find the sum of the 5th roots of unity. Answer: 0. Find the product of the 5th roots of unity. Answer: (-1)^4 = 1.</li>
+          </ul>
+       </div>
+    </div>
+    <h3 class="f-section-title" style="margin-top: 2rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">Chapter 8 - Binomial Theorem</h3>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 1: The "r" Index Bypasses (Finding Specific Terms)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>1. The Independent Term Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the term independent of x in the expansion of (axp + b/xq)n.</li>
+             <li><strong>Shortcut:</strong> You do not need to expand. The index 'r' is ALWAYS exactly: r = (np) / (p + q). If r is a fraction, no independent term exists (answer is 0). The term is T_(r+1).</li>
+             <li><strong>Example:</strong> Find the independent term in (x2 - 1/x)9. Here n=9, p=2, q=1. r = (9*2) / (2+1) = 18/3 = 6. The term is T7. Answer: 9C6 * (1)3 * (-1)6 = 9C6.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>2. The Target Power Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the coefficient of xm in the expansion of (axp + b/xq)n.</li>
+             <li><strong>Shortcut:</strong> The index 'r' is ALWAYS exactly: r = (np - m) / (p + q).</li>
+             <li><strong>Example:</strong> Find the coefficient of x4 in (x2 + 1/x)5. Here n=5, p=2, q=1, m=4. r = (5*2 - 4) / (2+1) = 6/3 = 2. The term is T3. Answer: 5C2 * (1)3 * (1)2 = 10.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>3. The Term from the End Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the k-th term from the end of the expansion (x + y)n.</li>
+             <li><strong>Shortcut:</strong> The k-th term from the end is EXACTLY the (n - k + 2)-th term from the beginning.</li>
+             <li><strong>Example:</strong> Find the 4th term from the end in (x + y)^10. Here n=10, k=4. Term from beginning = 10 - 4 + 2 = 8. Answer: Find the 8th term (T_8).</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 2: Number of Terms Bypasses</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>4. The Twin Bracket Addition Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the number of terms in the expansion of (x + a)n + (x - a)n.</li>
+             <li><strong>Shortcut:</strong> If n is EVEN, the number of terms is (n/2) + 1. If n is ODD, the number of terms is (n+1)/2.</li>
+             <li><strong>Example:</strong> Find the number of terms in (x + a)100 + (x - a)100. Since 100 is even, Answer: (100/2) + 1 = 51 terms.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>5. The Twin Bracket Subtraction Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the number of terms in the expansion of (x + a)n - (x - a)n.</li>
+             <li><strong>Shortcut:</strong> If n is EVEN, the number of terms is n/2. If n is ODD, the number of terms is (n+1)/2.</li>
+             <li><strong>Example:</strong> Find the number of terms in (x + a)100 - (x - a)100. Since 100 is even, Answer: 100/2 = 50 terms.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>6. The Multinomial Terms Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the total number of terms in the expansion of (a + b + c + ... k terms)n.</li>
+             <li><strong>Shortcut:</strong> The number of terms is ALWAYS exactly n + k - 1Ck - 1.</li>
+             <li><strong>Example:</strong> Find the number of terms in (x + y + z)10. Here n=10, k=3 (three variables). Answer: 12C2 = 66 terms.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 3: Substitution Bypasses (Sum of Coefficients)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>7. Total Sum of Coefficients</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the sum of all coefficients in a massive expansion like (ax + by + cz)n.</li>
+             <li><strong>Shortcut:</strong> Ignore the expansion completely. Put ALL variables (x, y, z) equal to 1, and simply evaluate the numbers.</li>
+             <li><strong>Example:</strong> Find the sum of coefficients in (2x - 3y + 4z)10. Put x=y=z=1. The bracket becomes (2 - 3 + 4) = 3. Answer: 310.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>8. Sum of Even/Odd Place Coefficients</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the sum of coefficients of only the EVEN powers of x, or only the ODD powers of x, in f(x) = (ax + b)n.</li>
+             <li><strong>Shortcut:</strong> Sum of even powers = [f(1) + f(-1)] / 2. Sum of odd powers = [f(1) - f(-1)] / 2.</li>
+             <li><strong>Example:</strong> Find the sum of coefficients of even powers in (1 + x)10. f(1) = 210. f(-1) = 0. Answer: (210 + 0) / 2 = 29.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 4: Standard Binomial Coefficient Series (C0, C1, C2...)</h4>
+    <div class="formula-grid">
+             <li style="list-style-type: none; margin-left: -1rem; padding-top: 0.5rem; opacity: 0.8; font-size: 0.9em;">(Note: Cr means nCr)</li>
+       <div class="card formula-card">
+          <h4>9. The Universal Sum Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate C0 + C1 + C2 + ... + Cn.</li>
+             <li><strong>Shortcut:</strong> The sum of all basic binomial coefficients is ALWAYS exactly 2n.</li>
+             <li><strong>Example:</strong> Evaluate 10C0 + 10C1 + ... + 10C10. Answer: 210 = 1024.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>10. The Alternate Sum Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate C0 + C2 + C4 + ... OR C1 + C3 + C5 + ...</li>
+             <li><strong>Shortcut:</strong> The sum of just the even-placed, or just the odd-placed binomial coefficients is ALWAYS 2n-1.</li>
+             <li><strong>Example:</strong> Evaluate 10C1 + 10C3 + 10C5 + 10C7 + 10C9. Answer: 210-1 = 29 = 512.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>11. The Alternating Sign Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate C0 - C1 + C2 - C3 + ... +/- Cn.</li>
+             <li><strong>Shortcut:</strong> Any full series of binomial coefficients with perfectly alternating + and - signs ALWAYS equals 0.</li>
+             <li><strong>Example:</strong> Evaluate 5C0 - 5C1 + 5C2 - 5C3 + 5C4 - 5C5. Answer: 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>12. The Multiplier Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate 1C1 + 2C2 + 3C3 + ... + nCn.</li>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS exactly n * 2n-1.</li>
+             <li><strong>Example:</strong> Evaluate 1*(10C1) + 2*(10C2) + ... + 10*(10C10). Answer: 10 * 29 = 5120.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>13. The Divider Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate C0 + C1/2 + C2/3 + ... + Cn/(n+1).</li>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS exactly (2n+1 - 1) / (n + 1).</li>
+             <li><strong>Example:</strong> Evaluate 4C0 + 4C1/2 + 4C2/3 + 4C3/4 + 4C4/5. Here n=4. Answer: (25 - 1) / 5 = 31 / 5.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>14. The Sum of Squares Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate (C0)2 + (C1)2 + (C2)2 + ... + (Cn)2.</li>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS exactly 2nCn.</li>
+             <li><strong>Example:</strong> Evaluate (5C0)2 + (5C1)2 + ... + (5C5)2. Answer: 10C5 = 252.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>15. The Shifted Product Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate C0Cr + C1Cr+1 + C2*Cr+2 + ... + Cn-r*Cn.</li>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS exactly 2nCn - r.</li>
+             <li><strong>Example:</strong> Evaluate 10C0*10C2 + 10C1*10C3 + ... + 10C8*10C10. Here n=10, r=2. Answer: 20C8.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 5: Greatest Terms & Middle Terms</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>16. The Middle Term Spotter</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the middle term of (x + y)n.</li>
+             <li><strong>Shortcut:</strong> If n is EVEN, there is ONE middle term: T_(n/2 + 1). If n is ODD, there are TWO middle terms: T_((n+1)/2) and T_((n+3)/2).</li>
+             <li><strong>Example:</strong> Middle term of (x + y)^8. n is even. Position is (8/2)+1 = 5. Answer: 5th term (T_5).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>17. Greatest Binomial Coefficient</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the greatest coefficient in (1 + x)^n.</li>
+             <li><strong>Shortcut:</strong> The greatest coefficient ALWAYS belongs to the middle term(s). For even n, it is nCn/2.</li>
+             <li><strong>Example:</strong> Find the maximum coefficient in (1 + x)10. Answer: 10C5 = 252.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>18. Numerically Greatest Term (Value)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the numerically greatest term in (1 + a)n for a given value of a.</li>
+             <li><strong>Shortcut:</strong> Calculate m = [ (n + 1) * |a| ] / [ 1 + |a| ]. If m is an integer, both T_m and T_(m+1) are the greatest terms. If m is a decimal, the greatest term is T_([m] + 1) where [m] is the integer part.</li>
+             <li><strong>Example:</strong> Find greatest term in (1 + 2x)8 when x=1. Here a = 2. m = (9 * 2) / (1 + 2) = 18/3 = 6. Since 6 is an integer, Answer: Both T6 and T7 are the greatest terms.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 6: Negative and Fractional Index Bypasses</h4>
+    <div class="formula-grid">
+             <li style="list-style-type: none; margin-left: -1rem; padding-top: 0.5rem; opacity: 0.8; font-size: 0.9em;">(Only valid when |x| < 1. Number of terms is ALWAYS infinite).</li>
+       <div class="card formula-card">
+          <h4>19. Negative Index Coefficient Spotter</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the coefficient of xr in the expansion of (1 - x)-n.</li>
+             <li><strong>Shortcut:</strong> The coefficient is ALWAYS exactly n + r - 1Cr. All coefficients are positive.</li>
+             <li><strong>Example:</strong> Find the coefficient of x4 in (1 - x)-3. Here n=3, r=4. Answer: 6C4 = 15.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>20. The (1 - x)^(-1) Series</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Expansion of 1 / (1 - x) or (1 - x)-1.</li>
+             <li><strong>Shortcut:</strong> The coefficient of EVERY term x^r is exactly 1.</li>
+             <li><strong>Example:</strong> Find the coefficient of x100 in (1 - x)-1. Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>21. The (1 - x)^(-2) Series</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Expansion of 1 / (1 - x)2 or (1 - x)-2.</li>
+             <li><strong>Shortcut:</strong> The coefficient of x^r is ALWAYS exactly (r + 1).</li>
+             <li><strong>Example:</strong> Find the coefficient of x50 in (1 - x)-2. Answer: 50 + 1 = 51.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>22. The First Negative Term Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the first negative term in the expansion of (1 + x)p/q where p/q is a positive fraction.</li>
+             <li><strong>Shortcut:</strong> Check the sign of the multiplier (p/q - r + 1). The first integer 'r' that makes this multiplier negative points to the first negative term T_(r+1).</li>
+             <li><strong>Example:</strong> First negative term in (1 + x)7/2. We need (7/2 - r + 1) < 0 -> 4.5 < r. The first integer is r=5. Answer: The 6th term (T6).</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 7: Remainders and Divisibility (Number Theory Hacks)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>23. The "Last Two Digits ending in 1" Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the last two digits of a huge power ending in 1, like (31)14.</li>
+             <li><strong>Shortcut:</strong> The last digit is ALWAYS 1. The tens digit is the last digit of (Base's Tens Digit * Power's Last Digit).</li>
+             <li><strong>Example:</strong> Find the last two digits of 3114. Last digit = 1. Tens digit = 3 * 4 = 12, keep the 2. Answer: 21.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>24. The Last Digit Hack (Cyclicity)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the last digit of a massive power like 72025.</li>
+             <li><strong>Shortcut:</strong> Powers repeat in cycles of 4. Divide the power by 4 to find the remainder R. The last digit is (Base's last digit)^R. (If remainder is 0, use power 4).</li>
+             <li><strong>Example:</strong> Find last digit of 72025. 2025 / 4 gives remainder 1. Answer: 71 = 7.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>25. Binomial Remainder Bypass</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the remainder when (1 + x)n is divided by x or x2.</li>
+             <li><strong>Shortcut:</strong> Never expand fully. Use only the first two terms: 1 + nx. All other terms have x^2 or higher and will be perfectly divisible.</li>
+             <li><strong>Example:</strong> Find the remainder when 9100 is divided by 8. Rewrite as (1 + 8)100. Divide by 8. First term is 1. All other terms contain 8 and are perfectly divisible. Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>26. The Difference Divisibility Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Determine what divides xn - yn.</li>
+             <li><strong>Shortcut:</strong> x^n - y^n is ALWAYS perfectly divisible by (x - y) for all integer values of n.</li>
+             <li><strong>Example:</strong> Is 158 - 48 divisible by 11? Since 15 - 4 = 11, Answer: Yes.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>27. The Even Addition Divisibility Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Determine what divides xn + yn when n is an ODD number.</li>
+             <li><strong>Shortcut:</strong> x^n + y^n is ALWAYS perfectly divisible by (x + y) ONLY when n is ODD.</li>
+             <li><strong>Example:</strong> Is 127 + 57 divisible by 17? Since n=7 is odd and 12+5 = 17, Answer: Yes.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 8: Advanced Binomial Spotters</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>28. The Pascal's Triangle Addition Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Simplify the sum of two adjacent combinations: nCr + nCr - 1.</li>
+             <li><strong>Shortcut:</strong> Add 1 to the top number 'n', and KEEP the larger bottom number 'r'. Answer: n+1Cr.</li>
+             <li><strong>Example:</strong> Evaluate 15C6 + 15C5. The tops match, the bottoms are adjacent. Add 1 to top, keep 6. Answer: 16C6.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>29. The nCr Ratio Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate the ratio of adjacent binomial coefficients: nCr / nCr - 1.</li>
+             <li><strong>Shortcut:</strong> You do not need factorials. The answer is ALWAYS exactly (n - r + 1) / r.</li>
+             <li><strong>Example:</strong> Evaluate 20C8 / 20C7. Here n=20, r=8. Answer: (20 - 8 + 1) / 8 = 13 / 8.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>30. The Rational Terms Hack (Irrational Expansions)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the total number of rational (integer) terms in (x1/p + y1/q)n.</li>
+             <li><strong>Shortcut:</strong> Find the LCM of the denominators p and q. Divide the total power 'n' by that LCM. If n is perfectly divisible by the LCM, the answer is (n / LCM) + 1.</li>
+             <li><strong>Example:</strong> Find the number of rational terms in (21/3 + 31/4)12. LCM of 3 and 4 is 12. Total power n=12. 12 / 12 = 1. Answer: 1 + 1 = 2 rational terms.</li>
+          </ul>
+       </div>
+    </div>
+    <h3 class="f-section-title" style="margin-top: 2rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">Chapter 9 - Quadratic Expressions & Theory of Equations</h3>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 1: Roots in Progressions (A.P., G.P., H.P.)</h4>
+    <div class="formula-grid">
+             <li style="list-style-type: none; margin-left: -1rem; padding-top: 0.5rem; opacity: 0.8; font-size: 0.9em;">(For standard cubic equations: ax3 + bx2 + cx + d = 0)</li>
+       <div class="card formula-card">
+          <h4>1. The A.P. Middle Root Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find a root when the roots are given to be in Arithmetic Progression (A.P.).</li>
+             <li><strong>Shortcut:</strong> The middle root is ALWAYS exactly -b / 3a.</li>
+             <li><strong>Example:</strong> Roots of x3 - 6x2 + 11x - 6 = 0 are in A.P. Find the middle root. Here a=1, b=-6. Answer: -(-6) / 3(1) = 2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>2. The A.P. Condition Check</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Determine the condition for the roots of a cubic equation to be in A.P.</li>
+             <li><strong>Shortcut:</strong> Substitute the middle root (-b/3a) into the equation. The condition simplifies to: 2b3 - 9abc + 27a2d = 0.</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>3. The G.P. Middle Root Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find a root when the roots are given to be in Geometric Progression (G.P.).</li>
+             <li><strong>Shortcut:</strong> The middle root is ALWAYS exactly ∛(-d/a).</li>
+             <li><strong>Example:</strong> Roots of x3 - 7x2 + 14x - 8 = 0 are in G.P. Find the middle root. Here a=1, d=-8. Answer: ∛8 = 2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>4. The G.P. Condition Check</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Determine the condition for the roots of a cubic equation to be in G.P.</li>
+             <li><strong>Shortcut:</strong> Substitute the middle root into the equation. The condition simplifies to: b3d = ac3.</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>5. The H.P. Middle Root Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find a root when the roots are given to be in Harmonic Progression (H.P.).</li>
+             <li><strong>Shortcut:</strong> The middle root is ALWAYS exactly -3d / c.</li>
+             <li><strong>Example:</strong> Roots of 6x3 - 11x2 + 6x - 1 = 0 are in H.P. Find the middle root. Here c=6, d=-1. Answer: -3(-1) / 6 = 1/2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>6. The H.P. Condition Check</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Determine the condition for the roots of a cubic equation to be in H.P.</li>
+             <li><strong>Shortcut:</strong> The condition is 2c3 - 9bcd + 27ad2 = 0. (Notice it is the A.P. condition with coefficients reversed: a → d and b → c).</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 2: Quadratic Equation Bypasses (ax2 + bx + c = 0)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>7. The "Ratio of Roots" Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> The roots are given to be in the ratio m : n.</li>
+             <li><strong>Shortcut:</strong> mnb2 = (m + n)2 ac.</li>
+             <li><strong>Example:</strong> Roots are in the ratio 2:3. Here m=2, n=3. Answer: 6b2 = 25ac.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>8. The "Square of the Other" Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> One root is the square of the other root (α = β2).</li>
+             <li><strong>Shortcut:</strong> b3 + a2c + ac2 = 3abc.</li>
+             <li><strong>Example:</strong> One root of x2 + px + q = 0 is the square of the other. Answer: p3 + q2 + q = 3pq.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>9. The "Difference of Roots" Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> The absolute difference between the roots is k.</li>
+             <li><strong>Shortcut:</strong> b2 - 4ac = a2k2.</li>
+             <li><strong>Example:</strong> The difference of roots is 1. Answer: b2 - 4ac = a2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>10. The Single Common Root Condition</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Two quadratics a1x2 + b1x + c1 = 0 and a2x2 + b2x + c2 = 0 have exactly one common root.</li>
+             <li><strong>Shortcut:</strong> The condition is ALWAYS: (a1b2 - a2b1)(b1c2 - b2c1) = (c1a2 - c2a1)2. (Use cross-multiplication).</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>11. The Both Common Roots Trick</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Two quadratics have both roots common.</li>
+             <li><strong>Shortcut:</strong> Their coefficients must be strictly proportional: a1/a2 = b1/b2 = c1/c2.</li>
+             <li><strong>Example:</strong> If x2 + 2x + 3 = 0 and ax2 + bx + c = 0 have both roots common. Answer: a/1 = b/2 = c/3.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>12. The "n times the other" Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> One root is n times the other root (alpha = nbeta).</li>
+             <li><strong>Shortcut:</strong> nb2 = (n+1)2 ac.</li>
+             <li><strong>Example:</strong> One root is 3 times the other. Answer: 3b2 = 16ac.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 3: Equation Transformations (Finding New Equations)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>13. The Reciprocal Roots Equation</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the equation whose roots are 1/α, 1/β, 1/γ.</li>
+             <li><strong>Shortcut:</strong> Simply reverse the entire order of coefficients from the original equation.</li>
+             <li><strong>Example:</strong> Original is 2x3 - 3x2 + 4x - 5 = 0. Answer: -5x3 + 4x2 - 3x + 2 = 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>14. The Negative Roots Equation</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the equation whose roots are -α, -β, -γ.</li>
+             <li><strong>Shortcut:</strong> Change the signs of the alternate terms, starting from the SECOND term.</li>
+             <li><strong>Example:</strong> Original is x3 + 2x2 + 3x + 4 = 0. Answer: x3 - 2x2 + 3x - 4 = 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>15. The Multiplied Roots Equation</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the equation whose roots are kα, kβ, kγ.</li>
+             <li><strong>Shortcut:</strong> Multiply the 1st term by k0, 2nd term by k1, 3rd term by k2, 4th term by k3, and so on.</li>
+             <li><strong>Example:</strong> Roots are multiplied by 2 for x3 + 3x2 - x + 5 = 0. Here k=2. Answer: x3 + 3(2)x2 - (4)x + 5(8) = 0 ⟹ x3 + 6x2 - 4x + 40 = 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>16. The Squared Roots Equation (Quadratic)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the equation whose roots are α2, β2 derived from ax2 + bx + c = 0.</li>
+             <li><strong>Shortcut:</strong> a2x2 - (b2 - 2ac)x + c2 = 0.</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>17. The Cubed Roots Equation (Quadratic)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the equation whose roots are α3, β3 derived from ax2 + bx + c = 0.</li>
+             <li><strong>Shortcut:</strong> a3x2 + (b3 - 3abc)x + c3 = 0.</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>18. The Diminished Roots Bypass</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the equation whose roots are diminished by h (roots are α - h, β - h, γ - h).</li>
+             <li><strong>Shortcut:</strong> Substitute x = y + h in place of x in the original equation and expand. (Or use Synthetic Division).</li>
+             <li><strong>Example:</strong> Find equation with roots α - 2, β - 2. Substitute x = y + 2 into the original polynomial.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 4: Sums of Symmetric Functions</h4>
+    <div class="formula-grid">
+             <li style="list-style-type: none; margin-left: -1rem; padding-top: 0.5rem; opacity: 0.8; font-size: 0.9em;">(For standard cubic equations: ax3 + bx2 + cx + d = 0)</li>
+       <div class="card formula-card">
+          <h4>19. Sum of Squares of Roots</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate α2 + β2 + γ2.</li>
+             <li><strong>Shortcut:</strong> ∑ α2 = (b2 - 2ac) / a2.</li>
+             <li><strong>Example:</strong> For x3 - 2x2 + 3x - 4 = 0. Here a=1, b=-2, c=3. Answer: (4 - 6) / 1 = -2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>20. Sum of Reciprocals of Roots</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate 1/α + 1/β + 1/γ.</li>
+             <li><strong>Shortcut:</strong> ∑ (1/α) = -c / d.</li>
+             <li><strong>Example:</strong> For 2x3 + 5x2 - 7x + 3 = 0. Here c=-7, d=3. Answer: -(-7) / 3 = 7/3.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>21. Sum of Reciprocal Squares</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate 1/α2 + 1/β2 + 1/γ2.</li>
+             <li><strong>Shortcut:</strong> ∑ (1/α2) = (c2 - 2bd) / d2.</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>22. Sum of Cubes of Roots</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate α3 + β3 + γ3.</li>
+             <li><strong>Shortcut:</strong> ∑ α3 = (3abc - b3 - 3a2d) / a3.</li>
+             <li><strong>Example:</strong> For x3 - x2 + x - 1 = 0. Here a=1, b=-1, c=1, d=-1. Answer: (-3 + 1 + 3) / 1 = 1.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 5: Nature of Roots, Signs, and Conjugates</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>23. Maximum Positive Real Roots (Descartes' Rule)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the maximum possible number of positive real roots for a polynomial f(x) = 0.</li>
+             <li><strong>Shortcut:</strong> Count the number of sign changes between consecutive non-zero coefficients of f(x).</li>
+             <li><strong>Example:</strong> f(x) = x3 - 2x2 + 3x - 4 = 0. Signs: (+) → (-) → (+) → (-). There are 3 sign changes. Answer: Max 3 positive real roots.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>24. Maximum Negative Real Roots (Descartes' Rule)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the maximum possible number of negative real roots for a polynomial f(x) = 0.</li>
+             <li><strong>Shortcut:</strong> Replace x with -x to get f(-x). Count the number of sign changes in f(-x).</li>
+             <li><strong>Example:</strong> f(x) = x3 - 2x2 + 3x - 4 = 0. Thus, f(-x) = -x3 - 2x2 - 3x - 4 = 0. Signs: (-) → (-) → (-) → (-). There are 0 sign changes. Answer: 0 negative real roots.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>25. The Complex Conjugate Root Pair</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Given p + iq is a root of an equation with real coefficients.</li>
+             <li><strong>Shortcut:</strong> p - iq is automatically also a root. The quadratic factor representing these two roots is ALWAYS x2 - 2px + (p2 + q2).</li>
+             <li><strong>Example:</strong> 2 + 3i is a root. Here p=2, q=3. The hidden quadratic factor is x2 - 4x + (4+9) = x2 - 4x + 13.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>26. The Irrational Conjugate Root Pair</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Given p + √q is a root of an equation with rational coefficients.</li>
+             <li><strong>Shortcut:</strong> p - √q is automatically also a root. The quadratic factor representing these two roots is ALWAYS x2 - 2px + (p2 - q).</li>
+             <li><strong>Example:</strong> 3 + √5 is a root. Here p=3, q=5. The hidden quadratic factor is x2 - 6x + (9-5) = x2 - 6x + 4.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>27. Condition for Exactly One Zero Root</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the condition for exactly one root of f(x) = 0 to be zero.</li>
+             <li><strong>Shortcut:</strong> The absolute constant term must be ZERO, and the coefficient of x must NOT be zero.</li>
+             <li><strong>Example:</strong> For ax3+bx2+cx+d=0, if one root is exactly 0, then Answer: d = 0 and c ≠ 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>28. Condition for Exactly Two Zero Roots</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the condition for exactly two roots of f(x) = 0 to be zero.</li>
+             <li><strong>Shortcut:</strong> The absolute constant term AND the coefficient of x must BOTH be ZERO.</li>
+             <li><strong>Example:</strong> For ax3+bx2+cx+d=0, if two roots are exactly 0, then Answer: d = 0 and c = 0.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 6: Miscellaneous Equation Hacks</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>29. Sum of Coefficients Zero Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> You notice the sum of all coefficients in a polynomial equation f(x) = 0 is exactly 0.</li>
+             <li><strong>Shortcut:</strong> x = 1 is ALWAYS a guaranteed root. You can immediately divide the polynomial by (x - 1) to reduce the equation's degree.</li>
+             <li><strong>Example:</strong> Solve 3x3 - 5x2 + x + 1 = 0. Sum of coefficients: 3 - 5 + 1 + 1 = 0. Answer: One root is strictly x = 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>30. Alternating Sum Zero Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> You notice the sum of the coefficients of even powers equals the sum of the coefficients of odd powers.</li>
+             <li><strong>Shortcut:</strong> x = -1 is ALWAYS a guaranteed root. You can immediately divide the polynomial by (x + 1) to reduce the equation's degree.</li>
+             <li><strong>Example:</strong> Solve 2x3 + 3x2 - 4x - 5 = 0. Sum of even powers (x2, x0): 3 + (-5) = -2. Sum of odd powers (x3, x1): 2 + (-4) = -2. Answer: One root is strictly x = -1.</li>
+          </ul>
+       </div>
+    </div>
+    <h3 class="f-section-title" style="margin-top: 2rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">Chapter 10 - Trigonometry</h3>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 1: Maximum & Minimum Values (Instant Bounds)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>1. The Linear Sine/Cosine Bounds</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the maximum or minimum value of f(x) = asin(x) + bcos(x) + c.</li>
+             <li><strong>Shortcut:</strong> The maximum is c + √ (a² + b²). The minimum is c - √ (a² + b²).</li>
+             <li><strong>Example:</strong> Find max/min of 3sin(x) - 4cos(x) + 10. Here a=3, b=-4, c=10. √ (9+16) = 5. Max = 10 + 5 = 15. Min = 10 - 5 = 5.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>2. The Squared Sine/Cosine Bounds</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the maximum or minimum value of f(x) = asin2(x) + bcos2(x).</li>
+             <li><strong>Shortcut:</strong> You do NOT need to differentiate. The Maximum is simply the larger number between 'a' and 'b'. The Minimum is the smaller number.</li>
+             <li><strong>Example:</strong> Find max/min of 7sin2(x) + 4cos2(x). Max = 7. Min = 4.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>3. The Secant/Cosecant Squared Minimum</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the minimum value of f(x) = asec2(x) + bcsc2(x).</li>
+             <li><strong>Shortcut:</strong> The minimum value is ALWAYS exactly (√a + √b)2.</li>
+             <li><strong>Example:</strong> Find the minimum value of 9sec2(x) + 16csc2(x). Here a=9, b=16. Answer: (3 + 4)2 = 72 = 49.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>4. The Tangent/Cotangent Squared Minimum</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the minimum value of f(x) = atan2(x) + bcot2(x).</li>
+             <li><strong>Shortcut:</strong> The minimum value is ALWAYS exactly 2√(ab).</li>
+             <li><strong>Example:</strong> Find the minimum value of 4tan2(x) + 25cot2(x). Answer: 2√(4*25) = 2*√(100) = 20.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>5. The Product Power Maximum</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the maximum value of f(x) = sinn(x) cosn(x).</li>
+             <li><strong>Shortcut:</strong> The maximum value is ALWAYS exactly (1/2)n.</li>
+             <li><strong>Example:</strong> Find the max value of sin4(x) cos4(x). Answer: (1/2)4 = 1/16.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 2: The "60-Degree" Symmetry Hacks</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>6. The Sine Symmetry Product</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate sin(A) sin(60 - A) sin(60 + A).</li>
+             <li><strong>Shortcut:</strong> The product collapses instantly to (1/4) * sin(3A).</li>
+             <li><strong>Example:</strong> Evaluate sin(10) sin(50) sin(70). Here A=10, 60-A=50, 60+A=70. Answer: (1/4) sin(30) = (1/4) (1/2) = 1/8.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>7. The Cosine Symmetry Product</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate cos(A) cos(60 - A) cos(60 + A).</li>
+             <li><strong>Shortcut:</strong> The product collapses instantly to (1/4) * cos(3A).</li>
+             <li><strong>Example:</strong> Evaluate cos(20) cos(40) cos(80). Here A=20, 60-A=40, 60+A=80. Answer: (1/4) cos(60) = (1/4) (1/2) = 1/8.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>8. The Tangent Symmetry Product</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate tan(A) tan(60 - A) tan(60 + A).</li>
+             <li><strong>Shortcut:</strong> The product collapses instantly to tan(3A). (Notice there is NO 1/4 here!).</li>
+             <li><strong>Example:</strong> Evaluate tan(20) tan(40) tan(80). Answer: tan(60) = √3.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>9. The Squared Sine Symmetry Sum</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate sin2(A) + sin2(60 - A) + sin2(60 + A).</li>
+             <li><strong>Shortcut:</strong> The sum is ALWAYS exactly 3/2, independent of the angle A.</li>
+             <li><strong>Example:</strong> Evaluate sin2(15) + sin2(45) + sin2(75). Answer: 3/2.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 3: Famous Fixed Series (Do not calculate these!)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>10. The Cosine Doubling Product</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate a product where angles keep doubling: cos(A) cos(2A) cos(4A)...cos(2n-1 A).</li>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS [ sin(2n A) ] / [ 2n sin(A) ].</li>
+             <li><strong>Example:</strong> Evaluate cos(π/7) cos(2π/7) cos(4π/7). Here A=π/7, and there are n=3 terms. Answer: sin(8π/7) / [ 8 sin(π/7) ]. Since sin(8π/7) = -sin(π/7), Answer: -1/8.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>11. The "7-Denom" Cosine Sum (Even)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate cos(2π/7) + cos(4π/7) + cos(6π/7).</li>
+             <li><strong>Shortcut:</strong> This specific EAPCET favorite is ALWAYS exactly -1/2.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: -1/2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>12. The "7-Denom" Cosine Sum (Odd)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate cos(π/7) - cos(2π/7) + cos(3π/7).</li>
+             <li><strong>Shortcut:</strong> This specific alternating sum is ALWAYS exactly +1/2.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: 1/2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>13. The 45-Degree Tangent Series</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate (1 + tan 1) * (1 + tan 2) * (1 + tan 3) ... (1 + tan 45).</li>
+             <li><strong>Shortcut:</strong> Pair angles that add to 45 (like 1 and 44). Each pair equals 2. There are 22 pairs, plus the standalone (1+tan45) which is also 2. Answer is 2n/2.</li>
+             <li><strong>Example:</strong> Evaluate (1 + tan 1) ... (1 + tan 45). Answer: 222 2 = 223.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 4: Triangle Conditionals (If A + B + C = 180)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>14. The Tangent Sum to Product Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Simplify tan(A) + tan(B) + tan(C) in a triangle.</li>
+             <li><strong>Shortcut:</strong> In any triangle, the sum equals the product: tan(A) tan(B) tan(C).</li>
+             <li><strong>Example:</strong> If A, B, C are angles of a triangle, simplify (tan A + tan B + tan C) / (tan A tan B tan C). Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>15. The Cotangent Product Sum Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Simplify cot(A)cot(B) + cot(B)cot(C) + cot(C)cot(A).</li>
+             <li><strong>Shortcut:</strong> In any triangle, this specific sum is ALWAYS exactly 1.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>16. The Double Angle Sine Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Simplify sin(2A) + sin(2B) + sin(2C) in a triangle.</li>
+             <li><strong>Shortcut:</strong> This collapses instantly to: 4 * sin(A) * sin(B) * sin(C).</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>17. The "45-Degree" Twin Bracket</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Given A + B = 45 degrees, evaluate (1 + tan A)(1 + tan B).</li>
+             <li><strong>Shortcut:</strong> The answer is ALWAYS exactly 2.</li>
+             <li><strong>Example:</strong> Evaluate (1 + tan 20)(1 + tan 25). Since 20+25=45, Answer: 2.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 5: Inverse Trigonometry Bypasses</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>18. The "pi/4" Tangent Spotter</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate tan-1(1/2) + tan-1(1/3).</li>
+             <li><strong>Shortcut:</strong> Do not use the formula. This specific sum is the most common in exams and ALWAYS equals π/4.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: π/4.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>19. The Complementary Domain Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Given an equation like sin-1(x) + sin-1(y) = π/2. Find x² + y².</li>
+             <li><strong>Shortcut:</strong> If the sum is π/2, then one is the complement of the other. This implies y = cos(sin-1(x)), which means x² + y² = 1.</li>
+             <li><strong>Example:</strong> If sin-1(x) + sin-1(y) = π/2, find x² + y². Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>20. The "x = tan(theta)" Substitution Trick</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Simplify massive inverse expressions like sin-1[ 2x / (1+x²) ] or cos-1[ (1-x²)/(1+x²) ].</li>
+             <li><strong>Shortcut:</strong> Both of these are standard identities disguised by 'x'. They BOTH simplify instantly to exactly 2 tan-1(x).</li>
+             <li><strong>Example:</strong> Differentiate sin-1[ 2x / (1+x²) ]. It is simply 2 tan-1(x). Derivative is 2 / (1+x²).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>21. The "Right Triangle Draw" Bypass</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate nested mixed inverse trigs like cos(tan-1(3/4)).</li>
+             <li><strong>Shortcut:</strong> NEVER use formulas. Draw a right triangle. If tan = 3/4, Opposite=3, Adjacent=4. Hypotenuse = 5. Now you need the 'cos' of this triangle, which is Adjacent/Hypotenuse.</li>
+             <li><strong>Example:</strong> cos(tan-1(3/4)). Triangle sides: 3, 4, 5. Cosine is 4/5. Answer: 4/5.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 6: The "Value Put" Hacks (MCQ Elimination)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>22. The Universal Variable Angle Elimination</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Simplifying a massive trigonometric fraction/equation where the options are pure numbers (1, 0, -1, 2).</li>
+             <li><strong>Shortcut:</strong> If the options have no variables, the answer is independent of theta. Just substitute a friendly angle like theta = 0, 45, or 90 to find the answer in 5 seconds.</li>
+             <li><strong>Example:</strong> Evaluate 3(sin4 A + cos4 A) - 2(sin6 A + cos6 A). Put A = 90. sin(90)=1, cos(90)=0. Expression = 3(1) - 2(1) = 1. Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>23. The Equilateral Triangle Hack (SOT)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Simplifying an expression with sides (a,b,c) and angles (A,B,C) where options are numbers or simple variables.</li>
+             <li><strong>Shortcut:</strong> Assume the triangle is Equilateral. Put A=B=C=60 degrees, and a=b=c=1. Plug these into the question and the options to find the match.</li>
+             <li><strong>Example:</strong> In a triangle, evaluate (a-b)² cos²(C/2) + (a+b)² sin²(C/2). Put a=b=1, C=60. Result is (0) + (2)² sin²(30) = 4 (1/4) = 1. Since c=1, the option equal to c² is correct.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 7: Properties of Triangles (SOT) Direct Results</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>24. The Sides to Cotangent AP Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If the sides a, b, c of a triangle are in Arithmetic Progression (A.P.), find the relation between the half-angles.</li>
+             <li><strong>Shortcut:</strong> If a, b, c are in A.P., then cot(A/2), cot(B/2), cot(C/2) are ALWAYS in A.P.</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>25. The Exradii to Sides HP/AP Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If the exradii r1, r2, r3 are in Harmonic Progression (H.P.), find the relation between the sides.</li>
+             <li><strong>Shortcut:</strong> If r1, r2, r3 are in H.P., then the sides a, b, c are ALWAYS in A.P.</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>26. The Area from Radii Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the area (Delta) of a triangle given its inradius (r) and exradii (r1, r2, r3).</li>
+             <li><strong>Shortcut:</strong> The Area is ALWAYS exactly Δ = √(r r1 r2 r3).</li>
+             <li><strong>Example:</strong> If r=1, r1=2, r2=3, r3=6. Δ = √(1 2 3 6) = √36 = 6.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>27. The Sum of Exradii Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Simplify the sum of the exradii minus the inradius: r1 + r2 + r3 - r.</li>
+             <li><strong>Shortcut:</strong> This sum is ALWAYS exactly 4R (where R is the circumradius).</li>
+             <li><strong>Example:</strong> If exradii sum is 15 and inradius is 3, find R. 15 - 3 = 12. 4R = 12. Answer: R = 3.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>28. Distance Between Centers (Euler's Theorem)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the distance 'd' between the circumcenter (radius R) and incenter (radius r).</li>
+             <li><strong>Shortcut:</strong> The square of the distance is ALWAYS d² = R² - 2Rr.</li>
+             <li><strong>Example:</strong> If R=5 and r=2. d² = 25 - 2(5)(2) = 25 - 20 = 5. Answer: d = √5.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>29. The "Angle C = 60" Spotter</h4>
+          <ul>
+             <li><strong>Pattern:</strong> A relation between sides is given involving squares and a mixed product.</li>
+             <li><strong>Shortcut:</strong> If Angle C = 60 degrees, then c² is exactly a² + b² - ab. (If Angle C = 120 degrees, then c² = a² + b² + ab).</li>
+             <li><strong>Example:</strong> If sides satisfy a² + b² - c² = ab, find Angle C. Answer: 60 degrees.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>30. The Reciprocal Radii Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate 1/r1 + 1/r2 + 1/r3.</li>
+             <li><strong>Shortcut:</strong> The sum of the reciprocals of the exradii is ALWAYS exactly 1/r (the reciprocal of the inradius).</li>
+             <li><strong>Example:</strong> If r1=3, r2=4, r3=12. 1/3 + 1/4 + 1/12 = 4/12 + 3/12 + 1/12 = 8/12 = 2/3. This equals 1/r. Answer: Inradius r = 3/2.</li>
+          </ul>
+       </div>
+    </div>
+    <h3 class="f-section-title" style="margin-top: 2rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">Chapter 11 - Vector Algebra & 3D Geometry</h3>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 1: Vector Triple Products & Identities</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>1. The BAC-CAB Rule (Vector Triple Product)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Expand a vector triple product like a x (b x c).</li>
+             <li><strong>Shortcut:</strong> ALWAYS expands to (a . c)b - (a . b)c. (Memorize it as "BAC minus CAB").</li>
+             <li><strong>Example:</strong> Expand i x (j x i). Here a=i, b=j, c=i. Answer: (i . i)j - (i . j)i = (1)j - (0)i = j.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>2. The Lagrange Identity Bypass</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find |a x b| when magnitudes |a|, |b|, and the dot product (a . b) are known.</li>
+             <li><strong>Shortcut:</strong> |a x b|² + (a . b)² = |a|² * |b|².</li>
+             <li><strong>Example:</strong> If |a|=2, |b|=3, and a.b = 4. Find |a x b|. Answer: |a x b|² + 16 = (4 * 9). |a x b|² = 36 - 16 = 20. |a x b| = √20.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>3. The Cyclic Scalar Triple Product (STP)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate or compare scalar triple products like [a b c], [b c a], [a c b].</li>
+             <li><strong>Shortcut:</strong> Cyclic shifts keep the sign: [a b c] = [b c a] = [c a b]. Anti-cyclic shifts flip the sign: [a c b] = -[a b c].</li>
+             <li><strong>Example:</strong> Evaluate [i j k] + [j k i] + [k j i]. Answer: 1 + 1 + (-1) = 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>4. The "[a+b b+c c+a]" Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate the scalar triple product of sum vectors: [a+b b+c c+a].</li>
+             <li><strong>Shortcut:</strong> This is ALWAYS exactly 2 * [a b c].</li>
+             <li><strong>Example:</strong> If the volume of a parallelepiped with edges a,b,c is 5. Find the volume with edges a+b, b+c, c+a. Answer: 2 * 5 = 10.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>5. The Cross Product STP Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Evaluate the scalar triple product of cross vectors: [a x b, b x c, c x a].</li>
+             <li><strong>Shortcut:</strong> This is ALWAYS exactly [a b c]².</li>
+             <li><strong>Example:</strong> If [a b c] = 4, evaluate [a x b, b x c, c x a]. Answer: 4² = 16.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 2: Areas & Volumes (Instant Geometry)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>6. Parallelogram Area (Diagonals Given)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the area of a parallelogram when its DIAGONALS d1 and d2 are given (not its sides).</li>
+             <li><strong>Shortcut:</strong> Area = (1/2) * |d1 x d2|. (Do not forget the 1/2!).</li>
+             <li><strong>Example:</strong> Diagonals are 2i and 2j. d1 x d2 = 4k. |d1 x d2| = 4. Answer: (1/2) * 4 = 2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>7. Tetrahedron Volume (Coterminous Edges)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the volume of a tetrahedron with edges a, b, c starting from the same vertex.</li>
+             <li><strong>Shortcut:</strong> Volume = (1/6) * |[a b c]|. (Absolute value of the scalar triple product divided by 6).</li>
+             <li><strong>Example:</strong> If [a b c] = 24. Answer: Volume = 24 / 6 = 4.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>8. 3D Triangle Area from Vertices</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the area of a triangle with position vectors A, B, and C.</li>
+             <li><strong>Shortcut:</strong> Area = (1/2) * |(A x B) + (B x C) + (C x A)|.</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 3: Dot & Cross Product Traps</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>9. The "a + b + c = 0" Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Given a + b + c = 0 and their magnitudes, evaluate a.b + b.c + c.a.</li>
+             <li><strong>Shortcut:</strong> The sum of dot products is ALWAYS exactly -( |a|² + |b|² + |c|² ) / 2.</li>
+             <li><strong>Example:</strong> Given unit vectors where a+b+c=0. |a|=|b|=|c|=1. Answer: -(1+1+1)/2 = -3/2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>10. The Unit Vector Sum Trap</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If the sum of two unit vectors is also a unit vector, find the magnitude of their difference.</li>
+             <li><strong>Shortcut:</strong> The magnitude of their difference is ALWAYS exactly √3.</li>
+             <li><strong>Example:</strong> |a|=1, |b|=1, |a+b|=1. Find |a-b|. Answer: √3.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>11. Projection vs. Vector Projection</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the projection of vector 'a' ON vector 'b'.</li>
+             <li><strong>Shortcut:</strong> Scalar Projection = (a . b) / |b|. (Divide by the magnitude of what it is ON). Vector Projection = [ (a . b) / |b|² ] * b.</li>
+             <li><strong>Example:</strong> Projection of 2i on j. Dot product is 0. Answer: 0.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>12. The Angle Bisector Vector</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find a vector along the angle bisector of two vectors 'a' and 'b'.</li>
+             <li><strong>Shortcut:</strong> The bisector is ALWAYS proportional to the sum of their unit vectors: (a / |a|) + (b / |b|).</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>13. Collinear/Parallel Ratio Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Check if vectors a = x1 i + y1 j + z1 k and b = x2 i + y2 j + z2 k are parallel.</li>
+             <li><strong>Shortcut:</strong> Do NOT use cross product. Just check if the ratios are equal: x1/x2 = y1/y2 = z1/z2.</li>
+             <li><strong>Example:</strong> a = 2i + 3j + 4k, b = 4i + 6j + 8k. Ratios: 2/4 = 3/6 = 4/8 = 1/2. Answer: Yes, they are parallel.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>14. The Reciprocal System Bypass</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If a', b', c' form a reciprocal system of vectors to a, b, c. Evaluate a.a' + b.b' + c.c'.</li>
+             <li><strong>Shortcut:</strong> The dot product of any vector with its reciprocal is 1. The total sum is ALWAYS exactly 3.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: 1 + 1 + 1 = 3.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 4: 3D Direction Cosines & Ratios</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>15. The Direction Cosine Squares Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> A line makes angles alpha, beta, gamma with the coordinate axes. Evaluate cos²(a) + cos²(b) + cos²(c).</li>
+             <li><strong>Shortcut:</strong> The sum of squared cosines is ALWAYS exactly 1.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>16. The Direction Sine Squares Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> A line makes angles alpha, beta, gamma with the axes. Evaluate sin²(a) + sin²(b) + sin²(c).</li>
+             <li><strong>Shortcut:</strong> Convert using 1-cos². The sum is ALWAYS exactly 2.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: 2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>17. Angle Between Cube Diagonals</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the angle between any two main diagonals of a cube.</li>
+             <li><strong>Shortcut:</strong> DO NOT calculate it. It is a standard result and ALWAYS exactly cos⁻¹(1/3).</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: cos⁻¹(1/3).</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 5: Planes (Equations & Distances)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>18. Foot of the Perpendicular Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the foot of the perpendicular (h, k, l) from a point (x1, y1, z1) to a plane ax + by + cz + d = 0.</li>
+             <li><strong>Shortcut:</strong> Use the formula: (h-x1)/a = (k-y1)/b = (l-z1)/c = - (ax1 + by1 + cz1 + d) / (a² + b² + c²).</li>
+             <li><strong>Example:</strong> Point (1,1,1) to plane x + y + z - 6 = 0. (h-1)/1 = (k-1)/1 = (l-1)/1 = - (1+1+1-6) / (1+1+1) = -(-3)/3 = 1. h-1=1 -> h=2. Answer: Foot is (2, 2, 2).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>19. Image of a Point in a Plane</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the reflection/image (h, k, l) of a point in a plane.</li>
+             <li><strong>Shortcut:</strong> Use the EXACT SAME formula as #18, but multiply the right-hand side by 2.</li>
+             <li><strong>Example:</strong> Point (1,1,1) in plane x + y + z - 6 = 0. RHS = 2 * (-(-3)/3) = 2. h-1=2 -> h=3. Answer: Image is (3, 3, 3).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>20. Distance Between Parallel Planes</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find distance between ax + by + cz + d1 = 0 and ax + by + cz + d2 = 0.</li>
+             <li><strong>Shortcut:</strong> Distance = |d1 - d2| / √(a² + b² + c²). (CRITICAL: Ensure the a, b, c coefficients match exactly in both equations first!).</li>
+             <li><strong>Example:</strong> Dist between x+y+z-3=0 and 2x+2y+2z-10=0. First, divide the second by 2: x+y+z-5=0. Now d1=-3, d2=-5. Distance = |-3 - (-5)| / √(1+1+1) = 2/√3.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>21. The Axis Intercept Plane</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Equation of a plane making intercepts a, b, c on the x, y, z axes.</li>
+             <li><strong>Shortcut:</strong> ALWAYS write it directly as: x/a + y/b + z/c = 1.</li>
+             <li><strong>Example:</strong> Plane cuts x, y, z axes at 2, 3, 4. Answer: x/2 + y/3 + z/4 = 1.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>22. Family of Intersecting Planes</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Equation of a plane passing through the intersection line of Plane1 = 0 and Plane2 = 0.</li>
+             <li><strong>Shortcut:</strong> The equation is ALWAYS of the form: Plane1 + k * Plane2 = 0. Plug in the given third point to find 'k'.</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 6: Lines (3D Geometry)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>23. Angle Between Line and Plane (The Trap)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the angle (theta) between a line (direction a,b,c) and a plane (normal p,q,r).</li>
+             <li><strong>Shortcut:</strong> Use SINE, not cosine! sin(theta) = |ap + bq + cr| / (|direction| * |normal|).</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>24. Line Lying in a Plane Check</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Verify if a given line lies entirely inside a given plane.</li>
+             <li><strong>Shortcut:</strong> Two conditions must be met: 1) The point from the line equation must satisfy the plane equation. 2) The dot product of the line's direction and the plane's normal must be 0.</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>25. Coplanar Lines Determinant Rule</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find if two lines (x-x1)/a1 = ... and (x-x2)/a2 = ... are coplanar.</li>
+             <li><strong>Shortcut:</strong> The 3x3 determinant MUST be 0. Row 1: (x2-x1, y2-y1, z2-z1). Row 2: (a1, b1, c1). Row 3: (a2, b2, c2).</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>26. Shortest Distance Between Parallel Lines</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the distance between lines r = a1 + tb and r = a2 + sb.</li>
+             <li><strong>Shortcut:</strong> Distance = |(a2 - a1) x b| / |b|.</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>27. Shortest Distance Between Skew Lines</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the distance between non-parallel, non-intersecting lines r = a1 + tb1 and r = a2 + sb2.</li>
+             <li><strong>Shortcut:</strong> Distance = |[ (a2 - a1) b1 b2 ]| / |b1 x b2|. (Numerator is the scalar triple product).</li>
+             <li><strong>Example:</strong> (Matches pattern).</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 7: Points & Ratios (3D Co-ordinate Geometry)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>28. The 3D Coordinate Plane Divider</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the ratio in which the XY, YZ, or ZX plane divides the line segment joining (x1, y1, z1) and (x2, y2, z2).</li>
+             <li><strong>Shortcut:</strong> XY plane ratio is ALWAYS exactly -z1 / z2. YZ plane is -x1 / x2. ZX plane is -y1 / y2.</li>
+             <li><strong>Example:</strong> Ratio in which XY plane divides line joining (1, 2, 3) and (4, 5, -6). Answer: -(3) / (-6) = 1:2.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>29. Centroid of a Tetrahedron</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the centroid of a tetrahedron with vertices A, B, C, D.</li>
+             <li><strong>Shortcut:</strong> The centroid is simply the average: (A + B + C + D) / 4.</li>
+             <li><strong>Example:</strong> Vertices are (1,0,0), (0,1,0), (0,0,1), (0,0,0). Answer: (1/4, 1/4, 1/4).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>30. The "Sphere Center/Radius" Spotter</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the center and radius of a sphere from its general equation: x² + y² + z² + 2ux + 2vy + 2wz + d = 0.</li>
+             <li><strong>Shortcut:</strong> Center is ALWAYS (-u, -v, -w). Divide x,y,z coefficients by -2. Radius is √(u² + v² + w² - d).</li>
+             <li><strong>Example:</strong> Sphere x² + y² + z² - 4x + 6y - 8z + 4 = 0. Center = (2, -3, 4). Radius = √(4 + 9 + 16 - 4) = 5.</li>
+          </ul>
+       </div>
+    </div>
+    <h3 class="f-section-title" style="margin-top: 2rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">Chapter 12 - Measures of Dispersion</h3>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 1: The "Change of Origin & Scale" Bypasses</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>1. The "Addition/Subtraction" Bypass (Origin)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the new Variance, Standard Deviation (SD), Range, or Mean Deviation when a constant 'k' is added to or subtracted from every observation.</li>
+             <li><strong>Shortcut:</strong> These measures of dispersion NEVER CHANGE. They are 100% independent of change of origin.</li>
+             <li><strong>Example:</strong> The variance of 10 observations is 5. If 3 is added to every observation, find the new variance. Answer: 5 (It remains completely unchanged).</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>2. The "Multiplication" Bypass (Scale)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the new SD or Variance when every observation is multiplied by a constant 'k'.</li>
+             <li><strong>Shortcut:</strong> The new SD is exactly |k| * (Old SD). The new Variance is exactly k² * (Old Variance).</li>
+             <li><strong>Example:</strong> The variance of a dataset is 4. If every observation is multiplied by 3, find the new variance. Answer: 3² * 4 = 9 * 4 = 36.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>3. The Linear Equation Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> If y = ax + b, and the variance/SD of x is given, find the variance/SD of y.</li>
+             <li><strong>Shortcut:</strong> Ignore 'b' completely. SD of y = |a| * (SD of x). Variance of y = a² * (Variance of x).</li>
+             <li><strong>Example:</strong> If y = -2x + 5 and Variance of x is 3. Find Variance of y. Ignore 5. Answer: (-2)² * 3 = 4 * 3 = 12.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 2: Standard Sequences (Instant Formulas)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>4. Variance of First 'n' Natural Numbers</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the variance or SD of the numbers 1, 2, 3, ... n.</li>
+             <li><strong>Shortcut:</strong> The variance is ALWAYS exactly (n² - 1) / 12.</li>
+             <li><strong>Example:</strong> Find the variance of the first 11 natural numbers. Here n=11. Answer: (11² - 1) / 12 = 120 / 12 = 10.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>5. Variance of an Arithmetic Progression (A.P.)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the variance of a sequence of 'n' terms in an A.P. with a common difference 'd'.</li>
+             <li><strong>Shortcut:</strong> The variance is ALWAYS exactly [d² * (n² - 1)] / 12.</li>
+             <li><strong>Example:</strong> Find the variance of 3, 6, 9, 12, 15. Here n=5, d=3. Answer: [3² * (5² - 1)] / 12 = [9 * 24] / 12 = 18.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>6. Variance of First 'n' Even/Odd Numbers</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the variance of the first 'n' EVEN natural numbers or first 'n' ODD natural numbers.</li>
+             <li><strong>Shortcut:</strong> Both have the exact same variance! It is ALWAYS exactly (n² - 1) / 3.</li>
+             <li><strong>Example:</strong> Find the variance of the first 7 even natural numbers. Here n=7. Answer: (7² - 1) / 3 = 48 / 3 = 16.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>7. The "Two Number" SD Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the Standard Deviation of exactly two numbers 'a' and 'b'.</li>
+             <li><strong>Shortcut:</strong> Do not use the long variance formula. The SD is ALWAYS exactly |a - b| / 2 (half of their absolute difference).</li>
+             <li><strong>Example:</strong> Find the SD of 14 and 20. Answer: |14 - 20| / 2 = 6 / 2 = 3.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 3: Theoretical Minima & Maxima (No Calculations)</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>8. The Absolute Deviation Minimum</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the value of 'A' for which the sum of absolute deviations Sum|xᵢ - A| is minimum.</li>
+             <li><strong>Shortcut:</strong> The sum of absolute deviations is ALWAYS minimum when measured about the MEDIAN.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: A = Median.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>9. The Squared Deviation Minimum</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the value of 'A' for which the sum of squared deviations Sum(xᵢ - A)² is minimum.</li>
+             <li><strong>Shortcut:</strong> The sum of squared deviations is ALWAYS minimum when measured about the MEAN.</li>
+             <li><strong>Example:</strong> For a dataset, Sum(xᵢ - A)² is minimum. What is A? Answer: The Arithmetic Mean.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>10. The Maximum Variance Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the maximum possible variance of a dataset where all values are strictly bounded in the interval [a, b].</li>
+             <li><strong>Shortcut:</strong> The absolute maximum variance is ALWAYS exactly (b - a)² / 4.</li>
+             <li><strong>Example:</strong> The marks of 50 students lie between 20 and 80. Find the maximum possible variance. Here a=20, b=80. Answer: (80 - 20)² / 4 = 3600 / 4 = 900.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 4: Corrections & Combinations</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>11. The Correct Mean Hack</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Correcting the mean when an incorrect observation was recorded.</li>
+             <li><strong>Shortcut:</strong> Correct Mean = Old Mean + (Right Value - Wrong Value) / n.</li>
+             <li><strong>Example:</strong> Mean of 20 observations is 50. One observation 30 was wrongly recorded as 80. Correct Mean = 50 + (30 - 80) / 20 = 50 - (50/20) = 50 - 2.5 = 47.5.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>12. Combined Variance (Same Mean)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the combined variance of two groups that happen to have the EXACT SAME mean.</li>
+             <li><strong>Shortcut:</strong> Do not use the massive d1, d2 formula. The combined variance is simply the weighted average: (n1V1 + n2V2) / (n1 + n2).</li>
+             <li><strong>Example:</strong> Group A (n=10, V=4, Mean=50) and Group B (n=20, V=7, Mean=50). Answer: (104 + 207) / 30 = (40 + 140) / 30 = 180 / 30 = 6.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>13. The Consistency / Stability Checker</h4>
+          <ul>
+             <li><strong>Pattern:</strong> A word problem asks which of two datasets (like batsmans' scores or factory wages) is more "consistent", "stable", or "uniform".</li>
+             <li><strong>Shortcut:</strong> Find the Coefficient of Variation (CV) = (SD / Mean) * 100. The dataset with the LESSER CV is ALWAYS the more consistent/stable one.</li>
+             <li><strong>Example:</strong> (Matches pattern). Answer: Calculate CV for both, pick the smaller one.</li>
+          </ul>
+       </div>
+    </div>
+    <h4 class="f-section-title" style="margin-top: 1rem; font-size: 1.1rem; color: var(--text); opacity: 0.9;">GROUP 5: Standard Distribution Ratios</h4>
+    <div class="formula-grid">
+       <div class="card formula-card">
+          <h4>14. The 4:5:6 Ratio Hack (Symmetric Distributions)</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find the relationship between Quartile Deviation (QD), Mean Deviation (MD), and Standard Deviation (SD) for a normal or symmetric distribution.</li>
+             <li><strong>Shortcut:</strong> Memorize the ratio 4:5:6. This means QD / 4 = MD / 5 = SD / 6.</li>
+             <li><strong>Example:</strong> If SD = 12, find QD. QD / 4 = 12 / 6 -> QD / 4 = 2 -> QD = 8.</li>
+          </ul>
+       </div>
+       <div class="card formula-card">
+          <h4>15. The Empirical Formula Trick</h4>
+          <ul>
+             <li><strong>Pattern:</strong> Find Mean, Median, or Mode when the other two are given.</li>
+             <li><strong>Shortcut:</strong> Mode = 3*(Median) - 2*(Mean). (Memorize it as "Mode = 3 Med - 2 Mean").</li>
+             <li><strong>Example:</strong> In a moderately skewed distribution, Mean = 20, Median = 22. Find Mode. Answer: Mode = 3(22) - 2(20) = 66 - 40 = 26.</li>
+          </ul>
+       </div>
+    </div>
+  </div>
+</div>
 
     <!-- TODO -->
     <div class="page" id="page-todo">
